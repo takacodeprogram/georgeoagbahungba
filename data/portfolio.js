@@ -1,7 +1,7 @@
 export const contact = {
-  phoneDisplay: "+229 67 65 97 17",
-  phone: "+22967659717",
-  whatsapp: "https://wa.me/22967659717",
+  phoneDisplay: "+229 01 67 65 97 17",
+  phone: "+2290167659717",
+  whatsapp: "https://wa.me/2290167659717",
   email: "contact@georgeo-agbahungba.xyz",
   emailAlt: "gagbahungba2019@gmail.com",
   location: "Cotonou, Bénin",

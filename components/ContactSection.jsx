@@ -13,7 +13,7 @@ export default function ContactSection() {
           <MessageCircle aria-hidden="true" /><span>Discuter sur WhatsApp<small>{contact.phoneDisplay}</small></span><ArrowUpRight aria-hidden="true" />
         </a>
         <a href={`mailto:${contact.email}`}><Mail aria-hidden="true" /><span>E-mail<small>{contact.email}</small></span></a>
-        <a href="tel:+22967659717"><Phone aria-hidden="true" /><span>Téléphone<small>{contact.phoneDisplay}</small></span></a>
+        <a href="tel:+2290167659717"><Phone aria-hidden="true" /><span>Téléphone<small>{contact.phoneDisplay}</small></span></a>
         <div><MapPin aria-hidden="true" /><span>Localisation<small>{contact.location}</small></span></div>
       </div>
       <div className="social-row">

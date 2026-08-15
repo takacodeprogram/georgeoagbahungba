@@ -87,7 +87,7 @@ const personJsonLd = {
   jobTitle: "Agroéconomiste & Développeur Full Stack",
   url: "https://georgeo-agbahungba.xyz",
   email: "mailto:contact@georgeo-agbahungba.xyz",
-  telephone: "+22967659717",
+  telephone: "+2290167659717",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cotonou",
