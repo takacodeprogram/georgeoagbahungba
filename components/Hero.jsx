@@ -48,7 +48,7 @@ const frames = [
 ];
 
 const chapterStops = [0, 0.25, 0.5, 0.75];
-const chapterJumpStops = [0, 0.26, 0.52, 0.78];
+const chapterJumpStops = [0, 0.38, 0.64, 0.90];
 
 export default function Hero() {
   const storyRef = useRef(null);
