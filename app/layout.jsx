@@ -54,7 +54,7 @@ export const metadata = {
     creator: "@r_agbahungba",
     title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
     description:
-      "Agroéconomiste et développeur Full Stack : data, technologie et expertise métier pour des solutions digitales, Agritech et IA concrètes.",
+      "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
     images: ["/og-image.png"],
   },
   robots: {

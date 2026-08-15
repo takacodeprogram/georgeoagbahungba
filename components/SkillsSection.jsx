@@ -7,8 +7,8 @@ const groups = [
     title: "Développement & Technologie",
     skills: [
       "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
-      "React Native", "Expo", "WordPress", "SQL", "Supabase", "Git", "GitHub",
-      "Docker", "APIs", "IA générative",
+      "Flutter", "React Native", "Expo", "WordPress", "SQL", "Supabase",
+      "Google Cloud", "AWS Cloud", "Git", "GitHub", "Docker", "APIs", "IA générative",
     ],
   },
   {
@@ -16,7 +16,7 @@ const groups = [
     icon: DatabaseZap,
     title: "Agroéconomie & Data",
     skills: [
-      "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
+      "Python", "SQL", "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
       "Économétrie", "Statistiques", "Analyse de données", "Suivi-évaluation",
       "Évaluation d'impact",
     ],

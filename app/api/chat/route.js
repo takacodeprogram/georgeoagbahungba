@@ -5,7 +5,7 @@ const fallbackAnswers = [
   { match: ["cv", "curriculum", "télécharger", "telecharger"], answer: "La section CV propose trois versions : Agroéconomiste, Développeur et Profil complet, chacune en français et en anglais — à télécharger sur la page /cv." },
   { match: ["agri", "agro", "terrain", "kobo", "anacarde", "soja"], answer: "Georgeo développe notamment des solutions de collecte agricole offline, de visualisation KoboCollect, d’aide à la décision et des plateformes pour les filières agricoles (soja, anacarde)." },
   { match: ["projet", "réalisation", "realisation", "musimaps", "takacode"], answer: "Parmi ses projets : TakaCode, Musimaps, ANOPER Cartes membres, Ire Ayodé, la plateforme filière soja, Content Factory, Lottery dApp et 3D AI Customizer. La page /projets présente la liste complète." },
-  { match: ["compétence", "competence", "technologie", "stack", "react", "next"], answer: "Ses compétences couvrent React, Next.js, Node.js, PHP/Laravel, bases de données, mobile, IA, automatisation, collecte terrain et analyse de données." },
+  { match: ["compétence", "competence", "technologie", "stack", "react", "next", "flutter", "python", "sql", "aws", "google cloud"], answer: "Ses compétences couvrent React, Next.js, Node.js, PHP/Laravel, Flutter, React Native, Python, SQL, Cloud (Google Cloud, AWS), les bases de données, le mobile, l'IA, l'automatisation, la collecte terrain et l'analyse de données." },
 ];
 
 function fallback(message) {
