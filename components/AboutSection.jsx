@@ -82,10 +82,10 @@ export default function AboutSection() {
             J'évolue à l’intersection de l'<strong>analyse, du code et de la donnée</strong>. Je conçois des pipelines de données (ETL) robustes, gère des bases de données SQL complexes et réalise des analyses statistiques et économétriques.
           </p>
           <p data-reveal>
-            Côté tech et IA, je bâtis des applications web et mobiles sur-mesure (Next.js, Supabase, Flutter) et automatise des flux intelligents pour structurer et valoriser l'information.
+            Côté tech et IA, je bâtis des applications web et mobiles sur-mesure et automatise des flux intelligents pour structurer et valoriser l'information.
           </p>
           <p data-reveal>
-            Mon objectif : mettre cette synergie au service de l'<strong>Agritech</strong> et de projets à fort impact, de la collecte de données terrain jusqu'à la mise en production de solutions fiables.
+            Mon objectif : mettre cette synergie au service des <strong>technologies de la donnée</strong>, de l'<strong>Agritech</strong> et de projets numériques à fort impact, de la collecte de données terrain jusqu'à la mise en production.
           </p>
         </div>
       </div>
