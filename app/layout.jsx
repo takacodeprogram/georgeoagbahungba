@@ -5,28 +5,133 @@ import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL("https://georgeo-agbahungba.xyz"),
-  title: "Georgeo Agbahungba — Agroéconomie, Tech & IA",
+  title: {
+    default: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    template: "%s — Georgeo Agbahungba",
+  },
   description:
-    "Portfolio de Georgeo Agbahungba, agroéconomiste, développeur full stack et entrepreneur tech à Cotonou.",
-  keywords: ["Georgeo Agbahungba", "Agroéconomiste", "Développeur Full Stack", "Agritech", "Intelligence artificielle", "Bénin"],
+    "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
+  keywords: [
+    "Georgeo Agbahungba",
+    "Agroéconomiste",
+    "Développeur Full Stack",
+    "Agritech",
+    "Intelligence artificielle",
+    "Data",
+    "Cotonou",
+    "Bénin",
+    "Portfolio développeur",
+    "Suivi-évaluation",
+  ],
+  authors: [{ name: "Georgeo S. R. Agbahungba" }],
+  creator: "Georgeo S. R. Agbahungba",
+  publisher: "Georgeo S. R. Agbahungba",
+  category: "Portfolio",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Georgeo Agbahungba — Agroéconomie, Tech & IA",
-    description: "Du terrain au code : Agritech, data, IA et produits numériques.",
+    type: "website",
+    locale: "fr_FR",
+    alternateLocale: "en_US",
     url: "https://georgeo-agbahungba.xyz",
     siteName: "Georgeo Agbahungba",
-    locale: "fr_FR",
-    type: "website",
+    title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    description:
+      "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Georgeo Agbahungba — Analyser. Innover. Développer.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@r_agbahungba",
+    creator: "@r_agbahungba",
+    title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    description:
+      "Agroéconomiste et développeur Full Stack : data, technologie et expertise métier pour des solutions digitales, Agritech et IA concrètes.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {},
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 };
 
 export const viewport = {
   themeColor: "#080b0d",
-  colorScheme: "dark",
+  colorScheme: "dark light",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Georgeo S. R. Agbahungba",
+  jobTitle: "Agroéconomiste & Développeur Full Stack",
+  url: "https://georgeo-agbahungba.xyz",
+  email: "mailto:contact@georgeo-agbahungba.xyz",
+  telephone: "+22967659717",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Cotonou",
+    addressCountry: "BJ",
+  },
+  knowsAbout: [
+    "Agroéconomie",
+    "Économétrie",
+    "Statistiques",
+    "Développement Full Stack",
+    "Agritech",
+    "Intelligence artificielle",
+    "Data",
+  ],
+  sameAs: [
+    "https://github.com/TripleCrownDiamond",
+    "https://www.linkedin.com/in/join-digital-process",
+    "https://x.com/r_agbahungba",
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Georgeo Agbahungba — Portfolio",
+  url: "https://georgeo-agbahungba.xyz",
+  inLanguage: "fr",
+  description:
+    "Portfolio d'agroéconomie, data, IA et développement numérique : du terrain au code.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

@@ -6,7 +6,20 @@ import ContactSection from "@/components/ContactSection";
 import ChatAssistant from "@/components/ChatAssistant";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata = { title: "Projets — Georgeo Agbahungba", description: "Projets Agritech, IA, data, web, mobile et automatisation de Georgeo Agbahungba." };
+export const metadata = {
+  title: "Projets",
+  description:
+    "Projets Agritech, IA, data, web, mobile et automatisation de Georgeo Agbahungba : plateformes, applications et solutions numériques.",
+  alternates: { canonical: "/projets" },
+  openGraph: {
+    type: "website",
+    url: "https://georgeo-agbahungba.xyz/projets",
+    title: "Projets — Georgeo Agbahungba",
+    description:
+      "Une sélection de projets Agritech, IA, data, web et mobile : des idées rendues tangibles.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Georgeo Agbahungba — Projets" }],
+  },
+};
 
 export default function ProjectsPage() {
   return (
