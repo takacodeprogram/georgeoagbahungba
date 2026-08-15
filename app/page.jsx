@@ -8,6 +8,7 @@ import PortraitSection from "@/components/PortraitSection";
 import PageLoader from "@/components/PageLoader";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import CvSection from "@/components/CvSection";
+import NewsletterSection from "@/components/NewsletterSection";
 import ContactSection from "@/components/ContactSection";
 import ChatAssistant from "@/components/ChatAssistant";
 import JourneySection from "@/components/JourneySection";
@@ -54,6 +55,7 @@ export default function Home() {
       </section>
 
       <CvSection />
+      <NewsletterSection />
       <ContactSection />
 
       <SiteFooter />

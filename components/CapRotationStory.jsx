@@ -122,7 +122,7 @@ export default function CapRotationStory() {
         <div className="cap-meta">
           <span className="cap-count">01 / 02</span>
           <span className="cap-angle">Agroéconomie</span>
-          <span>Du terrain au code</span>
+          <span>De l’analyse au produit</span>
         </div>
         <div className="cap-progress" aria-hidden="true"><i /></div>
       </div>

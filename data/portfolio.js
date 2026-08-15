@@ -27,8 +27,9 @@ export const projects = [
   { name: "3D AI Customizer", url: "https://project-threejs-ai-customizer-app.onrender.com/", category: "3D + IA", code: "3D", sector: "dev", description: "Personnalisateur de t-shirts 3D avec génération de textures par intelligence artificielle.", tags: ["3D", "IA", "Expérimentation"] },
   { name: "Castro Négocé Inter", url: "https://centurion.castronegoceinter.com/", category: "Digitalisation", code: "CN", sector: "dev", description: "Digitalisation de l’entreprise et déploiement d’un outil de gestion pour ses boutiques de Cotonou et Lomé.", tags: ["Entreprise", "Gestion", "Web"] },
   { name: "Le Rural", url: "https://lerural.bj", image: "/media/project-lerural.webp", category: "Média agricole", code: "LR", sector: "agri", description: "Projet web pour le groupe de presse agricole Le Rural / AIG-Bénin.", tags: ["Média", "Agriculture", "Web"] },
-  { name: "IDID ONG", url: "https://ididong.org", category: "Développement", code: "ID", sector: "agri", description: "Présence numérique de l’ONG IDID, partenaire du secteur agricole et territorial.", tags: ["ONG", "Agriculture", "Web"] },
+  { name: "IDID ONG", url: "https://ididong.org", image: "/media/project-idid.webp", category: "Développement", code: "ID", sector: "agri", description: "Présence numérique de l’ONG IDID, partenaire du secteur agricole et territorial.", tags: ["ONG", "Agriculture", "Web"] },
   { name: "Data Palace", url: "https://datapalace.com", category: "Web", code: "DP", sector: "dev", description: "Projet web référencé dans le parcours de réalisations.", tags: ["Web", "Produit"] },
+  { name: "Invitation Dot", url: "https://invitation-dot.vercel.app", image: "/media/project-invitation.webp", category: "Événementiel", code: "ID", sector: "dev", description: "Invitation numérique pour une cérémonie de dot : écran de bienvenue, détails de l'événement et informations pratiques.", tags: ["Web", "Événementiel", "Invitation"] },
 ];
 
 export const cvs = [
@@ -40,7 +41,7 @@ export const cvs = [
 export const journey = [
   { period: "2015 — 2020", role: "Terrain & développement rural", org: "REV-Développement · APECDI", detail: "Enquêtes de terrain, animation de filières et suivi-évaluation des projets de développement." },
   { period: "2019 — 2022", role: "Développeur web freelance", org: "Digital Process & clients", detail: "Conception et livraison de sites, plateformes métiers et produits numériques de bout en bout." },
-  { period: "2020 — aujourd’hui", role: "Fondateur — Solutions Luciole", org: "Solutions Luciole", detail: "Pilotage de produits numériques à la rencontre du terrain, du code et de la donnée." },
+  { period: "2020 — aujourd’hui", role: "Fondateur — Solutions Luciole", org: "Solutions Luciole", detail: "Pilotage de produits numériques à la rencontre de l’analyse, du code et de la donnée." },
   { period: "2023 — aujourd’hui", role: "Direction produit & IA", org: "TakaCode · Musimaps", detail: "Applications, agents IA et exploration cartographique de la musique, apprentissage par la pratique." },
   { period: "2024 — 2026", role: "Data, Agritech & IA", org: "Missions & clients Agritech", detail: "Audits, enquêtes agricoles, plateformes de filières et automatisations intelligentes spécialisées." },
 ];

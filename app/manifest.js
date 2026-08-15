@@ -3,7 +3,7 @@ export default function manifest() {
     name: "Georgeo Agbahungba — Agroéconomie, Tech & IA",
     short_name: "Georgeo",
     description:
-      "Portfolio Agritech, IA, data et développement numérique : du terrain au code.",
+      "Portfolio Agritech, IA, data et développement numérique : de l'analyse au produit.",
     start_url: "/",
     scope: "/",
     display: "standalone",

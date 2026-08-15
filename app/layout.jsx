@@ -116,7 +116,7 @@ const websiteJsonLd = {
   url: "https://georgeo-agbahungba.xyz",
   inLanguage: "fr",
   description:
-    "Portfolio d'agroéconomie, data, IA et développement numérique : du terrain au code.",
+    "Portfolio d'agroéconomie, data, IA et développement numérique : de l'analyse au produit.",
 };
 
 export default function RootLayout({ children }) {
