@@ -7,13 +7,14 @@ import { projects } from "@/data/portfolio";
 
 const filters = [
   { label: "Tous", value: "all" },
-  { label: "Agritech", value: "agri" },
-  { label: "Développement", value: "dev" },
+  { label: "Web & Mobile", value: "web-mobile" },
+  { label: "IA & Automatisation", value: "ia-auto" },
+  { label: "Data & Agritech", value: "data-agri" },
 ];
 
 export default function ProjectShowcase({ limit = 6, full = false }) {
   const [activeFilter, setActiveFilter] = useState("all");
-  const filtered = activeFilter === "all" ? projects : projects.filter((project) => project.sector === activeFilter);
+  const filtered = activeFilter === "all" ? projects : projects.filter((project) => project.sectors.includes(activeFilter));
   // Sur la home, mettre en avant les projets avec image (les autres suivent dans l'ordre).
   const featured = [...projects].sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   const items = full ? filtered : featured.slice(0, limit);
