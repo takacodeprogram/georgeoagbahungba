@@ -4,7 +4,7 @@ import { contact } from "@/data/portfolio";
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <Image className="footer-logo" src="/media/georgeo-logo-white.png" alt="Georgeo Agbahungba" width={300} height={200} priority />
+      <Image className="footer-logo" src="/media/georgeo-logo-white.webp" alt="Georgeo Agbahungba" width={300} height={200} priority />
       <p className="footer-name">Georgeo Agbahungba</p>
       <p className="footer-tagline">Analyser. Imaginer. <em>Développer.</em></p>
       <nav aria-label="Liens du pied de page">

@@ -8,9 +8,8 @@ export default function PortraitSection() {
         <Image
           src="/media/georgeo-visage.webp"
           alt=""
-          width={1208}
-          height={1302}
-          unoptimized
+          width={900}
+          height={935}
         />
       </div>
       <div className="portrait-copy">

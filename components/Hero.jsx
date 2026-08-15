@@ -33,9 +33,9 @@ const chapters = [
 ];
 
 const frames = [
-  { key: "neutral", src: "/media/georgeo-vision.png", kind: "cover", priority: true },
-  { key: "agro", src: "/media/georgeo-agroeconomiste.png", kind: "cover" },
-  { key: "developer", src: "/media/developer-front.png", kind: "cover" },
+  { key: "neutral", src: "/media/georgeo-vision.webp", kind: "cover", priority: true },
+  { key: "agro", src: "/media/georgeo-agroeconomiste.webp", kind: "cover" },
+  { key: "developer", src: "/media/developer-front.webp", kind: "cover" },
 ];
 
 const chapterStops = [0, 0.34, 0.7];

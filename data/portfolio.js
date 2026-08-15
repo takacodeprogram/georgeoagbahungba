@@ -15,7 +15,7 @@ export const contact = {
 };
 
 export const projects = [
-  { name: "TakaCode", url: "https://takacode.app", image: "/media/project-takacode.png", category: "Produit IA", code: "TK", sector: "dev", description: "Plateforme qui accompagne la création de projets numériques et l’apprentissage par la pratique avec l’IA.", tags: ["IA", "EdTech", "Produit"] },
+  { name: "TakaCode", url: "https://takacode.app", image: "/media/project-takacode.webp", category: "Produit IA", code: "TK", sector: "dev", description: "Plateforme qui accompagne la création de projets numériques et l’apprentissage par la pratique avec l’IA.", tags: ["IA", "EdTech", "Produit"] },
   { name: "Musimaps", url: "https://musimaps.app", category: "Cartographie & Culture", code: "MM", sector: "dev", description: "Application web et mobile pour explorer les artistes et les cultures musicales à travers une cartographie interactive.", tags: ["Web", "Mobile", "Géodata"] },
   { name: "Collecte agricole IA", url: null, category: "Agritech & Data", code: "AI", sector: "agri", description: "Solution de collecte terrain offline et géolocalisée pour suivre, analyser et exploiter les données agricoles.", tags: ["Agritech", "Data", "IA"] },
   { name: "Content Factory", url: null, category: "IA & Automatisation", code: "CF", sector: "dev", description: "Système intelligent pour générer, valider, planifier et diffuser du contenu sur plusieurs canaux.", tags: ["IA", "Automatisation", "Contenu"] },

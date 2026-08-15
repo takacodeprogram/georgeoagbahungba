@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const capFrames = [
-  { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.png", label: "Agroéconomie" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.png", label: "Développement" },
+  { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroéconomie" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Développement" },
 ];
 
 export default function CapRotationStory() {

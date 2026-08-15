@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="about-frame">
             <div className="about-photo">
               <Image
-                src="/media/georgeo-about.png"
+                src="/media/georgeo-about.webp"
                 alt="Georgeo Agbahungba"
                 fill
                 sizes="(max-width: 900px) 100vw, 44vw"

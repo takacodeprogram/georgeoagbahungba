@@ -19,7 +19,7 @@ const SiteHeader = forwardRef(function SiteHeader({ solid = false }, ref) {
     <>
       <nav className={className} aria-label="Navigation principale" ref={ref}>
         <a href="/" className="brand" aria-label="Accueil Georgeo Agbahungba">
-          <Image src="/media/georgeo-logo-gold.png" alt="Georgeo Agbahungba" width={260} height={173} priority />
+          <Image src="/media/georgeo-logo-gold.webp" alt="Georgeo Agbahungba" width={260} height={173} priority />
         </a>
         <div className="nav-links">
           {links.map((link) => <a href={link.href} key={link.label}>{link.label}</a>)}
