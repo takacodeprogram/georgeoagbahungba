@@ -2385,7 +2385,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
 }
 

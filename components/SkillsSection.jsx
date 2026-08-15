@@ -1,4 +1,4 @@
-import { Code2, DatabaseZap } from "lucide-react";
+import { Code2, DatabaseZap, LineChart } from "lucide-react";
 
 const groups = [
   {
@@ -7,18 +7,25 @@ const groups = [
     title: "Développement & Technologie",
     skills: [
       "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
-      "Flutter", "React Native", "Expo", "WordPress", "SQL", "Supabase",
-      "Google Cloud", "AWS Cloud", "Git", "GitHub", "Docker", "APIs", "IA générative",
+      "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",
     ],
   },
   {
     number: "02",
     icon: DatabaseZap,
-    title: "Agroéconomie & Data",
+    title: "Data Engineering & Cloud",
     skills: [
-      "Python", "SQL", "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
-      "Économétrie", "Statistiques", "Analyse de données", "Suivi-évaluation",
-      "Évaluation d'impact",
+      "Python", "SQL", "Supabase", "Google Cloud", "AWS Cloud", "APIs",
+      "Pipelines de données (ETL)", "IA générative / LLMs",
+    ],
+  },
+  {
+    number: "03",
+    icon: LineChart,
+    title: "Agroéconomie & Data Analysis",
+    skills: [
+      "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
+      "Économétrie", "Statistiques", "Suivi-évaluation", "Évaluation d'impact",
     ],
   },
 ];
