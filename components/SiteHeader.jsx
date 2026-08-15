@@ -10,6 +10,7 @@ const links = [
   { href: "/#parcours", label: "Parcours", hash: "#parcours" },
   { href: "/#projets", label: "Projets", hash: "#projets" },
   { href: "/cv", label: "CV", path: "/cv" },
+  { href: "/agency", label: "Agency", path: "/agency" },
 ];
 
 const SiteHeader = forwardRef(function SiteHeader({ solid = false }, ref) {

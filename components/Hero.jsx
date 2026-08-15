@@ -30,16 +30,25 @@ const chapters = [
     accent: "Déployer.",
     copy: "Je transforme les besoins et les idées en applications, plateformes et solutions digitales fonctionnelles, de la conception jusqu’à la mise en production.",
   },
+  {
+    key: "data-eng",
+    tab: "Data Engineering",
+    eyebrow: "Pipelines • SQL • Automatisation",
+    title: ["Structurer. Connecter."],
+    accent: "Fiabiliser.",
+    copy: "Je conçois et déploie des architectures et des pipelines de données (ETL) robustes pour fluidifier et automatiser l’accès à des informations prêtes à l’analyse.",
+  },
 ];
 
 const frames = [
   { key: "neutral", src: "/media/georgeo-vision.webp", kind: "cover", priority: true },
   { key: "agro", src: "/media/georgeo-agroeconomiste.webp", kind: "cover" },
   { key: "developer", src: "/media/developer-front.webp", kind: "cover" },
+  { key: "data-eng", src: "/media/data-engineer.png", kind: "cover" },
 ];
 
-const chapterStops = [0, 0.34, 0.7];
-const chapterJumpStops = [0, 0.36, 0.72];
+const chapterStops = [0, 0.25, 0.5, 0.75];
+const chapterJumpStops = [0, 0.26, 0.52, 0.78];
 
 export default function Hero() {
   const storyRef = useRef(null);
@@ -160,31 +169,35 @@ export default function Hero() {
           onUpdate() {
             const progress = timeline.progress();
             let active = 0;
-            if (progress >= chapterStops[2]) active = 2;
+            if (progress >= chapterStops[3]) active = 3;
+            else if (progress >= chapterStops[2]) active = 2;
             else if (progress >= chapterStops[1]) active = 1;
             tabs.forEach((tab, index) => {
               tab.classList.toggle("is-active", index === active);
               tab.setAttribute("aria-selected", String(index === active));
             });
             const counter = hero.querySelector(".story-count");
-            if (counter) counter.textContent = `${String(Math.min(3, Math.floor(progress * 3) + 1)).padStart(2, "0")} — 03`;
+            if (counter) counter.textContent = `${String(Math.min(4, Math.floor(progress * 4) + 1)).padStart(2, "0")} — 04`;
           },
         });
 
         timelineRef.current = timeline;
-        timeline.to({}, { duration: 0.72 });
-        showFrame(timeline, 1, 0.72);
-        changeChapter(timeline, 0, 1, 0.76);
-        timeline.to({}, { duration: 0.8 });
+        timeline.to({}, { duration: 1.0 });
+        showFrame(timeline, 1, 1.0);
+        changeChapter(timeline, 0, 1, 1.04);
 
-        showFrame(timeline, 2, 1.9);
-        changeChapter(timeline, 1, 2, 1.94);
+        showFrame(timeline, 2, 2.0);
+        changeChapter(timeline, 1, 2, 2.04);
+
+        showFrame(timeline, 3, 3.0);
+        changeChapter(timeline, 2, 3, 3.04);
+
         timeline
-          .to({}, { duration: 1 })
-          .to(media, { scale: 1.035, duration: 3.3, ease: "none" }, 0)
-          .to(".hero-orbit", { rotate: 210, duration: 3.3, ease: "none" }, 0)
-          .to(".orbit-core", { rotate: -300, duration: 3.3, ease: "none" }, 0)
-          .to(".scroll-progress", { scaleX: 1, duration: 3.3, ease: "none" }, 0);
+          .to({}, { duration: 1.0 })
+          .to(media, { scale: 1.035, duration: 4.0, ease: "none" }, 0)
+          .to(".hero-orbit", { rotate: 210, duration: 4.0, ease: "none" }, 0)
+          .to(".orbit-core", { rotate: -300, duration: 4.0, ease: "none" }, 0)
+          .to(".scroll-progress", { scaleX: 1, duration: 4.0, ease: "none" }, 0);
 
         const moveX = gsap.quickTo(media, "x", { duration: 0.9, ease: "power3.out" });
         const moveY = gsap.quickTo(media, "y", { duration: 0.9, ease: "power3.out" });
@@ -309,7 +322,7 @@ export default function Hero() {
         <div className="hero-footerline">
           <span><MapPin size={14} aria-hidden="true" /> Cotonou, Bénin</span>
           <span>Faites défiler pour explorer</span>
-          <span className="story-count">01 — 03</span>
+          <span className="story-count">01 — 04</span>
         </div>
         <div className="scroll-track" aria-hidden="true"><i className="scroll-progress" /></div>
       </header>
