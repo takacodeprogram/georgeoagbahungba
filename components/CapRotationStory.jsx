@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 const capFrames = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroéconomie" },
   { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Développement" },
+  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineering" },
 ];
 
 export default function CapRotationStory() {
@@ -35,9 +36,8 @@ export default function CapRotationStory() {
       context = gsap.context(() => {
         gsap.set(frames, { autoAlpha: 0, scale: 0.98 });
         gsap.set(frames[0], { autoAlpha: 1, scale: 1 });
-        // Le second texte est retiré du flux tant que le premier est affiché :
-        // les deux ne peuvent jamais se superposer, même figé à mi-scroll.
         gsap.set(copy[1], { display: "none", autoAlpha: 0, y: 24 });
+        gsap.set(copy[2], { display: "none", autoAlpha: 0, y: 24 });
 
         const timeline = gsap.timeline({
           defaults: { ease: "none" },
@@ -50,26 +50,38 @@ export default function CapRotationStory() {
           },
           onUpdate() {
             const progress = timeline.progress();
-            const index = progress >= 0.5 ? 1 : 0;
+            let index = 0;
+            if (progress >= 0.66) index = 2;
+            else if (progress >= 0.33) index = 1;
             const count = stage.querySelector(".cap-count");
             const angle = stage.querySelector(".cap-angle");
-            if (count) count.textContent = `0${index + 1} / 02`;
+            if (count) count.textContent = `0${index + 1} / 03`;
             if (angle) angle.textContent = capFrames[index].label;
           },
         });
 
         timeline
           .to({}, { duration: 1 })
+          
+          // Transition 0 -> 1
           .to(frames[0], { autoAlpha: 0, scale: 1.03, duration: 0.25, ease: "sine.inOut" }, 1.05)
           .fromTo(frames[1], { autoAlpha: 0, scale: 0.975 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "sine.inOut" }, 1.05)
-          // Swap séquentiel des textes : le suivant n'est remis dans le flux
-          // (display) qu'une fois le précédent entièrement sorti.
           .to(copy[0], { autoAlpha: 0, y: -16, duration: 0.18, ease: "sine.in" }, 1.08)
+          .set(copy[0], { display: "none" }, 1.26)
           .set(copy[1], { display: "block", autoAlpha: 0, y: 14 }, 1.26)
           .to(copy[1], { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 1.28)
-          .to(".cap-progress i", { scaleX: 1, duration: 1.6 }, 0)
-          .to(".cap-orbit", { rotate: 90, duration: 1.6 }, 0)
-          .to({}, { duration: 0.4 });
+          
+          // Transition 1 -> 2
+          .to(frames[1], { autoAlpha: 0, scale: 1.03, duration: 0.25, ease: "sine.inOut" }, 2.3)
+          .fromTo(frames[2], { autoAlpha: 0, scale: 0.975 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "sine.inOut" }, 2.3)
+          .to(copy[1], { autoAlpha: 0, y: -16, duration: 0.18, ease: "sine.in" }, 2.33)
+          .set(copy[1], { display: "none" }, 2.51)
+          .set(copy[2], { display: "block", autoAlpha: 0, y: 14 }, 2.51)
+          .to(copy[2], { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 2.53)
+          
+          .to(".cap-progress i", { scaleX: 1, duration: 3.0 }, 0)
+          .to(".cap-orbit", { rotate: 180, duration: 3.0 }, 0)
+          .to({}, { duration: 0.5 });
       }, stage);
     }
 
@@ -98,6 +110,13 @@ export default function CapRotationStory() {
               exploiter les données et répondre à des besoins métiers.
             </p>
           </div>
+          <div className="cap-copy-panel" ref={(node) => { copyRef.current[2] = node; }}>
+            <p className="eyebrow">03 — Data Engineering</p>
+            <h2>Structurer pour mieux analyser</h2>
+            <p>
+              Conception d’architectures, modélisation de bases de données et pipelines ETL automatisés pour fiabiliser et fluidifier les flux de données complexes.
+            </p>
+          </div>
         </div>
 
         <div className="cap-visual" aria-hidden="true">
@@ -120,7 +139,7 @@ export default function CapRotationStory() {
         </div>
 
         <div className="cap-meta">
-          <span className="cap-count">01 / 02</span>
+          <span className="cap-count">01 / 03</span>
           <span className="cap-angle">Agroéconomie</span>
           <span>De l’analyse au produit</span>
         </div>
