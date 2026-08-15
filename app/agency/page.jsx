@@ -62,7 +62,7 @@ export default function AgencyPage() {
         </p>
         <div style={{ marginTop: "2rem" }}>
           <a
-            href="https://wa.me/2290167659717"
+            href="https://wa.me/22967659717"
             target="_blank"
             rel="noreferrer"
             className="projects-link"
@@ -132,7 +132,7 @@ export default function AgencyPage() {
           </p>
           <div style={{ display: "flex", gap: "1.5rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/2290167659717"
+              href="https://wa.me/22967659717"
               target="_blank"
               rel="noreferrer"
               className="projects-link"

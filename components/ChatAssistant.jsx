@@ -24,7 +24,7 @@ export default function ChatAssistant() {
       if (!response.ok) throw new Error(data.error || "Erreur");
       setMessages((current) => [...current, { role: "assistant", content: data.message }]);
     } catch {
-      setMessages((current) => [...current, { role: "assistant", content: "Je ne peux pas répondre maintenant. Vous pouvez joindre Georgeo sur WhatsApp au +229 01 67 65 97 17." }]);
+      setMessages((current) => [...current, { role: "assistant", content: "Je ne peux pas répondre maintenant. Vous pouvez joindre Georgeo sur WhatsApp au +229 67 65 97 17." }]);
     } finally {
       setLoading(false);
     }
