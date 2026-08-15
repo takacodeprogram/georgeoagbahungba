@@ -1,0 +1,55 @@
+"use client";
+
+import { Bot, MessageCircle, Send, X } from "lucide-react";
+import { useState } from "react";
+
+const suggestions = ["Quels sont ses projets Agritech ?", "Comment contacter Georgeo ?", "Où télécharger son CV ?"];
+
+export default function ChatAssistant() {
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState([{ role: "assistant", content: "Bonjour, je suis l’assistant du portfolio de Georgeo. Posez-moi une question sur son parcours, ses projets ou ses compétences." }]);
+
+  async function send(text) {
+    const message = text.trim();
+    if (!message || loading) return;
+    const next = [...messages, { role: "user", content: message }];
+    setMessages(next);
+    setInput("");
+    setLoading(true);
+    try {
+      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: next.slice(-8) }) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Erreur");
+      setMessages((current) => [...current, { role: "assistant", content: data.message }]);
+    } catch {
+      setMessages((current) => [...current, { role: "assistant", content: "Je ne peux pas répondre maintenant. Vous pouvez joindre Georgeo sur WhatsApp au +229 67 65 97 17." }]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className={`chat-widget ${open ? "is-open" : ""}`}>
+      {open && (
+        <section className="chat-panel" aria-label="Assistant du portfolio">
+          <header><div><Bot aria-hidden="true" /><span>Assistant Georgeo<small><i /> En ligne</small></span></div><button type="button" onClick={() => setOpen(false)} aria-label="Fermer"><X /></button></header>
+          <div className="chat-messages" aria-live="polite">
+            {messages.map((message, index) => <p className={message.role} key={`${message.role}-${index}`}>{message.content}</p>)}
+            {loading && <p className="assistant typing"><i /><i /><i /></p>}
+          </div>
+          {messages.length === 1 && <div className="chat-suggestions">{suggestions.map((item) => <button type="button" onClick={() => send(item)} key={item}>{item}</button>)}</div>}
+          <form onSubmit={(event) => { event.preventDefault(); send(input); }}>
+            <input value={input} onChange={(event) => setInput(event.target.value)} placeholder="Votre question…" maxLength={500} aria-label="Votre question" />
+            <button type="submit" aria-label="Envoyer" disabled={loading || !input.trim()}><Send /></button>
+          </form>
+          <small className="chat-disclaimer">Réponses basées sur le portfolio de Georgeo.</small>
+        </section>
+      )}
+      <button className="chat-trigger" type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Fermer l’assistant" : "Ouvrir l’assistant"}>
+        {open ? <X /> : <MessageCircle />}<span>Discuter avec mon IA</span>
+      </button>
+    </div>
+  );
+}

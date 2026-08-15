@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+_backup/
+output/
+.freebuff/
+tmp/
+.playwright-cli/
+_font-test/
+images-effets-transitions/
+logos/
+.env
+.env.local
+.env.*.local
