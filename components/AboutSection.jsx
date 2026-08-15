@@ -76,16 +76,16 @@ export default function AboutSection() {
           </div>
 
           <p data-reveal>
-            Je suis <strong>Georgeo AGBAHUNGBA</strong>, titulaire d’un <strong>Master&nbsp;1 en Agroéconomie</strong> à la Faculté des Sciences Agronomiques de l’Université d’Abomey-Calavi (FSA/UAC), actuellement en Master&nbsp;2, et <strong>développeur Full Stack certifié freeCodeCamp</strong> avec plus de <strong>6&nbsp;années d’expérience</strong> dans la conception de solutions digitales.
+            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste (Master 2 FSA/UAC), <strong>développeur Full Stack</strong> et <strong>Data Engineer</strong> avec plus de 6&nbsp;années d’expérience dans la conception de solutions numériques et d'architectures de données.
           </p>
           <p data-reveal>
-            Cette double compétence me permet d’évoluer entre <strong>analyse, données et technologie</strong> : statistique, économétrie, collecte et analyse de données, suivi-évaluation de projets et évaluation d’impact.
+            J'évolue à l’intersection de l'<strong>analyse, du code et de la donnée</strong>. Je conçois des pipelines de données (ETL) robustes, gère des bases de données SQL complexes et réalise des analyses statistiques et économétriques.
           </p>
           <p data-reveal>
-            Côté tech, je conçois des <strong>applications, plateformes et outils numériques</strong> : digitalisation de processus, automatisation, collecte et gestion de données, solutions métiers.
+            Côté tech et IA, je bâtis des applications web et mobiles sur-mesure (Next.js, Supabase, Flutter) et automatise des flux intelligents pour structurer et valoriser l'information.
           </p>
           <p data-reveal>
-            Mon objectif : mettre ces compétences au service de solutions <strong>Agritech</strong> qui facilitent le travail des acteurs du secteur et contribuent à la modernisation des activités agricoles.
+            Mon objectif : mettre cette synergie au service de l'<strong>Agritech</strong> et de projets à fort impact, de la collecte de données terrain jusqu'à la mise en production de solutions fiables.
           </p>
         </div>
       </div>
