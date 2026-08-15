@@ -1491,9 +1491,12 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   filter: drop-shadow(0 42px 46px rgba(0, 0, 0, 0.48));
 }
 
-.cap-frame-0 img,
-.cap-frame-5 img {
+.cap-frame-0 img {
   transform: scale(0.92);
+}
+
+.cap-frame-1 img {
+  transform: scale(0.88);
 }
 
 .cap-frame-2 img {
