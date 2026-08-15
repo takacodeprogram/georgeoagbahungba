@@ -36,8 +36,8 @@ export default function CapRotationStory() {
       context = gsap.context(() => {
         gsap.set(frames, { autoAlpha: 0, scale: 0.98 });
         gsap.set(frames[0], { autoAlpha: 1, scale: 1 });
-        gsap.set(copy[1], { display: "none", autoAlpha: 0, y: 24 });
-        gsap.set(copy[2], { display: "none", autoAlpha: 0, y: 24 });
+        gsap.set(copy[1], { autoAlpha: 0, y: 24 });
+        gsap.set(copy[2], { autoAlpha: 0, y: 24 });
 
         const timeline = gsap.timeline({
           defaults: { ease: "none" },
@@ -67,17 +67,13 @@ export default function CapRotationStory() {
           .to(frames[0], { autoAlpha: 0, scale: 1.03, duration: 0.25, ease: "sine.inOut" }, 1.05)
           .fromTo(frames[1], { autoAlpha: 0, scale: 0.975 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "sine.inOut" }, 1.05)
           .to(copy[0], { autoAlpha: 0, y: -16, duration: 0.18, ease: "sine.in" }, 1.08)
-          .set(copy[0], { display: "none" }, 1.26)
-          .set(copy[1], { display: "block", autoAlpha: 0, y: 14 }, 1.26)
-          .to(copy[1], { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 1.28)
+          .fromTo(copy[1], { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 1.26)
           
           // Transition 1 -> 2
           .to(frames[1], { autoAlpha: 0, scale: 1.03, duration: 0.25, ease: "sine.inOut" }, 2.3)
           .fromTo(frames[2], { autoAlpha: 0, scale: 0.975 }, { autoAlpha: 1, scale: 1, duration: 0.25, ease: "sine.inOut" }, 2.3)
           .to(copy[1], { autoAlpha: 0, y: -16, duration: 0.18, ease: "sine.in" }, 2.33)
-          .set(copy[1], { display: "none" }, 2.51)
-          .set(copy[2], { display: "block", autoAlpha: 0, y: 14 }, 2.51)
-          .to(copy[2], { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 2.53)
+          .fromTo(copy[2], { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.22, ease: "sine.out" }, 2.51)
           
           .to(".cap-progress i", { scaleX: 1, duration: 3.0 }, 0)
           .to(".cap-orbit", { rotate: 180, duration: 3.0 }, 0)
