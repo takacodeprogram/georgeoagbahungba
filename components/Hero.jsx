@@ -13,7 +13,7 @@ const chapters = [
     eyebrow: "Des expertises complémentaires pour un objectif unique",
     title: ["Innover"],
     accent: "pour le développement",
-    copy: "Je mets l’économie agricole, le code et la donnée au service de projets à impact, du diagnostic initial jusqu’à l’outil mis en service.",
+    copy: "Je mets l’économie agricole, le code et la donnée au service de projets à impact.",
     orbit: ["AGRO", "CODE", "DATA", "IA"],
   },
   {
