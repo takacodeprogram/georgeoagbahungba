@@ -1928,13 +1928,13 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
     right: -4vw;
     bottom: auto;
     left: -4vw;
-    height: 42%;
+    height: 46%;
   }
   .cap-orbit { width: min(88vw, 480px); }
   .cap-copy-stack {
     top: auto;
     right: 22px;
-    bottom: 60px;
+    bottom: 100px;
     left: 22px;
     width: auto;
     transform: none;
