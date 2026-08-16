@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, Menu, X } from "lucide-react";
 import { forwardRef, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -65,49 +66,49 @@ const SiteHeader = forwardRef(function SiteHeader({ solid = false }, ref) {
   return (
     <>
       <nav className={className} aria-label="Navigation principale" ref={ref}>
-        <a href="/" className="brand" aria-label="Accueil Georgeo Agbahungba">
+        <Link href="/" className="brand" aria-label="Accueil Georgeo Agbahungba">
           <Image src="/media/georgeo-logo-gold.webp" alt="Georgeo Agbahungba" width={260} height={173} priority />
-        </a>
+        </Link>
         <div className="nav-links">
           {links.map((link) => (
-            <a
+            <Link
               href={link.href}
               key={link.label}
               className={isLinkActive(link) ? "active" : ""}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="nav-actions">
-          <a
+          <Link
             className={`nav-contact${pathname === "/" && activeSection === "#contact" ? " active" : ""}`}
             href="/#contact"
           >
             <Mail size={15} aria-hidden="true" />
             <span>Me contacter</span>
-          </a>
+          </Link>
         </div>
         <button className="mobile-menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}>{menuOpen ? <X /> : <Menu />}</button>
       </nav>
       <div className={`mobile-menu ${menuOpen ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!menuOpen}>
         {links.map((link, index) => (
-          <a
+          <Link
             href={link.href}
             onClick={() => setMenuOpen(false)}
             key={link.label}
             className={isLinkActive(link) ? "active" : ""}
           >
             <span>0{index + 1}</span>{link.label}
-          </a>
+          </Link>
         ))}
-        <a
+        <Link
           href="/#contact"
           onClick={() => setMenuOpen(false)}
           className={pathname === "/" && activeSection === "#contact" ? "active" : ""}
         >
           <span>0{links.length + 1}</span>Contact
-        </a>
+        </Link>
       </div>
     </>
   );

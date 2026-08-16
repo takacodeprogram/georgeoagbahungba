@@ -36,15 +36,15 @@ export default function SkillsSection() {
     <section className="skills" id="competences" aria-labelledby="skills-title">
       <div className="section-heading">
         <p className="eyebrow">Compétences & outils</p>
-        <h2 id="skills-title">Les outils derrière <em>mes réalisations.</em></h2>
+        <h2 id="skills-title" data-anim="title">Les outils derrière <em>mes réalisations.</em></h2>
       </div>
-      <p className="skills-lead">
+      <p className="skills-lead" data-anim="up">
         Du développement d’applications au traitement statistique, en passant par la collecte de
         terrain, voici l’environnement dans lequel je travaille au quotidien.
       </p>
       <div className="skills-grid">
         {groups.map(({ number, icon: Icon, title, skills }) => (
-          <article className="skills-group" key={number}>
+          <article className="skills-group" data-anim="card" key={number}>
             <span className="card-number">{number}</span>
             <Icon aria-hidden="true" />
             <h3>{title}</h3>

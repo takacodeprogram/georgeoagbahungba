@@ -55,10 +55,10 @@ export default function AgencyPage() {
       <SiteHeader solid />
 
       <header className="cv-page-hero">
-        <Link href="/"><ArrowLeft aria-hidden="true" /> Retour au portfolio</Link>
+        <Link href="/" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Retour au portfolio</Link>
         <p className="eyebrow">TakaCode Agency</p>
-        <h1>Des idées complexes.<br /><em>Des produits concrets.</em></h1>
-        <p className="lead">
+        <h1 data-anim="title">Des idées complexes.<br /><em>Des produits concrets.</em></h1>
+        <p className="lead" data-anim="up">
           Nous concevons des applications web et mobiles, des automatisations IA et des systèmes de
           données pour les entreprises, les porteurs de projets et les organisations de développement.
         </p>
@@ -71,11 +71,11 @@ export default function AgencyPage() {
 
       <section className="agency-services" aria-labelledby="agency-services-title">
         <p className="eyebrow">Nos expertises</p>
-        <h2 id="agency-services-title">Ce que nous <em>bâtissons.</em></h2>
+        <h2 id="agency-services-title" data-anim="title">Ce que nous <em>bâtissons.</em></h2>
 
         <div className="agency-grid">
           {services.map(({ icon: Icon, title, description }) => (
-            <article className="agency-card" key={title}>
+            <article className="agency-card" data-anim="card" key={title}>
               <Icon aria-hidden="true" />
               <h3>{title}</h3>
               <p>{description}</p>
@@ -98,7 +98,7 @@ export default function AgencyPage() {
             </p>
             <ul className="agency-steps">
               {steps.map((step) => (
-                <li className="agency-step" key={step}>
+                <li className="agency-step" data-anim="up" key={step}>
                   <CheckCircle2 aria-hidden="true" />
                   <span>{step}</span>
                 </li>
@@ -111,16 +111,16 @@ export default function AgencyPage() {
       <section className="agency-cta" aria-labelledby="agency-cta-title">
         <div className="agency-cta-inner">
           <p className="eyebrow">Prêt à lancer ?</p>
-          <h2 id="agency-cta-title">Créons votre produit <em>maintenant.</em></h2>
+          <h2 id="agency-cta-title" data-anim="title">Créons votre produit <em>maintenant.</em></h2>
           <p>
             Prototype, application métier complète ou automatisation de vos tâches quotidiennes :
             décrivez-nous le besoin et nous revenons vers vous avec une estimation de budget et de délai.
           </p>
           <div className="agency-cta-actions">
-            <a className="agency-btn agency-btn-solid" href={contact.whatsapp} target="_blank" rel="noreferrer">
+            <a className="agency-btn agency-btn-solid" data-magnetic="0.3" href={contact.whatsapp} target="_blank" rel="noreferrer">
               Nous écrire sur WhatsApp <ArrowUpRight aria-hidden="true" />
             </a>
-            <Link className="agency-btn agency-btn-ghost" href="/#contact">Par e-mail</Link>
+            <Link className="agency-btn agency-btn-ghost" data-magnetic="0.3" href="/#contact">Par e-mail</Link>
           </div>
         </div>
       </section>

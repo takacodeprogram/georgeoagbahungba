@@ -15,7 +15,7 @@ export default function JourneySection() {
     <section className="journey" id="parcours" aria-labelledby="journey-title">
       <div className="journey-intro">
         <p className="eyebrow">Expériences</p>
-        <h2 id="journey-title">Des expériences qui ont<br /><em>construit ma pratique.</em></h2>
+        <h2 id="journey-title" data-anim="title">Des expériences qui ont<br /><em>construit ma pratique.</em></h2>
         <p>Missions de terrain, développement logiciel, traitement de données : chaque étape a laissé une manière de travailler que je continue d'appliquer.</p>
       </div>
       <div className="metric-strip">
@@ -23,7 +23,7 @@ export default function JourneySection() {
       </div>
       <div className="journey-list">
         {journey.map((item, index) => (
-          <article key={item.role}>
+          <article data-anim="up" key={item.role}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <time>{item.period}</time>
             <div className="journey-role">

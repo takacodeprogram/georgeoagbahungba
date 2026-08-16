@@ -3,6 +3,8 @@ import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 import { contact } from "@/data/portfolio";
+import MotionLayer from "@/components/MotionLayer";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata = {
   metadataBase: new URL("https://georgeo-agbahungba.xyz"),
@@ -156,6 +158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
+        <MotionLayer />
+        <CustomCursor />
       </body>
     </html>
   );

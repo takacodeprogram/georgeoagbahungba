@@ -6,13 +6,13 @@ export default function CvSection() {
   return (
     <section className="cv-section" id="cv" aria-labelledby="cv-title">
       <div className="section-heading cv-heading">
-        <p className="eyebrow">Mon parcours</p>
-        <h2 id="cv-title">Le profil qui correspond<br /><em>à votre besoin.</em></h2>
+        <p className="eyebrow" data-anim="up">Mon parcours</p>
+        <h2 id="cv-title" data-anim="title">Le profil qui correspond<br /><em>à votre besoin.</em></h2>
       </div>
-      <p className="cv-lead">Mon parcours couvre plusieurs domaines. Retrouvez une version de mon CV adaptée au contexte qui vous intéresse.</p>
+      <p className="cv-lead" data-anim="up">Mon parcours couvre plusieurs domaines. Retrouvez une version de mon CV adaptée au contexte qui vous intéresse.</p>
       <div className="cv-grid">
         {cvs.map((cv) => (
-          <article className="cv-card" key={cv.title}>
+          <article className="cv-card" data-anim="card" key={cv.title}>
             <span className="cv-number">{cv.number}</span>
             <Languages aria-hidden="true" />
             <h3>{cv.title}</h3>

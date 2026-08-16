@@ -32,7 +32,7 @@ export default function ProjectShowcase({ limit = 6, full = false }) {
         const inner = (
           <>
             <div className="project-art" aria-hidden="true">
-              {project.image ? <img className="project-art-img" src={project.image} alt="" /> : <span>{project.code}</span>}
+              {project.image ? <img className="project-art-img" src={project.image} alt="" data-parallax="9" /> : <span>{project.code}</span>}
               <i>{String(index + 1).padStart(2, "0")}</i>
             </div>
             <div className="project-info">
@@ -45,9 +45,9 @@ export default function ProjectShowcase({ limit = 6, full = false }) {
           </>
         );
         return project.url ? (
-          <a className="project-tile" href={project.url} target="_blank" rel="noreferrer" key={project.name}>{inner}</a>
+          <a className="project-tile" data-anim="up" href={project.url} target="_blank" rel="noreferrer" key={project.name}>{inner}</a>
         ) : (
-          <article className="project-tile" key={project.name}>{inner}</article>
+          <article className="project-tile" data-anim="up" key={project.name}>{inner}</article>
         );
       })}
       {!full && (
