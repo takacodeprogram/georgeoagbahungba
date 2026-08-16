@@ -1932,7 +1932,9 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   .chapter-copy { max-width: 560px; margin-top: 14px; font-size: 12px; line-height: 1.55; }
   .hero-story .hero-actions { margin-top: 18px; }
   .hero-story .primary-action { min-height: 44px; }
-  .hero-media { height: 67%; }
+  /* Le texte des casquettes tombe a ~22% de la hauteur de l'image, pile sous
+     la barre d'onglets. On descend le visuel pour degager ce bandeau. */
+  .hero-media { top: 42px; height: 67%; }
   .story-frame img { object-position: center; }
   .story-frame:first-child img { transform: translate(5px, 8px); }
   .frame-cutout img { object-fit: contain; object-position: 62% bottom; transform: scale(0.9); }

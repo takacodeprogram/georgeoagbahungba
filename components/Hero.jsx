@@ -22,7 +22,7 @@ const chapters = [
     title: ["L’expertise agricole"],
     accent: "augmentée par la tech",
     copy: "J’allie expertise agroéconomique, données et technologies numériques pour analyser les enjeux agricoles et développer des solutions adaptées aux réalités du secteur.",
-    orbit: ["AGRO", "DATA", "TECH", "TERRAIN"],
+    orbit: ["TERRAIN", "MARCHÉ", "FILIÈRE", "TECH"],
   },
   {
     key: "code",
@@ -31,7 +31,7 @@ const chapters = [
     title: ["Concevoir. Développer."],
     accent: "Déployer.",
     copy: "Je transforme les besoins et les idées en applications, plateformes et solutions digitales fonctionnelles, de la conception jusqu’à la mise en production.",
-    orbit: ["WEB", "MOBILE", "IA", "API"],
+    orbit: ["WEB", "MOBILE", "API", "PROD"],
   },
   {
     key: "data-eng",
