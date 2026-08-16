@@ -521,6 +521,7 @@ button {
 }
 
 .hero-orbit {
+  --orbit-spin: 0;
   position: absolute;
   z-index: 8;
   right: -90px;
@@ -553,6 +554,10 @@ button {
   font-size: 9px;
   letter-spacing: 0.14em;
   white-space: nowrap;
+  /* Le cercle tourne jusqu'à ~210° : sans cette contre-rotation les repères
+     finissent tête en bas. La variable est portée par `.hero-orbit`, donc les
+     repères remontés à chaque chapitre héritent aussitôt du bon angle. */
+  transform: rotate(calc(var(--orbit-spin, 0) * -1deg));
   animation: orbit-label-in 460ms ease both;
 }
 
@@ -563,9 +568,10 @@ button {
 .hero-orbit span:nth-of-type(3) { bottom: 72px; left: 46px; }
 .hero-orbit span:nth-of-type(4) { bottom: 48px; right: 82px; }
 
+/* Opacité seulement : le `transform` du repère porte la contre-rotation. */
 @keyframes orbit-label-in {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .hero-footerline {

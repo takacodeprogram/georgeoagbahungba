@@ -22,7 +22,7 @@ const chapters = [
     title: ["L’expertise agricole"],
     accent: "augmentée par la tech",
     copy: "J’allie expertise agroéconomique, données et technologies numériques pour analyser les enjeux agricoles et développer des solutions adaptées aux réalités du secteur.",
-    orbit: ["AGRO", "DATA", "AGRITECH", "ANALYSE"],
+    orbit: ["AGRO", "DATA", "TECH", "TERRAIN"],
   },
   {
     key: "code",
@@ -40,7 +40,7 @@ const chapters = [
     title: ["Structurer. Connecter."],
     accent: "Fiabiliser.",
     copy: "Je conçois et déploie des architectures et des pipelines de données (ETL) robustes pour fluidifier et automatiser l’accès à des informations prêtes à l’analyse.",
-    orbit: ["PIPELINES", "SQL", "ETL", "AUTO"],
+    orbit: ["ETL", "SQL", "FLUX", "AUTO"],
   },
 ];
 
@@ -228,7 +228,9 @@ export default function Hero() {
         timeline
           .to({}, { duration: 1.0 })
           .to(media, { scale: 1.035, duration: TIMELINE_SPAN, ease: "none" }, 0)
-          .to(".hero-orbit", { rotate: 210, duration: TIMELINE_SPAN, ease: "none" }, 0)
+          // `--orbit-spin` suit la rotation du cercle et sert de contre-rotation
+          // aux repères, qui restent ainsi lisibles d'un bout à l'autre.
+          .to(".hero-orbit", { rotate: 210, "--orbit-spin": 210, duration: TIMELINE_SPAN, ease: "none" }, 0)
           .to(".orbit-core", { rotate: -300, duration: TIMELINE_SPAN, ease: "none" }, 0)
           .to(".scroll-progress", { scaleX: 1, duration: TIMELINE_SPAN, ease: "none" }, 0);
 
