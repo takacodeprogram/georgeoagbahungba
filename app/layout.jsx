@@ -2,6 +2,7 @@ import "@fontsource-variable/manrope";
 import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
+import Script from "next/script";
 import { contact } from "@/data/portfolio";
 import MotionLayer from "@/components/MotionLayer";
 import CustomCursor from "@/components/CustomCursor";
@@ -128,28 +129,30 @@ const websiteJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      <body suppressHydrationWarning>
+        {/* Google Tag Manager, chargé par `next/script` : une balise <script>
+            écrite à la main dans un composant n'est jamais exécutée côté client. */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KSFPM6CL');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
+})(window,document,'script','dataLayer','GTM-KSFPM6CL');`}
+        </Script>
+
+        {/* Données structurées : balise rendue par le serveur, comme recommandé
+            par la doc, pour qu'elle figure dans le HTML même sans JavaScript.
+            `next/script` est écarté ici : il diffère le contenu dans une file
+            exécutée côté client, invisible pour les robots. Le contenu est
+            échappé, `JSON.stringify` seul n'empêchant pas l'injection HTML. */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c") }}
         />
-      </head>
-      <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
