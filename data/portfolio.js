@@ -47,7 +47,7 @@ export const journey = [
 ];
 
 export const skills = {
-  dev: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel", "Flutter", "React Native", "Expo", "WordPress", "SQL", "Supabase", "Google Cloud", "AWS Cloud", "Git", "GitHub", "Docker", "APIs", "IA générative"],
+  dev: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel", "Flutter", "React Native", "Expo", "WordPress", "SQL", "Supabase", "Google Cloud", "AWS Cloud", "Git", "GitHub", "Docker", "APIs", "IA générative", "Funnel Building"],
   agro: ["Python", "SQL", "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS", "Économétrie", "Statistiques", "Analyse de données", "Suivi-évaluation", "Évaluation d'impact"],
 };
 

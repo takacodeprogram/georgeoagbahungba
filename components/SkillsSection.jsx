@@ -8,7 +8,7 @@ const groups = [
     skills: [
       "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
       "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",
-      "DevOps", "CI/CD",
+      "DevOps", "CI/CD", "Funnel Building",
     ],
   },
   {
