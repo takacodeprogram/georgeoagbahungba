@@ -228,9 +228,7 @@ export default function Hero() {
         timeline
           .to({}, { duration: 1.0 })
           .to(media, { scale: 1.035, duration: TIMELINE_SPAN, ease: "none" }, 0)
-          // `--orbit-spin` suit la rotation du cercle et sert de contre-rotation
-          // aux repères, qui restent ainsi lisibles d'un bout à l'autre.
-          .to(".hero-orbit", { rotate: 210, "--orbit-spin": 210, duration: TIMELINE_SPAN, ease: "none" }, 0)
+          .to(".hero-orbit", { rotate: 210, duration: TIMELINE_SPAN, ease: "none" }, 0)
           .to(".orbit-core", { rotate: -300, duration: TIMELINE_SPAN, ease: "none" }, 0)
           .to(".scroll-progress", { scaleX: 1, duration: TIMELINE_SPAN, ease: "none" }, 0);
 
@@ -442,6 +440,12 @@ export default function Hero() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-orbit" aria-hidden="true">
           <div className="orbit-core"><i /><i /><i /></div>
+        </div>
+        {/* Les repères sont sortis du cercle : celui-ci déborde volontairement
+            à droite, si bien qu'en tournant avec lui plus de la moitié des mots
+            se retrouvaient hors écran. Ils restent désormais dans l'arc visible
+            pendant que les anneaux continuent de tourner. */}
+        <div className="hero-orbit-tags" aria-hidden="true">
           {orbitLabels.map((label) => (
             <span key={`${chapters[active].key}-${label}`}>{label}</span>
           ))}

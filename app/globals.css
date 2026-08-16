@@ -520,18 +520,27 @@ button {
   color: var(--ink);
 }
 
-.hero-orbit {
-  --orbit-spin: 0;
+/* Le cercle et le calque de repères partagent exactement la même boîte : seul
+   le premier tourne. */
+.hero-orbit,
+.hero-orbit-tags {
   position: absolute;
-  z-index: 8;
   right: -90px;
   bottom: -105px;
   width: 360px;
   height: 360px;
+  pointer-events: none;
+}
+
+.hero-orbit {
+  z-index: 8;
   border: 1px solid rgba(216, 169, 61, 0.45);
   border-radius: 50%;
-  pointer-events: none;
   will-change: transform;
+}
+
+.hero-orbit-tags {
+  z-index: 9;
 }
 
 .hero-orbit::before,
@@ -548,25 +557,22 @@ button {
   border-style: solid;
 }
 
-.hero-orbit span {
+.hero-orbit-tags span {
   position: absolute;
   color: var(--gold-bright);
   font-size: 9px;
   letter-spacing: 0.14em;
   white-space: nowrap;
-  /* Le cercle tourne jusqu'à ~210° : sans cette contre-rotation les repères
-     finissent tête en bas. La variable est portée par `.hero-orbit`, donc les
-     repères remontés à chaque chapitre héritent aussitôt du bon angle. */
-  transform: rotate(calc(var(--orbit-spin, 0) * -1deg));
   animation: orbit-label-in 460ms ease both;
 }
 
-/* `.orbit-core` occupe le premier rang : c'est bien nth-of-type qu'il faut ici,
-   sans quoi le quatrième repère n'est jamais positionné. */
-.hero-orbit span:nth-of-type(1) { top: 47px; left: 65px; }
-.hero-orbit span:nth-of-type(2) { top: 72px; right: 50px; }
-.hero-orbit span:nth-of-type(3) { bottom: 72px; left: 46px; }
-.hero-orbit span:nth-of-type(4) { bottom: 48px; right: 82px; }
+/* Positions en % : elles suivent les deux tailles de cercle (360px / 240px) et
+   restent dans l'arc gauche, seule portion toujours à l'écran puisque le cercle
+   déborde à droite. */
+.hero-orbit-tags span:nth-of-type(1) { top: 16%; left: 26%; }
+.hero-orbit-tags span:nth-of-type(2) { top: 40%; left: 8%; }
+.hero-orbit-tags span:nth-of-type(3) { top: 64%; left: 8%; }
+.hero-orbit-tags span:nth-of-type(4) { top: 86%; left: 26%; }
 
 /* Opacité seulement : le `transform` du repère porte la contre-rotation. */
 @keyframes orbit-label-in {
@@ -1369,7 +1375,8 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   .text-action { font-size: 11px; }
   .hero-footerline { grid-template-columns: 1fr auto; bottom: 16px; }
   .hero-footerline > span:nth-child(2) { display: none; }
-  .hero-orbit { width: 240px; height: 240px; right: -110px; bottom: 225px; }
+  .hero-orbit,
+  .hero-orbit-tags { width: 240px; height: 240px; right: -110px; bottom: 225px; }
   .manifesto-grid,
   .section-heading { grid-template-columns: 1fr; gap: 40px; }
   .expertise-grid { grid-template-columns: 1fr 1fr; }
