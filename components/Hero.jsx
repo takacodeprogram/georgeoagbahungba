@@ -22,7 +22,7 @@ const chapters = [
     eyebrow: "AGRO • DATA • AGRITECH",
     title: ["L’expertise agricole"],
     accent: "augmentée par la tech",
-    copy: "J’étudie les filières agricoles avec les outils de l’économiste, puis je construis ce qui leur manque avec ceux du développeur.",
+    copy: "J’analyse les filières agricoles pour comprendre leurs défis, puis je développe les solutions numériques dont elles ont besoin.",
     orbit: ["TERRAIN", "MARCHÉ", "FILIÈRE", "TECH"],
   },
   {
