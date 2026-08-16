@@ -31,7 +31,7 @@ const chapters = [
     title: ["Concevoir. Développer."],
     accent: "Déployer.",
     copy: "Je transforme les besoins et les idées en applications, plateformes et solutions digitales fonctionnelles, de la conception jusqu’à la mise en production.",
-    orbit: ["WEB", "MOBILE", "IA", "AUTO"],
+    orbit: ["WEB", "MOBILE", "IA", "API"],
   },
   {
     key: "data-eng",
@@ -40,7 +40,7 @@ const chapters = [
     title: ["Structurer. Connecter."],
     accent: "Fiabiliser.",
     copy: "Je conçois et déploie des architectures et des pipelines de données (ETL) robustes pour fluidifier et automatiser l’accès à des informations prêtes à l’analyse.",
-    orbit: ["ETL", "SQL", "FLUX", "AUTO"],
+    orbit: ["ETL", "SQL", "FLUX", "QUALITÉ"],
   },
 ];
 
