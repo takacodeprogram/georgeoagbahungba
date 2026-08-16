@@ -80,7 +80,10 @@ export const metadata = {
 
 export const viewport = {
   themeColor: "#080b0d",
-  colorScheme: "dark light",
+  // Le site n'implémente qu'un seul thème : l'annoncer "dark light" laissait le
+  // navigateur rendre ses propres éléments (barres de défilement, remplissage
+  // automatique des champs) en clair sur des pages sombres.
+  colorScheme: "dark",
 };
 
 const personJsonLd = {
