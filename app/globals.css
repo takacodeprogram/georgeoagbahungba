@@ -552,12 +552,21 @@ button {
   color: var(--gold-bright);
   font-size: 9px;
   letter-spacing: 0.14em;
+  white-space: nowrap;
+  animation: orbit-label-in 460ms ease both;
 }
 
-.hero-orbit span:nth-child(1) { top: 47px; left: 65px; }
-.hero-orbit span:nth-child(2) { top: 72px; right: 50px; }
-.hero-orbit span:nth-child(3) { bottom: 72px; left: 46px; }
-.hero-orbit span:nth-child(4) { bottom: 48px; right: 82px; }
+/* `.orbit-core` occupe le premier rang : c'est bien nth-of-type qu'il faut ici,
+   sans quoi le quatrième repère n'est jamais positionné. */
+.hero-orbit span:nth-of-type(1) { top: 47px; left: 65px; }
+.hero-orbit span:nth-of-type(2) { top: 72px; right: 50px; }
+.hero-orbit span:nth-of-type(3) { bottom: 72px; left: 46px; }
+.hero-orbit span:nth-of-type(4) { bottom: 48px; right: 82px; }
+
+@keyframes orbit-label-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: none; }
+}
 
 .hero-footerline {
   position: absolute;
@@ -1388,6 +1397,14 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   position: relative;
   height: 360vh;
   background: var(--ink);
+}
+
+/* Tant que le hero est épinglé sur mobile, le défilement vertical natif est
+   neutralisé : chaque glissement est converti en un passage de chapitre par le
+   gestionnaire tactile du composant. Le pan horizontal (onglets) et le
+   pincement de zoom restent disponibles. */
+@media (pointer: coarse) {
+  .hero-story.is-swipe-locked { touch-action: pan-x pinch-zoom; }
 }
 
 /* ---------- Cap rotation story ---------- */
