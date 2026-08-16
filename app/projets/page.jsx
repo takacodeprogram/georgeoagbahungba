@@ -9,7 +9,7 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata = {
   title: "Projets",
   description:
-    "Projets Agritech, IA, data, web, mobile et automatisation de Georgeo Agbahungba : plateformes, applications et solutions numériques.",
+    "Projets Agritech, IA, data, web, mobile et automatisation de Georgeo Agbahungba : plateformes, applications et outils métiers.",
   alternates: { canonical: "/projets" },
   openGraph: {
     type: "website",

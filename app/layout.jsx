@@ -11,7 +11,7 @@ export const metadata = {
     template: "%s — Georgeo Agbahungba",
   },
   description:
-    "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
+    "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
   keywords: [
     "Georgeo Agbahungba",
     "Agroéconomiste",
@@ -39,7 +39,7 @@ export const metadata = {
     siteName: "Georgeo Agbahungba",
     title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
     description:
-      "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
+      "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
     images: [
       {
         url: "/og-image.png",
@@ -55,7 +55,7 @@ export const metadata = {
     creator: "@r_agbahungba",
     title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
     description:
-      "Agroéconomiste et développeur Full Stack, je combine data, technologie et expertise métier pour concevoir des solutions digitales, Agritech et IA utiles et concrètes.",
+      "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
     images: ["/og-image.png"],
   },
   robots: {

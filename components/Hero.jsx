@@ -13,7 +13,7 @@ const chapters = [
     eyebrow: "Des expertises complémentaires pour un objectif unique",
     title: ["Innover"],
     accent: "pour le développement",
-    copy: "Je mets mes compétences au service de projets innovants, avec l’ambition de créer des solutions utiles qui contribuent au développement.",
+    copy: "Je mets l’économie agricole, le code et la donnée au service de projets qui changent quelque chose sur le terrain.",
     orbit: ["AGRO", "CODE", "DATA", "IA"],
   },
   {
@@ -22,7 +22,7 @@ const chapters = [
     eyebrow: "AGRO • DATA • AGRITECH",
     title: ["L’expertise agricole"],
     accent: "augmentée par la tech",
-    copy: "J’allie expertise agroéconomique, données et technologies numériques pour analyser les enjeux agricoles et développer des solutions adaptées aux réalités du secteur.",
+    copy: "J’étudie les filières agricoles avec les outils de l’économiste, puis je construis ce qui leur manque avec ceux du développeur.",
     orbit: ["TERRAIN", "MARCHÉ", "FILIÈRE", "TECH"],
   },
   {
@@ -31,7 +31,7 @@ const chapters = [
     eyebrow: "Web • Mobile • IA • Automatisation",
     title: ["Concevoir. Développer."],
     accent: "Déployer.",
-    copy: "Je transforme les besoins et les idées en applications, plateformes et solutions digitales fonctionnelles, de la conception jusqu’à la mise en production.",
+    copy: "Je transforme un besoin en application que l’on peut réellement utiliser, de la première maquette jusqu’à la mise en production.",
     orbit: ["WEB", "MOBILE", "API", "PROD"],
   },
   {
@@ -40,7 +40,7 @@ const chapters = [
     eyebrow: "Pipelines • SQL • Automatisation",
     title: ["Structurer. Connecter."],
     accent: "Fiabiliser.",
-    copy: "Je conçois et déploie des architectures et des pipelines de données (ETL) robustes pour fluidifier et automatiser l’accès à des informations prêtes à l’analyse.",
+    copy: "Je conçois des architectures et des pipelines ETL qui acheminent la donnée de sa source jusqu’au tableau de bord, sans rupture ni ressaisie.",
     orbit: ["ETL", "SQL", "FLUX", "QUALITÉ"],
   },
 ];

@@ -44,7 +44,7 @@ function styledEmail({ email }) {
               </p>
               <p style="margin:0 0 16px;color:#b9bdc4;font-size:15px;line-height:1.7;">
                 Merci de vous être inscrit·e à la newsletter. Vous recevrez les nouveautés sur mes projets,
-                mes travaux en agroéconomie, data et développement — ainsi que des ressources pratiques.
+                mes travaux en agroéconomie, data et développement, ainsi que des ressources pratiques.
                 Pas de spam, un e-mail de temps en temps, et vous pourrez vous désinscrire à tout moment.
               </p>
               <p style="margin:0 0 24px;color:#b9bdc4;font-size:15px;line-height:1.7;">

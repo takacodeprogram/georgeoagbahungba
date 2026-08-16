@@ -52,9 +52,9 @@ export default function ProjectShowcase({ limit = 6, full = false }) {
       })}
       {!full && (
         <Link className="all-projects-card" href="/projets">
-          <span>15+</span>
+          <span>{`${projects.length}+`}</span>
           <strong>Découvrir tous mes projets</strong>
-          <p>Applications, plateformes, expérimentations et solutions réalisées.</p>
+          <p>Applications, plateformes et expérimentations livrées.</p>
           <ArrowUpRight aria-hidden="true" />
         </Link>
       )}

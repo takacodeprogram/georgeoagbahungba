@@ -31,6 +31,11 @@
   --acid: #c6ee43;
   --line-dark: rgba(255, 255, 255, 0.16);
   --line-light: rgba(8, 11, 13, 0.16);
+  /* Texte clair sur fond sombre et texte atténué sur fond clair : ces deux
+     valeurs étaient déjà employées un peu partout en dur, on les nomme. */
+  --chalk: #f8f5ed;
+  --ink-muted: #4a4f54;
+  --display: "Plus Jakarta Sans Variable", sans-serif;
 }
 
 * {
@@ -1285,12 +1290,56 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .inner-nav { display: flex; align-items: center; justify-content: space-between; min-height: 88px; padding: 0 clamp(24px, 5vw, 78px); border-bottom: 1px solid var(--line-dark); }.inner-nav img { width: 180px; height: 68px; object-fit: contain; object-position: left center; }.inner-actions { display: flex; align-items: center; gap: 12px; }.inner-actions > a { display: flex; align-items: center; gap: 9px; color: var(--ink); background: var(--gold-bright); padding: 12px 16px; font-size: 11px; font-weight: 750; }.inner-nav svg { width: 15px; }
 .projects-page-hero { padding: clamp(140px, 15vw, 200px) clamp(24px, 7.5vw, 132px) 90px; }.projects-page-hero > a { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 70px; color: rgba(255,255,255,.48); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }.projects-page-hero > a svg { width: 15px; }.projects-page-hero .eyebrow { color: var(--gold-bright); }.projects-page-hero h1 { margin: 0; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(72px, 11vw, 180px); font-weight: 800; line-height: .78; letter-spacing: -.08em; }.projects-page-hero h1 em { color: var(--gold-bright); font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }.projects-page-hero > div { display: grid; grid-template-columns: 1fr minmax(280px, 520px) auto; gap: 35px; align-items: end; margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--line-dark); }.projects-page-hero > div span { color: var(--gold-bright); font-size: 11px; font-weight: 750; text-transform: uppercase; letter-spacing: .15em; }.projects-page-hero > div p { margin: 0; color: rgba(255,255,255,.55); line-height: 1.7; }.projects-page-hero > div svg { color: var(--gold-bright); }
 .projects-page-list { padding: 0 clamp(24px, 5vw, 78px) clamp(90px, 12vw, 180px); }.projects-page-list .project-tile { grid-column: span 4; }.projects-page-list .project-tile:nth-child(5n + 1) { grid-column: span 8; }
-.cv-page-hero { padding: clamp(140px, 15vw, 200px) clamp(24px, 7.5vw, 132px) clamp(70px, 9vw, 120px); background: #111517; }
+/* Le hero est sombre : sans couleur explicite le titre héritait de `--ink` et
+   se retrouvait noir sur noir. Concerne /cv comme /agency. */
+.cv-page-hero { padding: clamp(140px, 15vw, 200px) clamp(24px, 7.5vw, 132px) clamp(70px, 9vw, 120px); color: var(--chalk); background: #111517; }
 .cv-page-hero > a { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 70px; color: rgba(255,255,255,.48); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }.cv-page-hero > a svg { width: 15px; }
 .cv-page-hero .eyebrow { color: var(--gold-bright); }
 .cv-page-hero h1 { margin: 0; max-width: 1100px; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(58px, 8vw, 126px); font-weight: 800; line-height: .88; letter-spacing: -.07em; }.cv-page-hero h1 em { color: var(--gold-bright); font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }
-.cv-page-hero > p:last-child { max-width: 600px; margin: 48px 0 0 auto; color: rgba(255,255,255,.55); font-size: clamp(15px, 1.4vw, 19px); line-height: 1.75; }
+/* `.lead` explicitement ciblé : sur /agency le chapô est suivi d'un bouton,
+   donc `p:last-child` ne l'atteignait pas et il perdait sa mise en forme. */
+.cv-page-hero > p:last-child,
+.cv-page-hero .lead { max-width: 600px; margin: 48px 0 0 auto; color: rgba(255,255,255,.55); font-size: clamp(15px, 1.4vw, 19px); line-height: 1.75; }
 .cv-page .cv-section { padding-top: clamp(80px, 9vw, 130px); }
+
+/* ---------- Agency ---------- */
+.agency-hero-action { display: flex; justify-content: flex-end; margin-top: 34px; }
+
+.agency-services { padding: clamp(70px, 9vw, 130px) clamp(24px, 7.5vw, 132px); color: var(--ink); background: var(--paper-soft); border-bottom: 1px solid var(--line-light); }
+.agency-services > .eyebrow { color: var(--ink-muted); }
+.agency-services h2 { margin: 0 0 clamp(38px, 5vw, 68px); max-width: 900px; font-family: var(--display); font-size: clamp(34px, 4.4vw, 62px); font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+.agency-services h2 em { color: var(--gold); font-weight: 600; }
+
+.agency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(20px, 2.4vw, 34px); }
+.agency-card { display: flex; flex-direction: column; gap: 14px; padding: clamp(26px, 2.6vw, 38px); background: var(--paper); border: 1px solid var(--line-light); }
+.agency-card svg { width: 30px; height: 30px; color: var(--gold); }
+.agency-card h3 { margin: 0; font-family: var(--display); font-size: clamp(20px, 1.8vw, 26px); font-weight: 800; letter-spacing: -0.03em; }
+.agency-card p { margin: 0; color: var(--ink-muted); font-size: clamp(14px, 1.05vw, 15.5px); line-height: 1.7; }
+
+.agency-steps { display: grid; gap: 14px; margin-top: 30px; padding: 0; list-style: none; }
+.agency-step { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; font-size: clamp(14px, 1.05vw, 16px); line-height: 1.6; }
+.agency-step svg { width: 19px; height: 19px; margin-top: 3px; color: var(--gold-bright); }
+
+.agency-cta { padding: clamp(80px, 10vw, 150px) clamp(24px, 7.5vw, 132px); color: var(--chalk); text-align: center; background: var(--ink); border-top: 1px solid var(--line-dark); }
+.agency-cta-inner { max-width: 800px; margin: 0 auto; }
+.agency-cta .eyebrow { justify-content: center; color: var(--gold-bright); }
+.agency-cta h2 { margin: 0 0 26px; font-family: var(--display); font-size: clamp(38px, 5.2vw, 74px); font-weight: 800; line-height: 0.96; letter-spacing: -0.055em; }
+.agency-cta h2 em { color: var(--gold-bright); font-weight: 600; }
+.agency-cta p { max-width: 620px; margin: 0 auto 40px; color: rgba(255, 255, 255, 0.62); font-size: clamp(15px, 1.25vw, 18px); line-height: 1.75; }
+.agency-cta-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+.agency-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; font-size: 13px; font-weight: 750; letter-spacing: 0.02em; transition: background 180ms ease, color 180ms ease, border-color 180ms ease; }
+.agency-btn svg { width: 16px; height: 16px; }
+.agency-btn-solid { color: var(--ink); background: var(--gold-bright); border: 1px solid var(--gold-bright); }
+.agency-btn-solid:hover { background: var(--gold); border-color: var(--gold); }
+.agency-btn-ghost { color: var(--chalk); border: 1px solid rgba(255, 255, 255, 0.3); }
+.agency-btn-ghost:hover { border-color: var(--chalk); background: rgba(255, 255, 255, 0.06); }
+
+@media (max-width: 700px) {
+  .agency-hero-action { justify-content: flex-start; }
+  .agency-cta-actions { flex-direction: column; }
+  .agency-btn { justify-content: center; }
+}
 
 @media (max-width: 980px) {
   .project-tile, .all-projects-card, .project-tile:nth-child(1), .project-tile:nth-child(6), .projects-page-list .project-tile, .projects-page-list .project-tile:nth-child(5n + 1) { grid-column: span 6; }
@@ -2078,13 +2127,24 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .site-footer > nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; margin: 38px 0 0; color: rgba(255, 255, 255, 0.55); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .site-footer > nav a:hover { color: var(--gold-bright); }
 
-.not-found { display: flex; min-height: 100svh; flex-direction: column; justify-content: center; padding: clamp(30px, 8vw, 130px); color: #f8f5ed; background: radial-gradient(circle at 78% 30%, rgba(216, 169, 61, 0.14), transparent 30%), var(--ink); }
+/* La page rend désormais l'en-tête et le pied de page : la hauteur laisse la
+   place au reste plutôt que d'occuper tout l'écran. */
+.not-found { display: flex; min-height: 82svh; flex-direction: column; justify-content: center; padding: clamp(120px, 15vw, 190px) clamp(30px, 8vw, 130px) clamp(60px, 8vw, 110px); color: var(--chalk); background: radial-gradient(circle at 78% 30%, rgba(216, 169, 61, 0.14), transparent 30%), var(--ink); }
 .not-found > span { color: var(--gold-bright); font-size: 10px; font-weight: 800; letter-spacing: 0.25em; }
 .not-found > p { margin: 25px 0 15px; color: rgba(255, 255, 255, 0.5); }
+.not-found-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1px; margin: clamp(48px, 6vw, 74px) 0 0; padding: 0; list-style: none; background: var(--line-dark); border: 1px solid var(--line-dark); }
+.not-found-links a { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 20px 22px; background: var(--ink); border: 0; transition: background 180ms ease; }
+.not-found-links a:hover { background: #12171a; }
+.not-found-label { display: inline-flex; align-items: center; gap: 8px; color: var(--chalk); font-size: 13px; font-weight: 750; }
+.not-found-label svg { width: 14px; color: var(--gold-bright); }
+.not-found-detail { color: rgba(255, 255, 255, 0.45); font-size: 12px; line-height: 1.5; }
+.not-found-home { margin-top: 42px; }
 .not-found h1 { margin: 0; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(64px, 10vw, 150px); line-height: 0.82; letter-spacing: -0.08em; }
 .not-found h1 em { color: var(--gold-bright); font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }
-.not-found a { display: inline-flex; align-items: center; gap: 9px; width: max-content; margin-top: 55px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 750; }
-.not-found svg { width: 15px; }
+/* Ciblé sur le lien de retour seul : `.not-found a` touchait aussi les cartes
+   de destination, à spécificité égale mais déclaré plus bas, donc gagnant. */
+.not-found-home { display: inline-flex; align-items: center; gap: 9px; width: max-content; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 750; }
+.not-found-home svg { width: 15px; }
 
 @media (max-width: 1050px) {
   .hero-nav { grid-template-columns: 1fr auto auto; gap: 10px; }

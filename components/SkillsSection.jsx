@@ -39,8 +39,8 @@ export default function SkillsSection() {
         <h2 id="skills-title">Les outils derrière <em>mes réalisations.</em></h2>
       </div>
       <p className="skills-lead">
-        Des technologies de développement aux outils d’analyse, de collecte et de traitement des
-        données, voici l’environnement que j’utilise pour concevoir et mener mes projets.
+        Du développement d’applications au traitement statistique, en passant par la collecte de
+        terrain, voici l’environnement dans lequel je travaille au quotidien.
       </p>
       <div className="skills-grid">
         {groups.map(({ number, icon: Icon, title, skills }) => (

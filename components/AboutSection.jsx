@@ -76,16 +76,16 @@ export default function AboutSection() {
           </div>
 
           <p data-reveal>
-            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste (Master 2 FSA/UAC), <strong>développeur Full Stack</strong> et <strong>Data Engineer</strong> avec plus de 6&nbsp;années d’expérience dans la conception de solutions numériques et d'architectures de données.
+            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste (Master 2 FSA/UAC), <strong>développeur Full Stack</strong> et <strong>Data Engineer</strong>. Six années passées à construire des produits numériques, sept à travailler la donnée agricole.
           </p>
           <p data-reveal>
-            J'évolue à l’intersection de l'<strong>analyse, du code et de la donnée</strong>. Je conçois des pipelines de données (ETL) robustes, gère des bases de données SQL complexes et réalise des analyses statistiques et économétriques.
+            Mon terrain de travail se situe à l’intersection de l’<strong>économie agricole, du code et de la donnée</strong>. J’y conçois des pipelines ETL, je modélise des bases SQL et je conduis des travaux statistiques et économétriques.
           </p>
           <p data-reveal>
-            Côté tech et IA, je bâtis des applications web et mobiles sur-mesure et automatise des flux intelligents pour structurer et valoriser l'information.
+            Côté produit, je développe des applications web et mobiles, et j’automatise les tâches répétitives avec l’IA : traitement de documents, génération de contenu, réponses aux demandes courantes.
           </p>
           <p data-reveal>
-            Mon objectif : mettre cette synergie au service des <strong>technologies de la donnée</strong>, de l'<strong>Agritech</strong> et de projets numériques à fort impact, de la collecte de données terrain jusqu'à la mise en production.
+            Ce double bagage sert un même objectif : rendre exploitable l’information du secteur agricole, depuis la collecte sur le terrain jusqu’à la mise en production de l’outil qui s’en sert.
           </p>
         </div>
       </div>

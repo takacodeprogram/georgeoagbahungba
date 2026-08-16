@@ -34,8 +34,8 @@ export default function Home() {
             <h3 className="method-title" id="method-title">Pas de technologie <em>pour la technologie.</em></h3>
             <p className="method-copy">
               Je pars du besoin réel, des utilisateurs et des contraintes pour déterminer la réponse la
-              plus pertinente — qu’elle passe par la donnée, le logiciel, l’analyse ou une combinaison
-              de plusieurs approches.
+              plus juste. Elle passe parfois par la donnée, parfois par le logiciel, souvent par les deux
+              à la fois.
             </p>
           </div>
         </div>

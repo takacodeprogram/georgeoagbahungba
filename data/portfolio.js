@@ -60,7 +60,7 @@ Georgeo S. R. Agbahungba est titulaire d'un Master 1 en Agroéconomie à la Facu
 
 SA MÉTHODE DE TRAVAIL
 1. Le problème d'abord. 2. La solution ensuite. 3. Pas de technologie pour la technologie.
-Il part du besoin réel, des utilisateurs et des contraintes pour déterminer la réponse la plus pertinente — qu'elle passe par la donnée, le logiciel, l'analyse ou une combinaison de plusieurs approches.
+Il part du besoin réel, des utilisateurs et des contraintes pour déterminer la réponse la plus juste. Elle passe parfois par la donnée, parfois par le logiciel, souvent par les deux à la fois.
 
 MÉTRIQUES
 7+ années en agronomie · 6+ années en développement · ${projects.length}+ projets réalisés · 3 domaines d'expertise (agroéconomie, développement logiciel et data engineering).
