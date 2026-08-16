@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { clientKey, rateLimit, tooManyRequests } from "@/lib/rate-limit";
 import { contact } from "@/data/portfolio";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,7 +84,13 @@ function styledEmail({ email }) {
 }
 
 export async function POST(request) {
+  const key = clientKey(request, "newsletter");
   try {
+    // Chaque requête acceptée envoie un vrai e-mail : un abus consommerait le
+    // quota SMTP et abîmerait la réputation d'expéditeur du domaine.
+    const limite = rateLimit(key, { limit: 3, windowMs: 10 * 60_000 });
+    if (!limite.ok) return tooManyRequests(limite.retryAfter, "Inscription déjà envoyée. Vérifiez votre boîte de réception.");
+
     const body = await request.json().catch(() => ({}));
     const email = String(body.email || "").trim().toLowerCase();
 

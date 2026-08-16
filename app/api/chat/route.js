@@ -1,4 +1,11 @@
 import { assistantKnowledge, contact, cvs, journey, projects } from "@/data/portfolio";
+import { clientKey, rateLimit, tooManyRequests } from "@/lib/rate-limit";
+
+// Chaque requête peut déclencher deux appels facturés à Mistral : un pour la
+// réponse, un second si le modèle demande un outil. Les plafonds sont donc
+// serrés — un visiteur qui converse normalement reste très en dessous.
+const LIMITE_COURTE = { limit: 8, windowMs: 60_000 };
+const LIMITE_LONGUE = { limit: 40, windowMs: 60 * 60_000 };
 
 const fallbackAnswers = [
   { match: ["contact", "whatsapp", "téléphone", "telephone", "joindre", "email", "mail"], answer: `Vous pouvez joindre Georgeo sur WhatsApp au ${contact.phoneDisplay} ou par e-mail à ${contact.email}.` },
@@ -132,7 +139,15 @@ async function mistralChat(messages) {
 }
 
 export async function POST(request) {
+  const key = clientKey(request, "chat");
   try {
+    // Le plafond est verifie avant toute lecture du corps : une requete
+    // refusee ne doit rien coûter, ni en calcul ni en appel externe.
+    const courte = rateLimit(key, LIMITE_COURTE);
+    if (!courte.ok) return tooManyRequests(courte.retryAfter, "Trop de questions d'affilée. Reprenez dans un instant.");
+    const longue = rateLimit(`${key}:h`, LIMITE_LONGUE);
+    if (!longue.ok) return tooManyRequests(longue.retryAfter, "Limite horaire atteinte. Écrivez directement à Georgeo sur WhatsApp.");
+
     const body = await request.json();
     const messages = Array.isArray(body.messages) ? body.messages.slice(-8) : [];
     const lastMessage = messages.at(-1)?.content?.trim();
@@ -143,7 +158,10 @@ export async function POST(request) {
 
     const content = await mistralChat(messages);
     return Response.json({ message: content || fallback(lastMessage), mode: "ai" });
-  } catch {
+  } catch (error) {
+    // Sans cette trace, une panne de l'assistant en production etait
+    // indiagnosticable : le catch renvoyait un 500 muet.
+    console.error("[api/chat]", error);
     return Response.json({ error: "Assistant momentanément indisponible." }, { status: 500 });
   }
 }
