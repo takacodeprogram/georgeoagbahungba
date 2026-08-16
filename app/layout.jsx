@@ -2,6 +2,7 @@ import "@fontsource-variable/manrope";
 import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
+import { contact } from "@/data/portfolio";
 
 export const metadata = {
   metadataBase: new URL("https://georgeo-agbahungba.xyz"),
@@ -86,8 +87,8 @@ const personJsonLd = {
   name: "Georgeo S. R. Agbahungba",
   jobTitle: "Agroéconomiste & Développeur Full Stack",
   url: "https://georgeo-agbahungba.xyz",
-  email: "mailto:contact@georgeo-agbahungba.xyz",
-  telephone: "+2290167659717",
+  email: `mailto:${contact.email}`,
+  telephone: contact.phone,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cotonou",

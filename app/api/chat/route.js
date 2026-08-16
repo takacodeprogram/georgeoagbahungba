@@ -2,7 +2,7 @@ import { assistantKnowledge, contact, cvs, journey, projects } from "@/data/port
 
 const fallbackAnswers = [
   { match: ["contact", "whatsapp", "téléphone", "telephone", "joindre", "email", "mail"], answer: `Vous pouvez joindre Georgeo sur WhatsApp au ${contact.phoneDisplay} ou par e-mail à ${contact.email}.` },
-  { match: ["cv", "curriculum", "télécharger", "telecharger"], answer: "La section CV propose trois versions : Agroéconomiste, Développeur et Profil complet, chacune en français et en anglais — à télécharger sur la page /cv." },
+  { match: ["cv", "curriculum", "télécharger", "telecharger"], answer: `La section CV propose ${cvs.length} versions : ${cvs.map((cv) => cv.title).join(", ")} — chacune en français et en anglais, à télécharger sur la page /cv.` },
   { match: ["agri", "agro", "terrain", "kobo", "anacarde", "soja"], answer: "Georgeo développe notamment des solutions de collecte agricole offline, de visualisation KoboCollect, d’aide à la décision et des plateformes pour les filières agricoles (soja, anacarde)." },
   { match: ["projet", "réalisation", "realisation", "musimaps", "takacode"], answer: "Parmi ses projets : TakaCode, Musimaps, ANOPER Cartes membres, Ire Ayodé, la plateforme filière soja, Content Factory, Lottery dApp et 3D AI Customizer. La page /projets présente la liste complète." },
   { match: ["compétence", "competence", "technologie", "stack", "react", "next", "flutter", "python", "sql", "aws", "google cloud"], answer: "Ses compétences couvrent React, Next.js, Node.js, PHP/Laravel, Flutter, React Native, Python, SQL, Cloud (Google Cloud, AWS), les bases de données, le mobile, l'IA, l'automatisation, la collecte terrain et l'analyse de données." },
@@ -39,7 +39,7 @@ const tools = [
     type: "function",
     function: {
       name: "get_cvs",
-      description: "Liste des CV disponibles (Agroéconomiste, Développeur, Profil complet) avec liens français et anglais.",
+      description: "Liste des CV disponibles avec, pour chacun, le titre, le positionnement et les liens français et anglais.",
       parameters: { type: "object", properties: {} },
     },
   },

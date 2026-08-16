@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, MapPin } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
+import { contact } from "@/data/portfolio";
 
 const chapters = [
   {
@@ -466,7 +467,7 @@ export default function Hero() {
               <p className="chapter-copy">{chapter.copy}</p>
               <div className="hero-actions">
                 <a className="primary-action" href="#projets">Voir mes projets <ArrowDownRight aria-hidden="true" /></a>
-                <a className="text-action" href="mailto:contact@georgeo-agbahungba.xyz">Me contacter <ArrowUpRight aria-hidden="true" /></a>
+                <a className="text-action" href={`mailto:${contact.email}`}>Me contacter <ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
           ))}
