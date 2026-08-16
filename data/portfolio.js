@@ -35,7 +35,8 @@ export const projects = [
 export const cvs = [
   { title: "Agroéconomie", subtitle: "Économie rurale · Data · Agritech", description: "Parcours académique, expériences terrain, analyse de données, suivi-évaluation et projets agricoles.", fr: "/cv/CV_Agroeconomiste_FR.pdf", en: "/cv/CV_Agroeconomiste_EN.pdf", number: "01" },
   { title: "Développement", subtitle: "Full Stack · IA · Produit", description: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.", fr: "/cv/CV_Developpeur_FR.pdf", en: "/cv/CV_Developpeur_EN.pdf", number: "02" },
-  { title: "Profil complet", subtitle: "Agroéconomie · Tech · Data", description: "Une vision complète de mon parcours, de mes compétences et de mes expériences professionnelles.", fr: "/cv/CV_Complet_FR.pdf", en: "/cv/CV_Complet_EN.pdf", number: "03" },
+  { title: "Data Engineering", subtitle: "Collecte · Pipelines · Décision", description: "Chaîne de vie de la donnée agricole : conception des enquêtes, contrôle qualité, modélisation et restitution.", fr: "/cv/CV_DataEngineer_FR.pdf", en: "/cv/CV_DataEngineer_EN.pdf", number: "03" },
+  { title: "Profil complet", subtitle: "Agroéconomie · Tech · Data", description: "Une vision complète de mon parcours, de mes compétences et de mes expériences professionnelles.", fr: "/cv/CV_Complet_FR.pdf", en: "/cv/CV_Complet_EN.pdf", number: "04" },
 ];
 
 export const journey = [
