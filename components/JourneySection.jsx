@@ -16,7 +16,7 @@ export default function JourneySection() {
       <div className="journey-intro">
         <p className="eyebrow">Expériences</p>
         <h2 id="journey-title">Des expériences qui ont<br /><em>construit ma pratique.</em></h2>
-        <p>Dix ans de missions de terrain, de développement logiciel et de traitement de données. Chaque étape a laissé une méthode que j'applique encore aujourd'hui.</p>
+        <p>Missions de terrain, développement logiciel, traitement de données : chaque étape a laissé une manière de travailler que je continue d'appliquer.</p>
       </div>
       <div className="metric-strip">
         {metrics.map(({ value, label }) => <AnimatedMetric value={value} label={label} key={label} />)}

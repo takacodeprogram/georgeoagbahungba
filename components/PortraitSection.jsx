@@ -15,7 +15,7 @@ export default function PortraitSection() {
       <div className="portrait-copy">
         <p className="eyebrow">Travaillons ensemble</p>
         <h2 id="portrait-title">Analyser. Innover.<br /><em>Développer.</em></h2>
-        <p>Une idée à cadrer, un outil à construire, des données à remettre d’aplomb ? Je prends le projet depuis la question de départ jusqu’à sa mise en service.</p>
+        <p>Une idée à cadrer, un outil à construire, des données à remettre en ordre ? Je prends le projet depuis la question de départ jusqu’à sa mise en service.</p>
         <a className="portrait-cta" href="#contact">Collaborons sur votre projet <ArrowUpRight aria-hidden="true" /></a>
       </div>
     </section>
