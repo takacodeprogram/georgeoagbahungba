@@ -8,7 +8,7 @@ const groups = [
     skills: [
       "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
       "Économétrie", "Statistiques", "Analyse de politiques agricoles",
-      "Gestion de projet", "Cadre logique", "Suivi-évaluation", "Évaluation d'impact",
+      "Gestion de projet", "Suivi-évaluation", "Évaluation d'impact",
     ],
   },
   {
