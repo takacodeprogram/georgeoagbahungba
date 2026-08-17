@@ -26,7 +26,7 @@ export default function TakaCodePage() {
       <header className="cv-page-hero">
         <Link href="/en" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Back to portfolio</Link>
         <div style={{ marginTop: "2rem", marginBottom: "1.5rem" }}>
-          <img src="/media/takacode-skull.png" alt="TakaCode Skull Icon Logo" style={{ height: "160px", width: "auto" }} />
+          <img src="/media/logo_light_4.png" alt="TakaCode Logo" style={{ height: "160px", width: "auto" }} />
         </div>
         <p className="eyebrow">Ecosystem & Flagship Product</p>
         <h1 data-anim="title" style={{ marginTop: "0.5rem" }}>TakaCode<br /><em>Learning by doing.</em></h1>

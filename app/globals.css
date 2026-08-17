@@ -2919,6 +2919,60 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
     bottom: 20px;
   }
   .back-to-top-text {
-    display: none; /* Cache le texte sur mobile pour garder l'interface propre */
+    display: none;
+  }
+}
+
+/* ---------- TakaCode Promo Section ---------- */
+.takacode-promo-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.takacode-promo-media {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.takacode-promo-img-wrapper {
+  position: relative;
+  width: 100%;
+  maxWidth: 340px;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(216, 169, 61, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .takacode-promo {
+    padding: 5rem 0 4rem !important;
+  }
+  .takacode-promo-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .takacode-promo-text {
+    text-align: center;
+  }
+  .takacode-promo-text h3 {
+    font-size: 1.6rem !important;
+  }
+  .takacode-promo-text p {
+    font-size: 0.95rem !important;
+  }
+  .takacode-promo-text div {
+    justify-content: center;
+  }
+  .takacode-promo-media {
+    align-items: center;
   }
 }

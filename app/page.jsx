@@ -63,8 +63,8 @@ export default function Home({ locale = "fr" }) {
             <p className="eyebrow">{isEn ? "Ecosystem & Flagship Product" : "Écosystème & Produit Phare"}</p>
             <h2>{isEn ? <>Discover <em>TakaCode.</em></> : <>Découvrez <em>TakaCode.</em></>}</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "4rem", alignItems: "center" }}>
-            <div>
+          <div className="takacode-promo-grid">
+            <div className="takacode-promo-text">
               <h3 style={{ fontSize: "2rem", color: "var(--paper)", fontFamily: "var(--font-serif)", marginBottom: "1.5rem" }}>
                 {isEn ? "Learning by doing powered by AI" : "Apprendre par la pratique avec l'IA"}
               </h3>
@@ -82,8 +82,8 @@ export default function Home({ locale = "fr" }) {
                 </a>
               </div>
             </div>
-            <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ position: "relative", width: "100%", maxWidth: "340px", aspectRatio: "16/10", overflow: "hidden", borderRadius: "12px", border: "1px solid rgba(216,169,61,0.25)", boxShadow: "0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)", marginBottom: "1.5rem" }}>
+            <div className="takacode-promo-media">
+              <div className="takacode-promo-img-wrapper">
                 <img src="/media/project-takacode.webp" alt="TakaCode Screen Capture" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <strong style={{ display: "block", color: "var(--paper)", fontSize: "1.2rem" }}>
