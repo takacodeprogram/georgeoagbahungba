@@ -6,7 +6,6 @@ const base = "https://georgeo-agbahungba.xyz";
 const routes = [
   { path: "", priority: 1 },
   { path: "/projets", priority: 0.9 },
-  { path: "/a-propos", priority: 0.8 },
   { path: "/cv", priority: 0.8 },
   { path: "/takacode", priority: 0.8 },
   { path: "/agency", priority: 0.7 },
