@@ -1,3 +1,5 @@
+import { brand } from "@/data/portfolio";
+
 export default function manifest() {
   return {
     name: "Georgeo Agbahungba — Agroéconomie, Tech & IA",
@@ -7,8 +9,8 @@ export default function manifest() {
     start_url: "/",
     scope: "/",
     display: "standalone",
-    background_color: "#080b0d",
-    theme_color: "#080b0d",
+    background_color: brand.ink,
+    theme_color: brand.ink,
     orientation: "portrait-primary",
     categories: ["portfolio", "technology", "business"],
     icons: [

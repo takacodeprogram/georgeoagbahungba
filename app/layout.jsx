@@ -3,7 +3,7 @@ import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 import Script from "next/script";
-import { contact } from "@/data/portfolio";
+import { brand, contact } from "@/data/portfolio";
 import MotionLayer from "@/components/MotionLayer";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -80,7 +80,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#080b0d",
+  themeColor: brand.ink,
   // Le site n'implémente qu'un seul thème : l'annoncer "dark light" laissait le
   // navigateur rendre ses propres éléments (barres de défilement, remplissage
   // automatique des champs) en clair sur des pages sombres.

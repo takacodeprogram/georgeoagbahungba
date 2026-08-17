@@ -1,3 +1,10 @@
+export const brand = {
+  // Doit rester aligne sur --ink dans app/globals.css : cette valeur sert la
+  // barre du navigateur mobile et le manifeste, ou les variables CSS ne sont
+  // pas lisibles.
+  ink: "#080b0d",
+};
+
 export const contact = {
   phoneDisplay: "+229 01 67 65 97 17",
   phone: "+2290167659717",

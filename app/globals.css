@@ -885,10 +885,6 @@ button {
   color: var(--gold-bright);
 }
 
-.projects-link {
-  color: #f8f5ed;
-}
-
 .project-list {
   border-top: 1px solid var(--line-light);
 }
@@ -1202,6 +1198,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   gap: 12px;
   margin-top: 36px;
   padding-bottom: 5px;
+  color: var(--chalk);
   border-bottom: 1px solid currentColor;
   font-weight: 750;
 }
