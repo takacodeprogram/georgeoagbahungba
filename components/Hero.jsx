@@ -40,7 +40,7 @@ const chapters = [
     eyebrow: "Pipelines • SQL • Automatisation",
     title: ["Structurer. Connecter."],
     accent: "Fiabiliser.",
-    copy: "Je conçois des architectures et des pipelines ETL qui acheminent la donnée de sa source jusqu’au tableau de bord, sans rupture ni ressaisie.",
+    copy: "Je construis les pipelines, modèles SQL et automatisations qui transforment des sources dispersées en données propres, structurées et prêtes à être analysées.",
     orbit: ["ETL", "SQL", "FLUX", "QUALITÉ"],
   },
 ];
