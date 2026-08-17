@@ -11,6 +11,7 @@ import CvSection from "@/components/CvSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import ContactSection from "@/components/ContactSection";
 import ChatAssistant from "@/components/ChatAssistant";
+import BackToTop from "@/components/BackToTop";
 import JourneySection from "@/components/JourneySection";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -94,6 +95,7 @@ export default function Home() {
 
       <SiteFooter />
       <ChatAssistant />
+      <BackToTop />
     </main>
   );
 }
