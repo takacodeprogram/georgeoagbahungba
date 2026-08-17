@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, GraduationCap, Zap, Users, Code, BookOpen, Star } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
@@ -25,9 +26,14 @@ export default function TakaCodePage() {
 
       <header className="cv-page-hero">
         <Link href="/en" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Back to portfolio</Link>
-        <div style={{ marginTop: "2rem", marginBottom: "1.5rem" }}>
-          <img src="/media/logo_light_4.png" alt="TakaCode Logo" style={{ height: "160px", width: "auto" }} />
-        </div>
+        <Image
+          className="takacode-page-logo"
+          src="/media/logo_light_4.png"
+          alt="TakaCode"
+          width={1000}
+          height={1000}
+          priority
+        />
         <p className="eyebrow">Ecosystem & Flagship Product</p>
         <h1 data-anim="title" style={{ marginTop: "0.5rem" }}>TakaCode<br /><em>Learning by doing.</em></h1>
         <p className="lead" data-anim="up">
@@ -41,10 +47,45 @@ export default function TakaCodePage() {
         </div>
       </header>
 
+      <section className="takacode-showcase" aria-labelledby="takacode-showcase-title">
+        <div className="takacode-showcase-grid">
+          <figure className="takacode-showcase-media">
+            <div className="takacode-showcase-frame">
+              <Image
+                src="/media/project-takacode.webp"
+                alt="The TakaCode platform home page"
+                width={1000}
+                height={507}
+                sizes="(max-width: 780px) 92vw, (max-width: 1050px) 88vw, 56vw"
+                className="takacode-showcase-img"
+                priority
+              />
+            </div>
+          </figure>
+
+          <div className="takacode-showcase-copy">
+            <p className="eyebrow">The platform</p>
+            <h2 id="takacode-showcase-title" data-anim="title">Live, <em>today.</em></h2>
+            <ul className="takacode-showcase-points">
+              <li>Guided tracks built around real projects</li>
+              <li>AI support at every step of the build</li>
+              <li>Web, mobile and automation, all the way to production</li>
+            </ul>
+            <p className="takacode-showcase-status">
+              <span className="takacode-showcase-dot" aria-hidden="true" />
+              Active platform
+            </p>
+            <p className="takacode-showcase-note">
+              A project-oriented approach to bringing web, mobile, and AI automation applications to life.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="agency-services" aria-labelledby="takacode-concept-title" style={{ paddingBottom: "2rem" }}>
         <p className="eyebrow">The Concept</p>
         <h2 id="takacode-concept-title" data-anim="title">Why <em>TakaCode?</em></h2>
-        <p className="lead-text" style={{ maxWidth: "800px", margin: "1rem auto 3rem", textAlign: "center", color: "var(--mud)" }}>
+        <p className="lead-text" style={{ maxWidth: "800px", margin: "1rem auto 3rem", textAlign: "center" }}>
           Passive learning of technologies is often discouraging. TakaCode flips the equation by proposing a
           <strong> project-oriented</strong> model: you bring your idea, the platform provides the learning framework, the community,
           and the AI support to transform it into a functional product.
