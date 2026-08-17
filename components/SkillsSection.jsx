@@ -7,7 +7,8 @@ const groups = [
     title: "Agroéconomie & Analyse",
     skills: [
       "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
-      "Économétrie", "Statistiques", "Suivi-évaluation", "Évaluation d'impact",
+      "Économétrie", "Statistiques", "Analyse de politiques agricoles",
+      "Gestion de projet", "Cadre logique", "Suivi-évaluation", "Évaluation d'impact",
     ],
   },
   {
