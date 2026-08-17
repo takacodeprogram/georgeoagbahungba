@@ -640,14 +640,6 @@ button {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.manifesto-lead {
-  color: #f8f5ed;
-}
-
-.manifesto-copy {
-  color: rgba(255, 255, 255, 0.62);
-}
-
 .eyebrow {
   margin: 0 0 30px;
   color: #6b675f;
@@ -694,6 +686,7 @@ button {
 }
 
 .manifesto-lead {
+  color: #f8f5ed;
   margin: 0 0 25px;
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 520;
@@ -1224,7 +1217,6 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .cv-card > p { margin: 0; }
 .cv-card .cv-subtitle { color: var(--gold-bright); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .cv-card .cv-desc { margin-top: 14px; color: rgba(255, 255, 255, 0.55); font-size: 13px; line-height: 1.65; }
-.cv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
 .cv-actions a { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 11px; border: 1px solid rgba(255,255,255,.18); font-size: 10px; font-weight: 700; }
 .cv-actions a:nth-child(2) { color: var(--ink); background: var(--gold-bright); border-color: var(--gold-bright); }
 .cv-actions svg { width: 13px; }
@@ -2263,12 +2255,11 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .not-found-label { display: inline-flex; align-items: center; gap: 8px; color: var(--chalk); font-size: 13px; font-weight: 750; }
 .not-found-label svg { width: 14px; color: var(--gold-bright); }
 .not-found-detail { color: rgba(255, 255, 255, 0.45); font-size: 12px; line-height: 1.5; }
-.not-found-home { margin-top: 42px; }
 .not-found h1 { margin: 0; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(64px, 10vw, 150px); line-height: 0.82; letter-spacing: -0.08em; }
 .not-found h1 em { color: var(--gold-bright); font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }
 /* Ciblé sur le lien de retour seul : `.not-found a` touchait aussi les cartes
    de destination, à spécificité égale mais déclaré plus bas, donc gagnant. */
-.not-found-home { display: inline-flex; align-items: center; gap: 9px; width: max-content; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 750; }
+.not-found-home { display: inline-flex; align-items: center; gap: 9px; margin-top: 42px; width: max-content; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 11px; font-weight: 750; }
 .not-found-home svg { width: 15px; }
 
 @media (max-width: 1050px) {
