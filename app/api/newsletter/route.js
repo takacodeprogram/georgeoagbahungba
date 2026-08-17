@@ -114,7 +114,7 @@ export async function POST(request) {
 
     return Response.json({ ok: true, message: "Inscription confirmée, e-mail envoyé." });
   } catch (error) {
-    console.error("Newsletter error:", error);
+    console.error("[api/newsletter]", error);
     return Response.json({ error: "L'envoi de l'e-mail a échoué. Réessayez plus tard." }, { status: 500 });
   }
 }
