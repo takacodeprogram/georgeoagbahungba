@@ -76,16 +76,19 @@ export default function AboutSection() {
           </div>
 
           <p data-reveal>
-            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste (Master 2 FSA/UAC), <strong>développeur Full Stack</strong> et <strong>Data Engineer</strong>. Six années passées à construire des produits numériques, sept à travailler la donnée agricole.
+            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste, développeur Full Stack et Data Engineer. Mon parcours s’est construit entre missions agricoles, analyse de données et développement de produits numériques.
           </p>
           <p data-reveal>
-            Mon terrain de travail se situe à l’intersection de l’<strong>économie agricole, du code et de la donnée</strong>. J’y conçois des pipelines ETL, je modélise des bases SQL et je conduis des travaux statistiques et économétriques.
+            J’interviens sur toute la chaîne de valeur de l’information : collecter, nettoyer, structurer, analyser, automatiser et transformer la donnée en outils utilisables.
           </p>
           <p data-reveal>
-            Côté produit, je développe des applications web et mobiles, et j’automatise les tâches répétitives avec l’IA : traitement de documents, génération de contenu, réponses aux demandes courantes.
+            Côté data, je conçois des pipelines ETL, des modèles SQL et des systèmes de traitement destinés à rendre les données plus fiables et exploitables. Côté produit, je développe des applications web et mobiles et j’intègre l’IA lorsque l’automatisation apporte une réelle valeur.
           </p>
           <p data-reveal>
-            Ce double bagage sert un même objectif : rendre exploitable l’information du secteur agricole, depuis la collecte sur le terrain jusqu’à la mise en production de l’outil qui s’en sert.
+            L’agriculture reste mon terrain de spécialisation privilégié : données de terrain, marchés agricoles, suivi-évaluation, systèmes d’information et Agritech.
+          </p>
+          <p data-reveal>
+            Mon objectif n’est pas d’ajouter de la technologie à un problème. C’est de construire la bonne solution à partir du problème.
           </p>
         </div>
       </div>
