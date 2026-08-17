@@ -25,8 +25,11 @@ export default function TakaCodePage() {
 
       <header className="cv-page-hero">
         <Link href="/" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Retour au portfolio</Link>
+        <div style={{ marginTop: "2rem", marginBottom: "1rem" }}>
+          <img src="/media/takacode-logo-light.png" alt="TakaCode Logo" style={{ height: "70px", width: "auto" }} />
+        </div>
         <p className="eyebrow">Écosystème & Produit Phare</p>
-        <h1 data-anim="title">TakaCode<br /><em>Apprendre par la pratique.</em></h1>
+        <h1 data-anim="title" style={{ marginTop: "0.5rem" }}>TakaCode<br /><em>Apprendre par la pratique.</em></h1>
         <p className="lead" data-anim="up">
           Conçu et développé par Georgeo Agbahungba, TakaCode est une plateforme éducative d'un nouveau genre
           qui accompagne la création de projets numériques réels assistée par l'intelligence artificielle.

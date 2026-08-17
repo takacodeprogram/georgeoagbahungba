@@ -65,9 +65,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div style={{ position: "relative", background: "radial-gradient(circle, rgba(216,169,61,0.12) 0%, transparent 70%)", padding: "3rem", borderRadius: "16px", border: "1px solid var(--border)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <span style={{ fontSize: "4.5rem", color: "var(--gold)", fontWeight: "300", lineHeight: "1", fontFamily: "var(--font-serif)" }}>TK</span>
-              <strong style={{ display: "block", marginTop: "1rem", color: "var(--paper)", fontSize: "1.2rem" }}>Plateforme active</strong>
+            <div style={{ position: "relative", background: "radial-gradient(circle, rgba(216,169,61,0.12) 0%, transparent 70%)", padding: "3rem 2rem", borderRadius: "16px", border: "1px solid var(--border)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <img src="/media/takacode-logo-light.png" alt="TakaCode Logo" style={{ height: "65px", width: "auto", display: "block", marginBottom: "1rem" }} />
+              <strong style={{ display: "block", marginTop: "0.5rem", color: "var(--paper)", fontSize: "1.2rem" }}>Plateforme active</strong>
               <p style={{ color: "var(--mud)", fontSize: "0.95rem", marginTop: "0.5rem", margin: "0.5rem 0 0" }}>
                 Une approche orientée projet pour concrétiser des applications web, mobiles et automatisations IA.
               </p>
