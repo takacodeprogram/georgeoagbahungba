@@ -33,7 +33,7 @@ const PRESETS = {
       textMuted: "#8a9099",
     },
     fonts: {
-      title: "Valorax",
+      title: "Plus Jakarta Sans",
       subtitle: "Manrope",
     },
     logo: "/media/georgeo-logo-gold.webp",
@@ -49,8 +49,8 @@ const FORMATS = {
 
 const TEMPLATES = [
   {
-    id: "minimalist",
-    name: "Minimalisme Tech",
+    id: "tech-card",
+    name: "Gabarit Carte Produit / Tech",
     draw: (ctx, width, height, data, logoImg, customImg) => {
       // Fond sombre uni de marque
       ctx.fillStyle = data.colors.bg;
@@ -65,45 +65,17 @@ const TEMPLATES = [
       }
 
       // Lignes de guidage dorées / sub-accents
-      ctx.strokeStyle = `${data.colors.accent}20`;
+      ctx.strokeStyle = `${data.colors.accent}15`;
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(width * 0.1, 0); ctx.lineTo(width * 0.1, height);
-      ctx.moveTo(width * 0.9, 0); ctx.lineTo(width * 0.9, height);
+      ctx.moveTo(width * 0.08, 0); ctx.lineTo(width * 0.08, height);
+      ctx.moveTo(width * 0.92, 0); ctx.lineTo(width * 0.92, height);
       ctx.stroke();
 
-      // Dessin de l'image custom si fournie
-      if (customImg) {
+      // Dessin du Logo de marque (Toujours affiché en haut à gauche ou centré en haut)
+      if (logoImg) {
         ctx.save();
-        // Zone d'affichage image stylisée
-        const imgSize = Math.min(width, height) * 0.35;
-        const ix = (width - imgSize) / 2;
-        const iy = height * 0.22;
-        
-        ctx.strokeStyle = data.colors.accent;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(ix - 5, iy - 5, imgSize + 10, imgSize + 10);
-
-        // object-fit: cover simulation
-        const imgRatio = customImg.width / customImg.height;
-        let sWidth = customImg.width;
-        let sHeight = customImg.height;
-        let sx = 0;
-        let sy = 0;
-        if (imgRatio > 1) {
-          sWidth = customImg.height;
-          sx = (customImg.width - sWidth) / 2;
-        } else {
-          sHeight = customImg.width;
-          sy = (customImg.height - sHeight) / 2;
-        }
-
-        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, ix, iy, imgSize, imgSize);
-        ctx.restore();
-      } else if (logoImg) {
-        // Logo central par défaut
-        const logoSize = Math.min(width, height) * 0.28;
-        // calcul pour éviter la déformation du logo
+        const logoSize = Math.min(width, height) * 0.12;
         const logoRatio = logoImg.width / logoImg.height;
         let dWidth = logoSize;
         let dHeight = logoSize;
@@ -112,34 +84,66 @@ const TEMPLATES = [
         } else {
           dWidth = logoSize * logoRatio;
         }
-        const lx = (width - dWidth) / 2;
-        const ly = height * 0.22 + (logoSize - dHeight) / 2;
-        ctx.drawImage(logoImg, lx, ly, dWidth, dHeight);
+        // Placé en haut à gauche
+        ctx.drawImage(logoImg, width * 0.08, height * 0.06, dWidth, dHeight);
+        ctx.restore();
+      }
+
+      // Dessin de l'image custom si fournie (affichée au centre)
+      if (customImg) {
+        ctx.save();
+        const imgWidth = width * 0.68;
+        const imgHeight = height * 0.35;
+        const ix = (width - imgWidth) / 2;
+        const iy = height * 0.18;
+        
+        ctx.strokeStyle = `${data.colors.accent}33`;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(ix - 4, iy - 4, imgWidth + 8, imgHeight + 8);
+
+        // object-fit: cover simulation
+        const targetRatio = imgWidth / imgHeight;
+        const imgRatio = customImg.width / customImg.height;
+        let sWidth = customImg.width;
+        let sHeight = customImg.height;
+        let sx = 0;
+        let sy = 0;
+        
+        if (imgRatio > targetRatio) {
+          sWidth = customImg.height * targetRatio;
+          sx = (customImg.width - sWidth) / 2;
+        } else {
+          sHeight = customImg.width / targetRatio;
+          sy = (customImg.height - sHeight) / 2;
+        }
+
+        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, ix, iy, imgWidth, imgHeight);
+        ctx.restore();
       }
 
       // Typographies & Textes
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
-      // 1. Tagline
+      // 1. Tagline / Sur-titre
       ctx.fillStyle = data.colors.accent;
-      ctx.font = `bold ${Math.max(12, width * 0.024)}px "${data.fonts.subtitle}"`;
-      ctx.fillText(data.tagline.toUpperCase(), width / 2, height * 0.62);
+      ctx.font = `bold ${Math.max(12, width * 0.022)}px "${data.fonts.subtitle}"`;
+      ctx.fillText(data.tagline.toUpperCase(), width / 2, customImg ? height * 0.62 : height * 0.45);
 
       // 2. Titre Principal
       ctx.fillStyle = data.colors.text;
-      ctx.font = `${Math.max(28, width * 0.052)}px "${data.fonts.title}"`;
-      ctx.fillText(data.title, width / 2, height * 0.72);
+      ctx.font = `${Math.max(26, width * 0.048)}px "${data.fonts.title}"`;
+      ctx.fillText(data.title, width / 2, customImg ? height * 0.71 : height * 0.56);
 
       // 3. Description / Texte libre
       ctx.fillStyle = data.colors.textMuted;
-      ctx.font = `${Math.max(14, width * 0.028)}px "${data.fonts.subtitle}"`;
+      ctx.font = `${Math.max(14, width * 0.026)}px "${data.fonts.subtitle}"`;
       
       const words = data.description.split(" ");
       let line = "";
       let lines = [];
-      const maxWidth = width * 0.75;
-      const lineHeight = Math.max(20, width * 0.038);
+      const maxWidth = width * 0.72;
+      const lineHeight = Math.max(20, width * 0.036);
 
       for (let n = 0; n < words.length; n++) {
         let testLine = line + words[n] + " ";
@@ -153,75 +157,78 @@ const TEMPLATES = [
       }
       lines.push(line);
 
-      let startY = height * 0.82;
+      let startY = customImg ? height * 0.80 : height * 0.68;
       for (let k = 0; k < lines.length; k++) {
         ctx.fillText(lines[k], width / 2, startY + (k * lineHeight));
       }
+
+      // 4. Footer visuel (Signature de bas de page)
+      ctx.fillStyle = `${data.colors.textMuted}60`;
+      ctx.font = `500 ${Math.max(10, width * 0.018)}px "${data.fonts.subtitle}"`;
+      ctx.fillText("TERRAIN × DATA × PRODUIT  |  GEORGE-AGBAHUNGBA.XYZ", width / 2, height * 0.94);
     },
   },
   {
-    id: "glowing-orbit",
-    name: "Orbite Radiale & Glow",
+    id: "split-studio",
+    name: "Gabarit Split Édito",
     draw: (ctx, width, height, data, logoImg, customImg) => {
-      // Fond dégradé radial
-      const gradient = ctx.createRadialGradient(
-        width / 2, height * 0.35, width * 0.1,
-        width / 2, height * 0.35, width * 0.8
-      );
-      gradient.addColorStop(0, `${data.colors.accent}33`);
-      gradient.addColorStop(1, data.colors.bg);
-      ctx.fillStyle = gradient;
+      // Split layout - fond gauche sombre, fond droit accentué ou image
+      ctx.fillStyle = data.colors.bg;
       ctx.fillRect(0, 0, width, height);
 
-      // Cercles d'orbite concentriques
-      ctx.strokeStyle = `${data.colors.accent}1f`;
-      ctx.lineWidth = 1.5;
-      
-      ctx.beginPath();
-      ctx.arc(width / 2, height * 0.35, width * 0.22, 0, Math.PI * 2);
-      ctx.stroke();
+      const splitX = width * 0.46;
 
-      ctx.beginPath();
-      ctx.arc(width / 2, height * 0.35, width * 0.38, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Dessin de l'image custom ou logo
+      // Dessin de l'image custom dans la partie droite
       if (customImg) {
         ctx.save();
-        const imgSize = Math.min(width, height) * 0.38;
-        const cx = width / 2;
-        const cy = height * 0.35;
-        // Masque circulaire pour l'avatar / image custom
+        // Côté droit entier
         ctx.beginPath();
-        ctx.arc(cx, cy, imgSize / 2, 0, Math.PI * 2);
-        ctx.closePath();
+        ctx.rect(splitX, 0, width - splitX, height);
         ctx.clip();
 
-        // object-fit: cover simulation
+        const targetWidth = width - splitX;
+        const targetRatio = targetWidth / height;
         const imgRatio = customImg.width / customImg.height;
         let sWidth = customImg.width;
         let sHeight = customImg.height;
         let sx = 0;
         let sy = 0;
-        if (imgRatio > 1) {
-          sWidth = customImg.height;
+
+        if (imgRatio > targetRatio) {
+          sWidth = customImg.height * targetRatio;
           sx = (customImg.width - sWidth) / 2;
         } else {
-          sHeight = customImg.width;
+          sHeight = customImg.width / targetRatio;
           sy = (customImg.height - sHeight) / 2;
         }
 
-        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, cx - imgSize / 2, cy - imgSize / 2, imgSize, imgSize);
-        ctx.restore();
+        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, splitX, 0, targetWidth, height);
         
-        // Bord doré circulaire brillant
-        ctx.strokeStyle = data.colors.accent;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(width / 2, height * 0.35, imgSize / 2, 0, Math.PI * 2);
-        ctx.stroke();
-      } else if (logoImg) {
-        const logoSize = Math.min(width, height) * 0.32;
+        // Overlay sombre sur le côté droit pour lisibilité
+        ctx.fillStyle = "rgba(7, 10, 12, 0.4)";
+        ctx.fillRect(splitX, 0, targetWidth, height);
+        ctx.restore();
+      } else {
+        // Côté droit dégradé abstrait de la marque
+        const rightGradient = ctx.createLinearGradient(splitX, 0, width, height);
+        rightGradient.addColorStop(0, `${data.colors.accent}15`);
+        rightGradient.addColorStop(1, `${data.colors.bg}`);
+        ctx.fillStyle = rightGradient;
+        ctx.fillRect(splitX, 0, width - splitX, height);
+      }
+
+      // Bord de délimitation vertical
+      ctx.strokeStyle = `${data.colors.accent}25`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(splitX, 0);
+      ctx.lineTo(splitX, height);
+      ctx.stroke();
+
+      // Dessin du Logo de marque (Toujours affiché)
+      if (logoImg) {
+        ctx.save();
+        const logoSize = Math.min(width, height) * 0.14;
         const logoRatio = logoImg.width / logoImg.height;
         let dWidth = logoSize;
         let dHeight = logoSize;
@@ -230,56 +237,55 @@ const TEMPLATES = [
         } else {
           dWidth = logoSize * logoRatio;
         }
-        const lx = (width - dWidth) / 2;
-        const ly = height * 0.35 - (dHeight / 2);
-        ctx.drawImage(logoImg, lx, ly, dWidth, dHeight);
+        ctx.drawImage(logoImg, width * 0.05, height * 0.08, dWidth, dHeight);
+        ctx.restore();
       }
 
-      // Textes
-      ctx.textAlign = "center";
+      // Textes alignés à gauche dans la partie gauche
+      ctx.textAlign = "left";
       ctx.textBaseline = "middle";
 
-      // 1. Tagline avec un mini badge de fond
-      const tagText = data.tagline.toUpperCase();
-      ctx.font = `bold ${Math.max(12, width * 0.024)}px "${data.fonts.subtitle}"`;
-      const tagMetrics = ctx.measureText(tagText);
-      const paddingX = 14;
-      const paddingY = 6;
-      
-      ctx.fillStyle = `${data.colors.accent}1a`;
-      ctx.fillRect(
-        width / 2 - (tagMetrics.width / 2) - paddingX,
-        height * 0.65 - (Math.max(12, width * 0.024) / 2) - paddingY,
-        tagMetrics.width + (paddingX * 2),
-        Math.max(12, width * 0.024) + (paddingY * 2)
-      );
-      
-      ctx.strokeStyle = `${data.colors.accent}4d`;
-      ctx.lineWidth = 1;
-      ctx.strokeRect(
-        width / 2 - (tagMetrics.width / 2) - paddingX,
-        height * 0.65 - (Math.max(12, width * 0.024) / 2) - paddingY,
-        tagMetrics.width + (paddingX * 2),
-        Math.max(12, width * 0.024) + (paddingY * 2)
-      );
-
+      // 1. Tagline
       ctx.fillStyle = data.colors.accent;
-      ctx.fillText(tagText, width / 2, height * 0.65);
+      ctx.font = `bold ${Math.max(12, width * 0.022)}px "${data.fonts.subtitle}"`;
+      ctx.fillText(data.tagline.toUpperCase(), width * 0.05, height * 0.32);
 
       // 2. Titre Principal
       ctx.fillStyle = data.colors.text;
-      ctx.font = `${Math.max(30, width * 0.056)}px "${data.fonts.title}"`;
-      ctx.fillText(data.title, width / 2, height * 0.74);
+      ctx.font = `${Math.max(24, width * 0.046)}px "${data.fonts.title}"`;
+      
+      const titleWords = data.title.split(" ");
+      let tLine = "";
+      let tLines = [];
+      const maxTitleWidth = splitX - (width * 0.1);
+      const titleLineHeight = Math.max(30, width * 0.054);
+
+      for (let n = 0; n < titleWords.length; n++) {
+        let testLine = tLine + titleWords[n] + " ";
+        let metrics = ctx.measureText(testLine);
+        if (metrics.width > maxTitleWidth && n > 0) {
+          tLines.push(tLine);
+          tLine = titleWords[n] + " ";
+        } else {
+          tLine = testLine;
+        }
+      }
+      tLines.push(tLine);
+
+      let startTitleY = height * 0.42;
+      for (let k = 0; k < tLines.length; k++) {
+        ctx.fillText(tLines[k], width * 0.05, startTitleY + (k * titleLineHeight));
+      }
 
       // 3. Description
       ctx.fillStyle = data.colors.textMuted;
-      ctx.font = `${Math.max(14, width * 0.028)}px "${data.fonts.subtitle}"`;
+      ctx.font = `${Math.max(14, width * 0.026)}px "${data.fonts.subtitle}"`;
       
       const words = data.description.split(" ");
       let line = "";
       let lines = [];
-      const maxWidth = width * 0.8;
-      const lineHeight = Math.max(20, width * 0.038);
+      const maxWidth = splitX - (width * 0.1);
+      const lineHeight = Math.max(20, width * 0.034);
 
       for (let n = 0; n < words.length; n++) {
         let testLine = line + words[n] + " ";
@@ -293,10 +299,15 @@ const TEMPLATES = [
       }
       lines.push(line);
 
-      let startY = height * 0.83;
+      let startDescY = startTitleY + (tLines.length * titleLineHeight) + 20;
       for (let k = 0; k < lines.length; k++) {
-        ctx.fillText(lines[k], width / 2, startY + (k * lineHeight));
+        ctx.fillText(lines[k], width * 0.05, startDescY + (k * lineHeight));
       }
+
+      // 4. Footer visuel gauche
+      ctx.fillStyle = `${data.colors.textMuted}60`;
+      ctx.font = `500 ${Math.max(10, width * 0.016)}px "${data.fonts.subtitle}"`;
+      ctx.fillText("TAKACODE × GEORGE-AGBAHUNGBA.XYZ", width * 0.05, height * 0.92);
     },
   },
 ];
