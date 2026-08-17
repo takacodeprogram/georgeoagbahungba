@@ -280,33 +280,12 @@ export default function Hero({ locale = "fr" }) {
         dispose = () => window.removeEventListener("pointermove", onPointerMove);
       }, hero);
 
-      let lastY = 0;
-      let startProgress = 0;
-      const onTouchStart = (event) => {
-        lastY = event.touches[0].clientY;
-        const trigger = ScrollTrigger.getById(story.id);
-        startProgress = trigger ? trigger.progress : 0;
-      };
-      const onTouchMove = (event) => {
-        const delta = lastY - event.touches[0].clientY;
-        if (Math.abs(delta) < 18) return;
-        const index = activeRef.current;
-        if (delta > 0 && index < 3) {
-          event.preventDefault();
-          jumpToChapter(index + 1);
-        } else if (delta < 0 && index > 0 && startProgress < chapterStops[index]) {
-          event.preventDefault();
-          jumpToChapter(index - 1);
-        }
-      };
-      story.addEventListener("touchstart", onTouchStart, { passive: true });
-      story.addEventListener("touchmove", onTouchMove, { passive: false });
-
+      // Au tactile, le défilement reste natif : la timeline est déjà scrubbée
+      // par le scroll, donc les chapitres s'enchaînent au rythme du doigt. Les
+      // onglets restent là pour sauter directement à un chapitre.
       dispose = ((prevDispose) => () => {
         prevDispose();
         safetyTimers.forEach(window.clearTimeout);
-        story.removeEventListener("touchstart", onTouchStart);
-        story.removeEventListener("touchmove", onTouchMove);
         if (onVisible) document.removeEventListener("visibilitychange", onVisible);
       })(dispose);
     }

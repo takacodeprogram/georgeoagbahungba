@@ -1626,14 +1626,6 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   background: var(--ink);
 }
 
-/* Tant que le hero est épinglé sur mobile, le défilement vertical natif est
-   neutralisé : chaque glissement est converti en un passage de chapitre par le
-   gestionnaire tactile du composant. Le pan horizontal (onglets) et le
-   pincement de zoom restent disponibles. */
-@media (pointer: coarse) {
-  .hero-story.is-swipe-locked { touch-action: pan-x pinch-zoom; }
-}
-
 /* ---------- Cap rotation story ---------- */
 .cap-story {
   position: relative;
