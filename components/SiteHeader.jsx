@@ -7,6 +7,7 @@ import { forwardRef, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const linksFR = [
+  { href: "/a-propos", label: "À propos", path: "/a-propos" },
   { href: "/#competences", label: "Compétences", hash: "#competences" },
   { href: "/#parcours", label: "Parcours", hash: "#parcours" },
   { href: "/#projets", label: "Projets", hash: "#projets" },
@@ -16,6 +17,7 @@ const linksFR = [
 ];
 
 const linksEN = [
+  { href: "/en/a-propos", label: "About", path: "/en/a-propos" },
   { href: "/en#competences", label: "Skills", hash: "#competences" },
   { href: "/en#parcours", label: "Timeline", hash: "#parcours" },
   { href: "/en#projets", label: "Projects", hash: "#projets" },

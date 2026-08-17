@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
 import CapRotationStory from "@/components/CapRotationStory";
 import SkillsSection from "@/components/SkillsSection";
 import PortraitSection from "@/components/PortraitSection";
@@ -23,7 +22,6 @@ export default function Home({ locale = "fr" }) {
     <main>
       <PageLoader />
       <Hero locale={locale} />
-      <AboutSection locale={locale} />
       <CapRotationStory locale={locale} />
       <SkillsSection locale={locale} />
 
