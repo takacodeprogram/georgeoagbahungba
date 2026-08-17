@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
+import { createRemoteJWKSet, jwtVerify } from "jose";
 
-export function middleware(request) {
+// Créer le vérificateur JWKS distant pour Neon Auth
+const JWKS = createRemoteJWKSet(
+  new URL(
+    process.env.NEON_AUTH_JWKS_URL ||
+      "https://ep-icy-bird-ay3324p2.neonauth.c-5.us-east-2.aws.neon.tech/neondb/auth/.well-known/jwks.json"
+  )
+);
+
+export async function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
   // Protéger le branding-studio
@@ -9,31 +17,30 @@ export function middleware(request) {
     const token = request.cookies.get("takacode_auth");
 
     if (!token) {
-      // Rediriger vers l'écran de login
-      const url = request.nextUrl.clone();
-      url.pathname = "/login";
-      // Conserve l'URL d'origine pour y revenir après connexion
-      url.searchParams.set("redirect", pathname);
-      return NextResponse.redirect(url);
+      // Rediriger vers l'écran de connexion Neon Auth managé
+      const loginUrl = `${process.env.NEON_AUTH_URL}/login?redirect_uri=${encodeURIComponent(
+        request.nextUrl.origin + "/api/auth/callback"
+      )}`;
+      return NextResponse.redirect(loginUrl);
     }
 
     try {
-      // Valider le token JWT
-      jwt.verify(token.value, process.env.JWT_SECRET);
+      // Valider le token JWT de Neon Auth via les clés JWKS publiques
+      await jwtVerify(token.value, JWKS);
       return NextResponse.next();
     } catch (err) {
-      // Token invalide ou expiré -> vers login
-      const url = request.nextUrl.clone();
-      url.pathname = "/login";
-      url.searchParams.set("redirect", pathname);
-      return NextResponse.redirect(url);
+      console.error("JWT verification failed:", err);
+      // Rediriger vers Neon Auth en cas d'expiration/erreur
+      const loginUrl = `${process.env.NEON_AUTH_URL}/login?redirect_uri=${encodeURIComponent(
+        request.nextUrl.origin + "/api/auth/callback"
+      )}`;
+      return NextResponse.redirect(loginUrl);
     }
   }
 
   return NextResponse.next();
 }
 
-// Configurer le Middleware pour n'écouter que sur /branding-studio
 export const config = {
   matcher: ["/branding-studio/:path*"],
 };
