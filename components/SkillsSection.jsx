@@ -3,6 +3,15 @@ import { Code2, DatabaseZap, LineChart } from "lucide-react";
 const groups = [
   {
     number: "01",
+    icon: LineChart,
+    title: "Agroéconomie & Analyse",
+    skills: [
+      "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
+      "Économétrie", "Statistiques", "Suivi-évaluation", "Évaluation d'impact",
+    ],
+  },
+  {
+    number: "02",
     icon: Code2,
     title: "Produits & développement",
     skills: [
@@ -12,21 +21,12 @@ const groups = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     icon: DatabaseZap,
     title: "Data Engineering & Cloud",
     skills: [
       "Python", "SQL", "Supabase", "Google Cloud", "AWS Cloud", "APIs",
       "Pipelines de données (ETL)", "IA générative / LLMs",
-    ],
-  },
-  {
-    number: "03",
-    icon: LineChart,
-    title: "Agroéconomie & Analyse",
-    skills: [
-      "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
-      "Économétrie", "Statistiques", "Suivi-évaluation", "Évaluation d'impact",
     ],
   },
 ];
