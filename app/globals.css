@@ -1514,7 +1514,8 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 
 @media (max-width: 1050px) {
   .nav-links { display: none; }
-  .hero-nav { grid-template-columns: 1fr 1fr; }
+  .hero-nav { grid-template-columns: auto 1fr; gap: 20px; }
+  .hero-nav .nav-actions { justify-self: end; }
   .hero-copy { width: 64vw; }
   .hero-role-switcher { width: auto; }
   .expertise-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2287,7 +2288,6 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .not-found-home svg { width: 15px; }
 
 @media (max-width: 1050px) {
-  .hero-nav { grid-template-columns: 1fr auto auto; gap: 10px; }
   .mobile-menu-toggle { display: grid; }
   .journey-list article { grid-template-columns: 48px 1fr; column-gap: 18px; }
   .journey-list time { grid-column: 2; }
