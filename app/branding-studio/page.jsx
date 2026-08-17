@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowLeft, Download, RefreshCw, Upload, Layout, User, Square, Eye, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ContactSection from "@/components/ContactSection";
+import ChatAssistant from "@/components/ChatAssistant";
 
 const PRESETS = {
   takacode: {
