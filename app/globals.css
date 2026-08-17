@@ -59,6 +59,15 @@
      valeurs étaient déjà employées un peu partout en dur, on les nomme. */
   --chalk: #f8f5ed;
   --ink-muted: #4a4f54;
+  /* Texte sur fond clair. Les ratios ci-dessous valent sur `--paper` puis sur
+     `--paper-soft`, les deux fonds clairs du site.
+     `--ink-soft` remplace un var(--ink-soft) qui tombait à 4,32:1 sur `--paper-soft`,
+     donc sous le seuil AA. `--gold-ink` sert aux grands titres, où le doré doit
+     rester lisible comme couleur de marque ; `--gold-deep` aux libellés de 9 à
+     10px, qui ont besoin de bien plus de contraste à cette taille. */
+  --ink-soft: #54504a;   /* 6,97 / 6,14 */
+  --gold-ink: #8f5c0d;   /* 4,94 / 4,35 — grand texte uniquement */
+  --gold-deep: #7a4d09;  /* 6,32 / 5,57 */
   --display: "Plus Jakarta Sans Variable", sans-serif;
 }
 
@@ -666,7 +675,7 @@ button {
 
 .eyebrow {
   margin: 0 0 30px;
-  color: #6b675f;
+  color: var(--ink-soft);
   font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.18em;
@@ -938,7 +947,7 @@ a.project-row:hover {
 
 .project-row p {
   margin: 0;
-  color: #6b675f;
+  color: var(--ink-soft);
   font-size: 13px;
 }
 
@@ -1187,11 +1196,13 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   background: var(--gold-bright);
 }
 
+/* Sur le doré de la carte, l'encre à 0,42 ne donnait que 2,48:1, sous les 3:1
+   du grand texte. 0,55 la place à 3,45:1 sans écraser l'effet de filigrane. */
 .all-projects-card span {
   position: absolute;
   top: 8px;
   right: 20px;
-  color: rgba(8, 11, 13, 0.42);
+  color: rgba(8, 11, 13, 0.55);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
   font-size: 130px;
   font-weight: 800;
@@ -1199,7 +1210,8 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 .all-projects-card strong { max-width: 260px; font-size: 30px; line-height: 1.05; }
-.all-projects-card p { max-width: 300px; margin: 12px 0 0; color: rgba(8, 11, 13, 0.6); font-size: 13px; line-height: 1.6; }
+/* 13px = texte normal, il faut 4,5:1. 0,6 donnait 3,93:1, 0,7 donne 5,09:1. */
+.all-projects-card p { max-width: 300px; margin: 12px 0 0; color: rgba(8, 11, 13, 0.7); font-size: 13px; line-height: 1.6; }
 .all-projects-card svg { margin-top: 22px; transition: transform 220ms ease; }
 .all-projects-card:hover svg { transform: translate(5px, -5px); }
 
@@ -1472,7 +1484,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .agency-services { padding: clamp(70px, 9vw, 130px) clamp(24px, 7.5vw, 132px); color: var(--ink); background: var(--paper-soft); border-bottom: 1px solid var(--line-light); }
 .agency-services > .eyebrow { color: var(--ink-muted); }
 .agency-services h2 { margin: 0 0 clamp(38px, 5vw, 68px); max-width: 900px; font-family: var(--display); font-size: clamp(34px, 4.4vw, 62px); font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
-.agency-services h2 em { color: #8f5c0d; font-weight: 600; }
+.agency-services h2 em { color: var(--gold-ink); font-weight: 600; }
 
 .agency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(20px, 2.4vw, 34px); }
 .agency-card { display: flex; flex-direction: column; gap: 14px; padding: clamp(26px, 2.6vw, 38px); background: var(--paper); border: 1px solid var(--line-light); }
@@ -2249,27 +2261,27 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 .journey-intro { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); column-gap: clamp(45px, 8vw, 130px); align-items: end; }
-.journey-intro .eyebrow { margin: 0; color: #6b675f; }
+.journey-intro .eyebrow { margin: 0; color: var(--ink-soft); }
 .journey-intro h2 { margin: 0; max-width: 820px; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(44px, 4.8vw, 78px); font-weight: 800; line-height: 0.98; letter-spacing: -0.05em; }
-.journey-intro h2 em { color: #8f5c0d; font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }
+.journey-intro h2 em { color: var(--gold-ink); font-family: "Plus Jakarta Sans Variable", sans-serif; font-weight: 600; }
 .journey-intro > p:last-child { max-width: 520px; margin: 34px 0 0; color: var(--ink-muted); line-height: 1.8; }
 
 .metric-strip { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 90px; border-top: 1px solid var(--line-light); border-left: 1px solid var(--line-light); }
 .metric-strip > div { position: relative; display: flex; flex-direction: column; min-height: 210px; justify-content: flex-end; padding: 30px; overflow: hidden; border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); transition: background 280ms ease; }
 .metric-strip > div:hover { background: rgba(8, 11, 13, 0.03); }
-.metric-strip strong { color: #8f5c0d; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(52px, 5.5vw, 84px); font-weight: 800; line-height: 0.82; letter-spacing: -0.02em; }
-.metric-strip span { margin-top: 16px; color: #6b675f; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.metric-strip strong { color: var(--gold-ink); font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(52px, 5.5vw, 84px); font-weight: 800; line-height: 0.82; letter-spacing: -0.02em; }
+.metric-strip span { margin-top: 16px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 .metric-strip > div::after { position: absolute; top: 0; left: 0; width: 100%; height: 2px; content: ""; background: linear-gradient(90deg, var(--gold), transparent 70%); opacity: 0; transition: opacity 280ms ease; }
 .metric-strip > div:hover::after { opacity: 1; }
 
 .journey-list { margin-top: 80px; border-top: 1px solid var(--line-light); }
 .journey-list article { display: grid; grid-template-columns: 64px 180px minmax(0, 1fr); column-gap: 30px; padding: 40px 0; border-bottom: 1px solid var(--line-light); transition: background 280ms ease; }
 .journey-list article:hover { background: rgba(8, 11, 13, 0.025); }
-.journey-list article > span { padding-top: 8px; color: #8f5c0d; font-size: 9px; letter-spacing: 0.16em; }
+.journey-list article > span { padding-top: 8px; color: var(--gold-deep); font-size: 9px; letter-spacing: 0.16em; }
 .journey-list time { padding-top: 9px; color: var(--ink-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
 .journey-role { min-width: 0; }
 .journey-role h3 { margin: 0; font-family: "Plus Jakarta Sans Variable", sans-serif; font-size: clamp(21px, 2.2vw, 30px); letter-spacing: -0.035em; }
-.journey-role .journey-org { margin: 7px 0 14px; color: #8f5c0d; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.journey-role .journey-org { margin: 7px 0 14px; color: var(--gold-deep); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .journey-detail { max-width: 520px; margin: 0; color: var(--ink-muted); font-size: 13px; line-height: 1.75; }
 
 .project-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-bottom: 28px; }
@@ -2346,7 +2358,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 .about .eyebrow {
-  color: #6b675f;
+  color: var(--ink-soft);
 }
 
 .about-grid {
@@ -2475,7 +2487,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .about-copy h3 {
   margin: 20px 0 38px;
   max-width: 560px;
-  color: #6b675f;
+  color: var(--ink-soft);
   font-family: "Plus Jakarta Sans Variable", sans-serif;
   font-size: clamp(21px, 2vw, 30px);
   font-weight: 700;
@@ -2530,11 +2542,11 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 .skills .eyebrow {
-  color: #6b675f;
+  color: var(--ink-soft);
 }
 
 .skills h2 em {
-  color: #8f5c0d;
+  color: var(--gold-ink);
 }
 
 .skills-lead {
@@ -2864,7 +2876,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 .takacode-showcase .eyebrow {
-  color: #6b675f;
+  color: var(--ink-soft);
 }
 
 .takacode-showcase-grid {
@@ -2891,7 +2903,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
    texte. On reprend le doré assombri déjà employé par `.agency-services h2 em`
    pour ce même cas. */
 .takacode-showcase-copy h2 em {
-  color: #8f5c0d;
+  color: var(--gold-ink);
   font-weight: 600;
   font-style: italic;
 }
@@ -2974,7 +2986,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-showcase-note {
   max-width: 46ch;
   margin: 12px 0 0;
-  color: #6b675f;
+  color: var(--ink-soft);
   font-size: clamp(13.5px, 1vw, 15px);
   line-height: 1.7;
 }
