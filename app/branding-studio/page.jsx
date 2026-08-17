@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ArrowLeft, Download, RefreshCw, Upload, Layout, User, Square, Eye, Sparkles, LogOut } from "lucide-react";
+import { ArrowLeft, Download, RefreshCw, Upload, Layout, User, Square, Eye, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ContactSection from "@/components/ContactSection";
@@ -314,7 +313,6 @@ const TEMPLATES = [
 ];
 
 export default function BrandingStudioPage() {
-  const router = useRouter();
   const [presetKey, setPresetKey] = useState("takacode");
   const [formatKey, setFormatKey] = useState("square");
   const [templateId, setTemplateId] = useState("tech-card");
@@ -422,44 +420,13 @@ export default function BrandingStudioPage() {
     link.click();
   };
 
-  const handleLogout = async () => {
-    try {
-      const res = await fetch("/api/auth/logout", { method: "POST" });
-      if (res.ok) {
-        window.location.href = "/login";
-      }
-    } catch (err) {
-      console.error("Logout failed:", err);
-    }
-  };
-
   return (
     <main className="agency-page branding-studio" style={{ background: "#050708", color: "#f8f5ed", minHeight: "100vh" }}>
       <SiteHeader solid />
 
-      <header className="cv-page-hero" style={{ paddingBottom: "2rem", position: "relative" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <Link href="/" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Retour au portfolio</Link>
-          <button
-            onClick={handleLogout}
-            style={{
-              background: "rgba(235, 64, 64, 0.1)",
-              border: "1px solid rgba(235, 64, 64, 0.3)",
-              color: "#ff8d8d",
-              borderRadius: "8px",
-              padding: "0.5rem 1rem",
-              fontSize: "0.85rem",
-              fontWeight: "600",
-              cursor: "pointer",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem"
-            }}
-          >
-            <LogOut size={14} /> Déconnexion
-          </button>
-        </div>
-        <p className="eyebrow" style={{ marginTop: "1.5rem" }}><Sparkles size={14} style={{ color: "var(--gold)", display: "inline", verticalAlign: "middle", marginRight: "6px" }} /> Outil de Branding interne</p>
+      <header className="cv-page-hero" style={{ paddingBottom: "2rem" }}>
+        <Link href="/" data-magnetic="0.25"><ArrowLeft aria-hidden="true" /> Retour au portfolio</Link>
+        <p className="eyebrow"><Sparkles size={14} style={{ color: "var(--gold)", display: "inline", verticalAlign: "middle", marginRight: "6px" }} /> Outil de Branding interne</p>
         <h1 data-anim="title">Générateur de <em>Visuels & Social Media</em></h1>
         <p className="lead" data-anim="up">
           Créez des cartes de réseaux sociaux harmonisées avec la charte graphique de TakaCode ou le branding personnel Georgeo Agbahungba.
