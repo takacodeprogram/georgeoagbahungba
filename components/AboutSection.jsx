@@ -3,10 +3,13 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const badges = ["Agroéconomie", "Full Stack", "Data & IA"];
+const badgesFR = ["Agroéconomie", "Full Stack", "Data & IA"];
+const badgesEN = ["Agroeconomics", "Full Stack", "Data & AI"];
 
-export default function AboutSection() {
+export default function AboutSection({ locale = "fr" }) {
   const sectionRef = useRef(null);
+  const isEn = locale === "en";
+  const badges = isEn ? badgesEN : badgesFR;
 
   useEffect(() => {
     let context;
@@ -65,9 +68,15 @@ export default function AboutSection() {
         </div>
 
         <div className="about-copy">
-          <p className="eyebrow">Qui suis-je</p>
-          <h2 id="about-title">À propos</h2>
-          <h3>À la croisée de l’agroéconomie <em>et du numérique</em></h3>
+          <p className="eyebrow">{isEn ? "Who I am" : "Qui suis-je"}</p>
+          <h2 id="about-title">{isEn ? "About Me" : "À propos"}</h2>
+          <h3>
+            {isEn ? (
+              <>At the crossroads of agroeconomics <em>and technology</em></>
+            ) : (
+              <>À la croisée de l’agroéconomie <em>et du numérique</em></>
+            )}
+          </h3>
 
           <div className="about-badges">
             {badges.map((badge) => (
@@ -75,21 +84,43 @@ export default function AboutSection() {
             ))}
           </div>
 
-          <p data-reveal>
-            Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste, développeur Full Stack et Data Engineer. Mon parcours s’est construit entre missions agricoles, analyse de données et développement de produits numériques.
-          </p>
-          <p data-reveal>
-            J’interviens sur toute la chaîne de valeur de l’information : collecter, nettoyer, structurer, analyser, automatiser et transformer la donnée en outils utilisables.
-          </p>
-          <p data-reveal>
-            Côté data, je conçois des pipelines ETL, des modèles SQL et des systèmes de traitement destinés à rendre les données plus fiables et exploitables. Côté produit, je développe des applications web et mobiles et j’intègre l’IA lorsque l’automatisation apporte une réelle valeur.
-          </p>
-          <p data-reveal>
-            L’agriculture reste mon terrain de spécialisation privilégié : données de terrain, marchés agricoles, suivi-évaluation, systèmes d’information et Agritech.
-          </p>
-          <p data-reveal>
-            Mon objectif n’est pas d’ajouter de la technologie à un problème. C’est de construire la bonne solution à partir du problème.
-          </p>
+          {isEn ? (
+            <>
+              <p data-reveal>
+                I am <strong>Georgeo AGBAHUNGBA</strong>, an agroeconomist, Full Stack Developer, and Data Engineer. My career has been built at the intersection of agricultural projects, data analytics, and digital product creation.
+              </p>
+              <p data-reveal>
+                I handle the entire information value chain: collecting, cleaning, structuring, analyzing, automating, and transforming raw data into highly usable tools.
+              </p>
+              <p data-reveal>
+                On the data side, I design ETL pipelines, SQL schemas, and processing scripts to make data reliable and actionable. On the product side, I build web and mobile applications, integrating AI wherever automation adds real, tangible value.
+              </p>
+              <p data-reveal>
+                Agriculture remains my primary field of specialization: field surveys, agricultural markets, monitoring & evaluation, information systems, and Agritech.
+              </p>
+              <p data-reveal>
+                My goal is never to throw technology at a problem. It is to architect the right solution starting from the problem itself.
+              </p>
+            </>
+          ) : (
+            <>
+              <p data-reveal>
+                Je suis <strong>Georgeo AGBAHUNGBA</strong>, agroéconomiste, développeur Full Stack et Data Engineer. Mon parcours s’est construit entre missions agricoles, analyse de données et développement de produits numériques.
+              </p>
+              <p data-reveal>
+                J’interviens sur toute la chaîne de valeur de l’information : collecter, nettoyer, structurer, analyser, automatiser et transformer la donnée en outils utilisables.
+              </p>
+              <p data-reveal>
+                Côté data, je conçois des pipelines ETL, des modèles SQL et des systèmes de traitement destinés à rendre les données plus fiables et exploitables. Côté produit, je développe des applications web et mobiles et j’intègre l’IA lorsque l’automatisation apporte une réelle valeur.
+              </p>
+              <p data-reveal>
+                L’agriculture reste mon terrain de spécialisation privilégié : données de terrain, marchés agricoles, suivi-évaluation, systèmes d’information et Agritech.
+              </p>
+              <p data-reveal>
+                Mon objectif n’est pas d’ajouter de la technologie à un problème. C’est de construire la bonne solution à partir du problème.
+              </p>
+            </>
+          )}
         </div>
       </div>
     </section>
