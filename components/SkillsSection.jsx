@@ -4,7 +4,7 @@ const groups = [
   {
     number: "01",
     icon: Code2,
-    title: "Développement & Technologie",
+    title: "Produits & développement",
     skills: [
       "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
       "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",
@@ -23,7 +23,7 @@ const groups = [
   {
     number: "03",
     icon: LineChart,
-    title: "Agroéconomie & Data Analysis",
+    title: "Agroéconomie & Analyse",
     skills: [
       "R", "Stata", "SPSS", "Excel", "KoboToolbox", "ODK", "Power BI", "QGIS",
       "Économétrie", "Statistiques", "Suivi-évaluation", "Évaluation d'impact",
@@ -36,11 +36,10 @@ export default function SkillsSection() {
     <section className="skills" id="competences" aria-labelledby="skills-title">
       <div className="section-heading">
         <p className="eyebrow">Compétences & outils</p>
-        <h2 id="skills-title" data-anim="title">Les outils derrière <em>mes réalisations.</em></h2>
+        <h2 id="skills-title" data-anim="title">Des compétences qui <em>couvrent toute la chaîne.</em></h2>
       </div>
       <p className="skills-lead" data-anim="up">
-        Du développement d’applications au traitement statistique, en passant par la collecte de
-        terrain, voici l’environnement dans lequel je travaille au quotidien.
+        Collecter une donnée sur le terrain, construire son pipeline, l’analyser, développer l’application qui l’exploite et la déployer : mon environnement technique couvre le parcours complet de l’information jusqu’au produit.
       </p>
       <div className="skills-grid">
         {groups.map(({ number, icon: Icon, title, skills }) => (
