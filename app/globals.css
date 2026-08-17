@@ -2934,20 +2934,20 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 /* ---------- TakaCode : vitrine de la page dédiée ----------
-   Placée entre le hero sombre et `.agency-services` clair. Le fond sombre n'est
-   pas qu'une question de rythme : la capture montre une interface sombre, qui
-   flotterait comme un rectangle rapporté sur un fond clair. */
+   Fond clair, entre le hero sombre et `.agency-services`. Cette dernière est
+   clair elle aussi : la vitrine prend `--paper` et elle `--paper-soft`, ce léger
+   décalage plus la bordure évitent que les deux bandes se confondent. */
 .takacode-showcase {
   position: relative;
   padding: clamp(70px, 9vw, 130px) clamp(24px, 7.5vw, 132px);
   overflow: hidden;
-  color: var(--chalk);
-  background: radial-gradient(ellipse at 78% 20%, rgba(216, 169, 61, 0.14), transparent 60%), #0b0e10;
-  border-bottom: 1px solid var(--line-dark);
+  color: var(--ink);
+  background: radial-gradient(ellipse at 78% 20%, rgba(195, 130, 24, 0.12), transparent 60%), var(--paper);
+  border-bottom: 1px solid var(--line-light);
 }
 
 .takacode-showcase .eyebrow {
-  color: var(--gold-bright);
+  color: #6b675f;
 }
 
 .takacode-showcase-grid {
@@ -2970,8 +2970,11 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   letter-spacing: -0.045em;
 }
 
+/* `--gold` sur `--paper` ne donne que 2,8:1, sous le seuil de 3:1 du grand
+   texte. On reprend le doré assombri déjà employé par `.agency-services h2 em`
+   pour ce même cas. */
 .takacode-showcase-copy h2 em {
-  color: var(--gold-bright);
+  color: #8f5c0d;
   font-weight: 600;
   font-style: italic;
 }
@@ -2987,7 +2990,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-showcase-points li {
   position: relative;
   padding-left: 26px;
-  color: rgba(255, 255, 255, 0.72);
+  color: #3c4247;
   font-size: clamp(14px, 1.02vw, 16px);
   line-height: 1.6;
 }
@@ -2999,7 +3002,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   width: 14px;
   height: 1px;
   content: "";
-  background: var(--gold-bright);
+  background: var(--gold);
 }
 
 .takacode-showcase-media {
@@ -3010,16 +3013,16 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-showcase-frame {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(216, 169, 61, 0.28);
+  border: 1px solid rgba(195, 130, 24, 0.42);
   border-radius: 12px;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 26px 60px rgba(8, 11, 13, 0.18);
   transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
 }
 
 .takacode-showcase-frame:hover {
   transform: translateY(-4px);
-  border-color: var(--gold-bright);
-  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-color: var(--gold);
+  box-shadow: 0 34px 70px rgba(8, 11, 13, 0.24);
 }
 
 .takacode-showcase-img {
@@ -3033,33 +3036,35 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   align-items: center;
   gap: 9px;
   margin: 0;
-  color: var(--chalk);
+  color: var(--ink);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
+/* `--acid` sur fond clair passe sous les seuils de contraste : la pastille
+   « en service » prend un vert qui tient sur le papier. */
 .takacode-showcase-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--acid);
-  box-shadow: 0 0 0 0 rgba(198, 238, 67, 0.55);
+  background: #2f9e5a;
+  box-shadow: 0 0 0 0 rgba(47, 158, 90, 0.5);
   animation: takacode-showcase-pulse 2s ease-out infinite;
 }
 
 .takacode-showcase-note {
   max-width: 46ch;
   margin: 12px 0 0;
-  color: rgba(255, 255, 255, 0.55);
+  color: #6b675f;
   font-size: clamp(13.5px, 1vw, 15px);
   line-height: 1.7;
 }
 
 @keyframes takacode-showcase-pulse {
-  70% { box-shadow: 0 0 0 9px rgba(198, 238, 67, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(198, 238, 67, 0); }
+  70% { box-shadow: 0 0 0 9px rgba(47, 158, 90, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 158, 90, 0); }
 }
 
 /* Le logo remplace un <img> à hauteur fixe sans dimensions : next/image réserve
