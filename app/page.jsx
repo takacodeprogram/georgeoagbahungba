@@ -47,9 +47,9 @@ export default function Home() {
       <section className="projects" id="projets" aria-labelledby="projects-title">
         <div className="section-heading">
           <p className="eyebrow">Projets & produits</p>
-          <h2 id="projects-title">Des idées rendues <em>tangibles.</em></h2>
+          <h2 id="projects-title">Des problèmes transformés <em>en produits.</em></h2>
         </div>
-        <p className="projects-lead">Une sélection de projets conçus pour répondre à des besoins concrets, explorer de nouveaux usages et transformer des idées en produits fonctionnels.</p>
+        <p className="projects-lead">Applications, plateformes, automatisations et expérimentations : une sélection de projets où la donnée et la technologie répondent à un besoin concret.</p>
         <ProjectShowcase />
         <Link className="projects-link" href="/projets">Explorer les projets <ArrowUpRight aria-hidden="true" /></Link>
       </section>

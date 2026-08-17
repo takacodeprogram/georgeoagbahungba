@@ -38,10 +38,9 @@ export default function NewsletterSection() {
       <div className="newsletter-inner">
         <div className="newsletter-copy">
           <p className="eyebrow">Newsletter</p>
-          <h2 id="newsletter-title">Restez en veille, <em>de l’analyse au produit.</em></h2>
+          <h2 id="newsletter-title">À l’intersection du terrain, <em>de la data et du produit.</em></h2>
           <p className="newsletter-lead">
-            Agroéconomie, data, IA et développement : recevez les nouveautés et ressources de temps en temps.
-            Pas de spam, désinscription à tout moment.
+            Je partage mes expérimentations, projets, ressources et réflexions autour de l’Agritech, de la donnée, de l’IA et du développement numérique.
           </p>
         </div>
         <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
@@ -51,13 +50,13 @@ export default function NewsletterSection() {
               id="newsletter-email"
               type="email"
               required
-              placeholder="votre@email.com"
+              placeholder="Votre e-mail"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               disabled={status === "loading"}
             />
             <button type="submit" disabled={status === "loading"}>
-              {status === "loading" ? "Envoi…" : "Je m’inscris"}
+              {status === "loading" ? "Envoi…" : "Suivre mes travaux"}
             </button>
           </div>
           {status === "success" && <p className="newsletter-feedback is-ok" role="status">{message}</p>}

@@ -22,11 +22,11 @@ export const contact = {
 };
 
 export const projects = [
-  { name: "TakaCode", url: "https://takacode.app", image: "/media/project-takacode.webp", category: "Produit IA", code: "TK", sectors: ["web-mobile", "ia-auto"], description: "Plateforme qui accompagne la création de projets numériques et l’apprentissage par la pratique avec l’IA.", tags: ["IA", "EdTech", "Produit"] },
-  { name: "Musimaps", url: "https://musimaps.app", image: "/media/project-musimaps.webp", category: "Cartographie & Culture", code: "MM", sectors: ["web-mobile", "data-agri"], description: "Application web et mobile pour explorer les artistes et les cultures musicales à travers une cartographie interactive.", tags: ["Web", "Mobile", "Géodata"] },
-  { name: "Lokali", url: "https://lokali.bj", image: "/media/project-lokali.webp", category: "Plateforme locale", code: "LO", sectors: ["web-mobile", "data-agri"], description: "Plateforme béninoise de consultation des prix agricoles : données du marché, recherche et filtres pour suivre les produits au Bénin.", tags: ["Web", "Prix agricoles", "Bénin"] },
+  { name: "TakaCode", url: "https://takacode.app", image: "/media/project-takacode.webp", category: "Produit IA", code: "TK", sectors: ["web-mobile", "ia-auto"], description: "Passer d’une idée à un projet numérique structuré avec l’appui de l’IA et l’apprentissage par la pratique.", tags: ["IA", "EdTech", "Produit"] },
+  { name: "Musimaps", url: "https://musimaps.app", image: "/media/project-musimaps.webp", category: "Cartographie & Culture", code: "MM", sectors: ["web-mobile", "data-agri"], description: "Explorer la musique autrement grâce à une cartographie interactive des artistes, scènes et cultures musicales.", tags: ["Web", "Mobile", "Géodata"] },
+  { name: "Lokali", url: "https://lokali.bj", image: "/media/project-lokali.webp", category: "Plateforme locale", code: "LO", sectors: ["web-mobile", "data-agri"], description: "Rendre les prix agricoles plus accessibles pour mieux comprendre les marchés et comparer les produits au Bénin.", tags: ["Web", "Prix agricoles", "Bénin"] },
   { name: "Collecte agricole IA", url: null, category: "Agritech & Data", code: "AI", sectors: ["ia-auto", "data-agri"], description: "Solution de collecte terrain offline et géolocalisée pour suivre, analyser et exploiter les données agricoles.", tags: ["Agritech", "Data", "IA"] },
-  { name: "Content Factory", url: "https://content-factory-rose.vercel.app/login", image: "/media/project-contentfactory.webp", category: "IA & Automatisation", code: "CF", sectors: ["web-mobile", "ia-auto"], description: "Système intelligent pour générer, valider, planifier et diffuser du contenu sur plusieurs canaux.", tags: ["IA", "Automatisation", "Contenu"] },
+  { name: "Content Factory", url: "https://content-factory-rose.vercel.app/login", image: "/media/project-contentfactory.webp", category: "IA & Automatisation", code: "CF", sectors: ["web-mobile", "ia-auto"], description: "Automatiser la chaîne éditoriale, de la génération du contenu jusqu’à sa validation, sa planification et sa diffusion.", tags: ["IA", "Automatisation", "Contenu"] },
   { name: "ANOPER — Cartes membres", url: "https://anoper.bj/card-create-system/", category: "Solution métier", code: "AN", sectors: ["web-mobile"], description: "Plateforme de gestion pour générer, administrer et exporter les cartes des membres de l’association.", tags: ["Association", "Gestion", "Digitalisation"] },
   { name: "Plateforme filière soja", url: "https://platformparcsojaidid-dqhk.vercel.app/", category: "Agritech", code: "SO", sectors: ["web-mobile", "data-agri"], description: "Ressources éducatives pour les acteurs de la filière soja et modernisation de la présence numérique d’IDID.", tags: ["Agritech", "Filière", "Digitalisation"] },
   { name: "Ire Ayodé", url: "https://ireayode.bj", category: "Data agricole", code: "IA", sectors: ["data-agri"], description: "Visualisation des données KoboCollect des coopératives d’anacarde dans les Collines du Bénin.", tags: ["Coopératives", "Data", "Terrain"] },
@@ -40,18 +40,18 @@ export const projects = [
 ];
 
 export const cvs = [
-  { title: "Agroéconomie", subtitle: "Économie rurale · Data · Agritech", description: "Parcours académique, expériences terrain, analyse de données, suivi-évaluation et projets agricoles.", fr: "/cv/CV_Agroeconomiste_FR.pdf", en: "/cv/CV_Agroeconomiste_EN.pdf", number: "01" },
-  { title: "Développement", subtitle: "Full Stack · IA · Produit", description: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.", fr: "/cv/CV_Developpeur_FR.pdf", en: "/cv/CV_Developpeur_EN.pdf", number: "02" },
-  { title: "Data Engineering", subtitle: "Collecte · Pipelines · Décision", description: "Chaîne de vie de la donnée agricole : conception des enquêtes, contrôle qualité, modélisation et restitution.", fr: "/cv/CV_DataEngineer_FR.pdf", en: "/cv/CV_DataEngineer_EN.pdf", number: "03" },
-  { title: "Profil complet", subtitle: "Agroéconomie · Tech · Data", description: "Une vision complète de mon parcours, de mes compétences et de mes expériences professionnelles.", fr: "/cv/CV_Complet_FR.pdf", en: "/cv/CV_Complet_EN.pdf", number: "04" },
+  { title: "Agroéconomie & Agritech", subtitle: "Terrain · Économie rurale · Data · Suivi-évaluation", description: "Parcours académique, expériences terrain, analyse de données, suivi-évaluation et projets agricoles.", fr: "/cv/CV_Agroeconomiste_FR.pdf", en: "/cv/CV_Agroeconomiste_EN.pdf", number: "01" },
+  { title: "Développement & Produit", subtitle: "Full Stack · Mobile · IA · Automatisation", description: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.", fr: "/cv/CV_Developpeur_FR.pdf", en: "/cv/CV_Developpeur_EN.pdf", number: "02" },
+  { title: "Data Engineering", subtitle: "Collecte · ETL · SQL · Qualité · Décision", description: "Chaîne de vie de la donnée agricole : conception des enquêtes, contrôle qualité, modélisation et restitution.", fr: "/cv/CV_DataEngineer_FR.pdf", en: "/cv/CV_DataEngineer_EN.pdf", number: "03" },
+  { title: "Profil multidisciplinaire", subtitle: "Agroéconomie · Data · Technologie", description: "Une vision complète de mon parcours, de mes compétences et de mes expériences professionnelles.", fr: "/cv/CV_Complet_FR.pdf", en: "/cv/CV_Complet_EN.pdf", number: "04" },
 ];
 
 export const journey = [
   { period: "2015 — 2020", role: "Terrain & développement rural", org: "REV-Développement · APECDI", detail: "Enquêtes de terrain, animation de filières et suivi-évaluation des projets de développement." },
   { period: "2019 — 2022", role: "Développeur web freelance", org: "Digital Process & clients", detail: "Conception et livraison de sites, plateformes métiers et produits numériques de bout en bout." },
   { period: "2020 — aujourd’hui", role: "Fondateur — Solutions Luciole", org: "Solutions Luciole", detail: "Pilotage de produits numériques à la rencontre de l’analyse, du code et de la donnée." },
-  { period: "2023 — aujourd’hui", role: "Direction produit & IA", org: "TakaCode · Musimaps", detail: "Applications, agents IA et exploration cartographique de la musique, apprentissage par la pratique." },
-  { period: "2024 — 2026", role: "Data, Agritech & IA", org: "Missions & clients Agritech", detail: "Audits, enquêtes agricoles, plateformes de filières et automatisations intelligentes spécialisées." },
+  { period: "2023 — aujourd’hui", role: "Produits numériques & IA", org: "TakaCode · Musimaps", detail: "Applications, agents IA et exploration cartographique de la musique, apprentissage par la pratique." },
+  { period: "2024 — 2026", role: "Data agricole, Agritech & automatisation", org: "Missions & clients Agritech", detail: "Audits, enquêtes agricoles, plateformes de filières et automatisations intelligentes spécialisées." },
 ];
 
 export const skills = {

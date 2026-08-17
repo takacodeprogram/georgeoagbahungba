@@ -4,10 +4,10 @@ import { journey, projects } from "@/data/portfolio";
 // Le nombre de projets suit la liste réelle, et les domaines suivent les trois
 // groupes de compétences affichés plus haut.
 const metrics = [
-  { value: "7+", label: "Années en agronomie" },
-  { value: "6+", label: "Années en développement" },
-  { value: `${projects.length}+`, label: "Projets réalisés" },
-  { value: "03", label: "Domaines d'expertise" },
+  { value: "7+", label: "Années dans le secteur agricole" },
+  { value: "6+", label: "Années de développement" },
+  { value: `${projects.length}+`, label: "Projets & produits" },
+  { value: "3", label: "Expertises complémentaires" },
 ];
 
 export default function JourneySection() {
@@ -16,7 +16,7 @@ export default function JourneySection() {
       <div className="journey-intro">
         <p className="eyebrow">Expériences</p>
         <h2 id="journey-title" data-anim="title">Des expériences qui ont<br /><em>construit ma pratique.</em></h2>
-        <p>Missions de terrain, développement logiciel, traitement de données : chaque étape a laissé une manière de travailler que je continue d'appliquer.</p>
+        <p>Du terrain agricole au développement logiciel, puis de la donnée aux produits numériques : chaque expérience a ajouté une pièce à une même pratique — comprendre, structurer et construire.</p>
       </div>
       <div className="metric-strip">
         {metrics.map(({ value, label }) => <AnimatedMetric value={value} label={label} key={label} />)}

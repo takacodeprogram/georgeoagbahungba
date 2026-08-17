@@ -7,9 +7,9 @@ export default function CvSection() {
     <section className="cv-section" id="cv" aria-labelledby="cv-title">
       <div className="section-heading cv-heading">
         <p className="eyebrow" data-anim="up">Mon parcours</p>
-        <h2 id="cv-title" data-anim="title">Le profil qui correspond<br /><em>à votre besoin.</em></h2>
+        <h2 id="cv-title" data-anim="title">Un parcours.<br /><em>Plusieurs angles de lecture.</em></h2>
       </div>
-      <p className="cv-lead" data-anim="up">Mon parcours couvre plusieurs domaines. Retrouvez une version de mon CV adaptée au contexte qui vous intéresse.</p>
+      <p className="cv-lead" data-anim="up">Agroéconomie, développement, Data Engineering : choisissez la version de mon parcours la plus pertinente pour votre contexte.</p>
       <div className="cv-grid">
         {cvs.map((cv) => (
           <article className="cv-card" data-anim="card" key={cv.title}>

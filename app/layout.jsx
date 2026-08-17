@@ -10,11 +10,11 @@ import CustomCursor from "@/components/CustomCursor";
 export const metadata = {
   metadataBase: new URL("https://georgeo-agbahungba.xyz"),
   title: {
-    default: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    default: "Georgeo Agbahungba — Du terrain au produit",
     template: "%s — Georgeo Agbahungba",
   },
   description:
-    "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
+    "Je transforme les problèmes, les données et les idées en solutions numériques exploitables. Agroéconomie, Data Engineering et Développement.",
   keywords: [
     "Georgeo Agbahungba",
     "Agroéconomiste",
@@ -40,15 +40,15 @@ export const metadata = {
     alternateLocale: "en_US",
     url: "https://georgeo-agbahungba.xyz",
     siteName: "Georgeo Agbahungba",
-    title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    title: "Georgeo Agbahungba — Du terrain au produit",
     description:
-      "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
+      "Je transforme les problèmes, les données et les idées en solutions numériques exploitables. Agroéconomie, Data Engineering et Développement.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Georgeo Agbahungba — Analyser. Innover. Développer.",
+        alt: "Georgeo Agbahungba — Du terrain au produit",
       },
     ],
   },
@@ -56,9 +56,9 @@ export const metadata = {
     card: "summary_large_image",
     site: "@r_agbahungba",
     creator: "@r_agbahungba",
-    title: "Georgeo Agbahungba — Agroéconomie, Agritech & Développement",
+    title: "Georgeo Agbahungba — Du terrain au produit",
     description:
-      "Agroéconomiste et développeur Full Stack à Cotonou. Je relie l’économie agricole, le code et la donnée pour construire des outils qui servent au quotidien.",
+      "Je transforme les problèmes, les données et les idées en solutions numériques exploitables. Agroéconomie, Data Engineering et Développement.",
     images: ["/og-image.png"],
   },
   robots: {

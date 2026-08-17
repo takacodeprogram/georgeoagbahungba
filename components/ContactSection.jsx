@@ -4,13 +4,13 @@ import { contact } from "@/data/portfolio";
 export default function ContactSection() {
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
-      <div className="contact-orbit" aria-hidden="true"><span>AGRO</span><span>CODE</span><span>DATA</span><span>IA</span></div>
-      <p className="eyebrow">Une idée, un besoin, un défi ?</p>
-      <h2 id="contact-title" data-anim="title">Faisons grandir<br /><em>votre prochain projet.</em></h2>
-      <p className="contact-lead">Un outil à construire, un processus à digitaliser, des données à exploiter, ou simplement une idée à confronter ? Écrivez-moi.</p>
+      <div className="contact-orbit" aria-hidden="true"><span>TERRAIN</span><span>DATA</span><span>PRODUIT</span></div>
+      <p className="eyebrow">Vous avez le problème. Construisons la solution.</p>
+      <h2 id="contact-title" data-anim="title">Un problème à comprendre.<br />Des données à structurer.<br /><em>Un produit à construire.</em></h2>
+      <p className="contact-lead">Données à exploiter, processus à automatiser, application à construire ou projet Agritech à structurer : expliquez-moi le besoin. Nous partirons de là.</p>
       <div className="contact-grid">
         <a className="contact-primary" href={contact.whatsapp} target="_blank" rel="noreferrer">
-          <MessageCircle aria-hidden="true" /><span>Discuter sur WhatsApp<small>{contact.phoneDisplay}</small></span><ArrowUpRight aria-hidden="true" />
+          <MessageCircle aria-hidden="true" /><span>Discuter de mon projet<small>{contact.phoneDisplay}</small></span><ArrowUpRight aria-hidden="true" />
         </a>
         <a href={`mailto:${contact.email}`}><Mail aria-hidden="true" /><span>E-mail<small>{contact.email}</small></span></a>
         <a href="tel:+2290167659717"><Phone aria-hidden="true" /><span>Téléphone<small>{contact.phoneDisplay}</small></span></a>
