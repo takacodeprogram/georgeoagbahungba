@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createRemoteJWKSet, jwtVerify } from "jose";
 
-// Créer le vérificateur JWKS distant pour Neon Auth
 const JWKS = createRemoteJWKSet(
   new URL(
     process.env.NEON_AUTH_JWKS_URL ||
@@ -17,24 +16,24 @@ export async function middleware(request) {
     const token = request.cookies.get("takacode_auth");
 
     if (!token) {
-      // Rediriger vers l'écran de connexion Neon Auth managé
-      const loginUrl = `${process.env.NEON_AUTH_URL}/login?redirect_uri=${encodeURIComponent(
-        request.nextUrl.origin + "/api/auth/callback"
-      )}`;
-      return NextResponse.redirect(loginUrl);
+      // Rediriger vers la page login locale de notre site
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      url.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(url);
     }
 
     try {
-      // Valider le token JWT de Neon Auth via les clés JWKS publiques
+      // Valider le token JWT via JWKS
       await jwtVerify(token.value, JWKS);
       return NextResponse.next();
     } catch (err) {
       console.error("JWT verification failed:", err);
-      // Rediriger vers Neon Auth en cas d'expiration/erreur
-      const loginUrl = `${process.env.NEON_AUTH_URL}/login?redirect_uri=${encodeURIComponent(
-        request.nextUrl.origin + "/api/auth/callback"
-      )}`;
-      return NextResponse.redirect(loginUrl);
+      // Rediriger vers la page login locale en cas d'erreur
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      url.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(url);
     }
   }
 
