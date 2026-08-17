@@ -2924,55 +2924,183 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 }
 
 /* ---------- TakaCode Promo Section ---------- */
+.takacode-promo {
+  position: relative;
+  padding: clamp(90px, 11vw, 180px) clamp(24px, 7.5vw, 132px);
+  overflow: hidden;
+  scroll-margin-top: 92px;
+  color: #f8f5ed;
+  background: radial-gradient(ellipse at 82% 22%, rgba(216, 169, 61, 0.12), transparent 58%), #0b0e10;
+  border-top: 1px solid rgba(216, 169, 61, 0.22);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.takacode-promo .eyebrow {
+  color: var(--gold-bright);
+}
+
+.takacode-promo .section-heading h2 {
+  color: #f8f5ed;
+}
+
+.takacode-promo-heading {
+  margin-bottom: clamp(38px, 4.6vw, 62px);
+}
+
 .takacode-promo-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(40px, 6vw, 96px);
   align-items: center;
+}
+
+.takacode-promo-text {
+  min-width: 0;
+}
+
+.takacode-promo-subtitle {
+  margin: 0 0 18px;
+  font-family: "Plus Jakarta Sans Variable", sans-serif;
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.takacode-promo-copy {
+  max-width: 56ch;
+  margin: 0 0 26px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(15px, 1.12vw, 17.5px);
+  line-height: 1.78;
+}
+
+.takacode-promo-points {
+  margin: 0 0 34px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.takacode-promo-points li {
+  position: relative;
+  padding-left: 26px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(14px, 1.02vw, 16px);
+  line-height: 1.6;
+}
+
+.takacode-promo-points li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 14px;
+  height: 1px;
+  content: "";
+  background: var(--gold-bright);
+}
+
+.takacode-promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
 }
 
 .takacode-promo-media {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  min-width: 0;
+  margin: 0;
 }
 
-.takacode-promo-img-wrapper {
+.takacode-promo-frame {
   position: relative;
-  width: 100%;
-  maxWidth: 340px;
-  aspect-ratio: 16/10;
   overflow: hidden;
-  border-radius: 12px;
   border: 1px solid rgba(216, 169, 61, 0.25);
+  border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-bottom: 1.5rem;
+  transition: transform 320ms ease, border-color 320ms ease;
 }
 
-@media (max-width: 900px) {
-  .takacode-promo {
-    padding: 5rem 0 4rem !important;
-  }
+.takacode-promo-frame:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 169, 61, 0.5);
+}
+
+.takacode-promo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.takacode-promo-caption {
+  margin-top: 22px;
+}
+
+.takacode-promo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--chalk);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.takacode-promo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0 0 0 rgba(198, 238, 67, 0.55);
+  animation: takacode-promo-pulse 2s ease-out infinite;
+}
+
+.takacode-promo-caption p {
+  max-width: 46ch;
+  margin: 9px 0 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: clamp(13.5px, 1vw, 15px);
+  line-height: 1.7;
+}
+
+@keyframes takacode-promo-pulse {
+  70% { box-shadow: 0 0 0 9px rgba(198, 238, 67, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(198, 238, 67, 0); }
+}
+
+@media (max-width: 1050px) {
   .takacode-promo-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .takacode-promo-text {
-    text-align: center;
-  }
-  .takacode-promo-text h3 {
-    font-size: 1.6rem !important;
-  }
-  .takacode-promo-text p {
-    font-size: 0.95rem !important;
-  }
-  .takacode-promo-text div {
-    justify-content: center;
+    gap: clamp(34px, 6vw, 54px);
   }
   .takacode-promo-media {
-    align-items: center;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 520px) {
+  .takacode-promo-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .takacode-promo-actions .primary-action {
+    justify-content: center;
+  }
+  .takacode-promo-actions .text-action {
+    align-self: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .takacode-promo-frame,
+  .takacode-promo-frame:hover {
+    transform: none;
+    transition: none;
+  }
+  .takacode-promo-dot {
+    animation: none;
   }
 }

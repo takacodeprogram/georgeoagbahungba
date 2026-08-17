@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -57,45 +58,62 @@ export default function Home({ locale = "fr" }) {
       <JourneySection locale={locale} />
       <PortraitSection locale={locale} />
 
-      <section className="takacode-promo" id="takacode" aria-labelledby="takacode-promo-title" style={{ padding: "8rem 0 6rem", borderTop: "1px solid var(--border)", position: "relative", overflow: "hidden" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
-          <div className="section-heading" style={{ marginBottom: "3rem" }}>
-            <p className="eyebrow">{isEn ? "Ecosystem & Flagship Product" : "Écosystème & Produit Phare"}</p>
-            <h2>{isEn ? <>Discover <em>TakaCode.</em></> : <>Découvrez <em>TakaCode.</em></>}</h2>
-          </div>
-          <div className="takacode-promo-grid">
-            <div className="takacode-promo-text">
-              <h3 style={{ fontSize: "2rem", color: "var(--paper)", fontFamily: "var(--font-serif)", marginBottom: "1.5rem" }}>
-                {isEn ? "Learning by doing powered by AI" : "Apprendre par la pratique avec l'IA"}
-              </h3>
-              <p style={{ color: "var(--mud)", fontSize: "1.1rem", lineHeight: "1.7", marginBottom: "2rem" }}>
-                {isEn
-                  ? "TakaCode is a new kind of educational platform designed and developed by Georgeo Agbahungba. It guides the creation of real digital projects with the smart support of AI."
-                  : "TakaCode est une plateforme éducative d'un nouveau genre conçue et développée par Georgeo Agbahungba. Elle accompagne la création de projets numériques réels avec le soutien intelligent de l'IA."}
-              </p>
-              <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-                <Link className="primary-action" href={isEn ? "/en/takacode" : "/takacode"} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-                  {isEn ? "Explore TakaCode" : "Découvrir TakaCode"} <ArrowUpRight size={16} aria-hidden="true" />
-                </Link>
-                <a className="text-action" href="https://takacode.app" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-                  {isEn ? "Visit takacode.app" : "Visiter takacode.app"} <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              </div>
+      <section className="takacode-promo" id="takacode" aria-labelledby="takacode-promo-title">
+        <div className="section-heading takacode-promo-heading">
+          <p className="eyebrow">{isEn ? "Ecosystem & Flagship Product" : "Écosystème & Produit Phare"}</p>
+          <h2 id="takacode-promo-title">
+            {isEn ? <>Discover <em>TakaCode.</em></> : <>Découvrez <em>TakaCode.</em></>}
+          </h2>
+        </div>
+
+        <div className="takacode-promo-grid">
+          <div className="takacode-promo-text">
+            <h3 className="takacode-promo-subtitle">
+              {isEn ? "Learning by doing powered by AI" : "Apprendre par la pratique avec l’IA"}
+            </h3>
+            <p className="takacode-promo-copy">
+              {isEn
+                ? "TakaCode is a new kind of educational platform designed and developed by Georgeo Agbahungba. It guides the creation of real digital projects with the smart support of AI."
+                : "TakaCode est une plateforme éducative d’un nouveau genre conçue et développée par Georgeo Agbahungba. Elle accompagne la création de projets numériques réels avec le soutien intelligent de l’IA."}
+            </p>
+            <ul className="takacode-promo-points">
+              <li>{isEn ? "Guided tracks built around real projects" : "Des parcours guidés construits autour de projets réels"}</li>
+              <li>{isEn ? "AI support at every step of the build" : "Un accompagnement IA à chaque étape de la réalisation"}</li>
+              <li>{isEn ? "Web, mobile and automation, all the way to production" : "Web, mobile et automatisation, jusqu’à la mise en production"}</li>
+            </ul>
+            <div className="takacode-promo-actions">
+              <Link className="primary-action" href={isEn ? "/en/takacode" : "/takacode"}>
+                {isEn ? "Explore TakaCode" : "Découvrir TakaCode"} <ArrowUpRight aria-hidden="true" />
+              </Link>
+              <a className="text-action" href="https://takacode.app" target="_blank" rel="noreferrer">
+                {isEn ? "Visit takacode.app" : "Visiter takacode.app"} <ArrowUpRight aria-hidden="true" />
+              </a>
             </div>
-            <div className="takacode-promo-media">
-              <div className="takacode-promo-img-wrapper">
-                <img src="/media/project-takacode.webp" alt="TakaCode Screen Capture" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
-              <strong style={{ display: "block", color: "var(--paper)", fontSize: "1.2rem" }}>
+          </div>
+
+          <figure className="takacode-promo-media">
+            <div className="takacode-promo-frame">
+              <Image
+                src="/media/project-takacode.webp"
+                alt={isEn ? "The TakaCode platform home page" : "La page d’accueil de la plateforme TakaCode"}
+                width={1000}
+                height={507}
+                sizes="(max-width: 780px) 92vw, (max-width: 1050px) 88vw, 44vw"
+                className="takacode-promo-img"
+              />
+            </div>
+            <figcaption className="takacode-promo-caption">
+              <span className="takacode-promo-status">
+                <span className="takacode-promo-dot" aria-hidden="true" />
                 {isEn ? "Active Platform" : "Plateforme active"}
-              </strong>
-              <p style={{ color: "var(--mud)", fontSize: "0.95rem", marginTop: "0.5rem", margin: "0.5rem 0 0" }}>
+              </span>
+              <p>
                 {isEn
                   ? "A project-oriented approach to bringing web, mobile, and AI automation applications to life."
                   : "Une approche orientée projet pour concrétiser des applications web, mobiles et automatisations IA."}
               </p>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

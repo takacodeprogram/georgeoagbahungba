@@ -113,6 +113,17 @@ export default function Hero({ locale = "fr" }) {
   const isEn = locale === "en";
   const chapters = isEn ? chaptersEN : chaptersFR;
 
+  // Déclaré avant l'effet GSAP : il figure dans ses dépendances, donc le hook
+  // doit exister au moment où le corps du composant est évalué (SSR compris).
+  const [chapterOffset, setChapterOffset] = useState(-50);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 780px)");
+    const update = () => setChapterOffset(media.matches ? 0 : -50);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
   useEffect(() => {
     let dispose = () => {};
 
@@ -303,15 +314,6 @@ export default function Hero({ locale = "fr" }) {
     init();
     return () => dispose();
   }, [chapterOffset]);
-
-  const [chapterOffset, setChapterOffset] = useState(-50);
-  useEffect(() => {
-    const media = window.matchMedia("(max-width: 780px)");
-    const update = () => setChapterOffset(media.matches ? 0 : -50);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
 
   useEffect(() => {
     const header = navRef.current;
