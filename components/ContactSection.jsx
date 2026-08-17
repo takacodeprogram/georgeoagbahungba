@@ -6,7 +6,7 @@ export default function ContactSection() {
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
       <div className="contact-orbit" aria-hidden="true"><span>TERRAIN</span><span>DATA</span><span>PRODUIT</span></div>
       <p className="eyebrow">Vous avez le problème. Construisons la solution.</p>
-      <h2 id="contact-title" data-anim="title">Un problème à comprendre.<br />Des données à structurer.<br /><em>Un produit à construire.</em></h2>
+      <h2 id="contact-title" data-anim="title">Le besoin.<br />La donnée.<br /><em>La solution.</em></h2>
       <p className="contact-lead">Données à exploiter, processus à automatiser, application à construire ou projet Agritech à structurer : expliquez-moi le besoin. Nous partirons de là.</p>
       <div className="contact-grid">
         <a className="contact-primary" href={contact.whatsapp} target="_blank" rel="noreferrer">
