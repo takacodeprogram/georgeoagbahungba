@@ -88,6 +88,37 @@ export default function Home() {
         <Link className="projects-link" href="/projets">Explorer les projets <ArrowUpRight aria-hidden="true" /></Link>
       </section>
 
+      <section className="branding-promo" style={{ padding: "8rem 0 6rem", borderTop: "1px solid var(--border)", background: "#080b0d", color: "#f8f5ed", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+          <div className="section-heading" style={{ marginBottom: "3rem" }}>
+            <p className="eyebrow" style={{ color: "var(--gold)" }}>Outil de Design interne</p>
+            <h2 id="branding-promo-title" style={{ color: "#f8f5ed" }}>Le Studio <em>de Branding.</em></h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+            <div style={{ position: "relative", border: "1px dashed rgba(216,169,61,0.3)", padding: "3rem", borderRadius: "16px", background: "rgba(0,0,0,0.3)" }}>
+              <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem" }}>
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ff5f56" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ffbd2e" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#27c93f" }} />
+              </div>
+              <strong style={{ fontSize: "1.4rem", color: "var(--gold)", display: "block", fontFamily: "var(--font-serif)", marginBottom: "0.8rem" }}>Créateur de cartes réseaux sociaux</strong>
+              <p style={{ color: "var(--mud)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+                Choisissez votre format (carré, vertical, paysage), chargez vos images, configurez vos textes et téléchargez des visuels prêts à publier aux couleurs de TakaCode ou Georgeo Agbahungba.
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize: "2rem", color: "#f8f5ed", fontFamily: "var(--font-serif)", marginBottom: "1.5rem" }}>Générez vos cartes & bannières en un clic</h3>
+              <p style={{ color: "var(--mud)", fontSize: "1.1rem", lineHeight: "1.7", marginBottom: "2rem" }}>
+                Un studio en ligne autonome conçu pour maintenir la cohérence de l’identité visuelle sur LinkedIn, X et Instagram.
+              </p>
+              <Link className="primary-action" href="/branding-studio" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                Ouvrir le Studio <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CvSection />
       <NewsletterSection />
       <ContactSection />

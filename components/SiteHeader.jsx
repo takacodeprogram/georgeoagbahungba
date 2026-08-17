@@ -11,6 +11,7 @@ const links = [
   { href: "/#parcours", label: "Parcours", hash: "#parcours" },
   { href: "/#projets", label: "Projets", hash: "#projets" },
   { href: "/takacode", label: "TakaCode", path: "/takacode" },
+  { href: "/branding-studio", label: "Studio", path: "/branding-studio" },
   { href: "/cv", label: "CV", path: "/cv" },
   { href: "/agency", label: "Agency", path: "/agency" },
 ];

@@ -7,6 +7,30 @@
 }
 
 @font-face {
+  font-family: "Valorax";
+  src: url("/fonts/valorax.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Venite Adoremus";
+  src: url("/fonts/venite_adoremus.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Venite Adoremus Straight";
+  src: url("/fonts/venite_adoremus_straight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "DeadStock";
   src: url("/fonts/DeadStock-Demo.ttf") format("truetype");
   font-style: normal;
