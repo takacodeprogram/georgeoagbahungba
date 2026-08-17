@@ -83,14 +83,38 @@ const TEMPLATES = [
         ctx.strokeStyle = data.colors.accent;
         ctx.lineWidth = 2;
         ctx.strokeRect(ix - 5, iy - 5, imgSize + 10, imgSize + 10);
-        ctx.drawImage(customImg, ix, iy, imgSize, imgSize);
+
+        // object-fit: cover simulation
+        const imgRatio = customImg.width / customImg.height;
+        let sWidth = customImg.width;
+        let sHeight = customImg.height;
+        let sx = 0;
+        let sy = 0;
+        if (imgRatio > 1) {
+          sWidth = customImg.height;
+          sx = (customImg.width - sWidth) / 2;
+        } else {
+          sHeight = customImg.width;
+          sy = (customImg.height - sHeight) / 2;
+        }
+
+        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, ix, iy, imgSize, imgSize);
         ctx.restore();
       } else if (logoImg) {
         // Logo central par défaut
         const logoSize = Math.min(width, height) * 0.28;
-        const lx = (width - logoSize) / 2;
-        const ly = height * 0.22;
-        ctx.drawImage(logoImg, lx, ly, logoSize, logoSize);
+        // calcul pour éviter la déformation du logo
+        const logoRatio = logoImg.width / logoImg.height;
+        let dWidth = logoSize;
+        let dHeight = logoSize;
+        if (logoRatio > 1) {
+          dHeight = logoSize / logoRatio;
+        } else {
+          dWidth = logoSize * logoRatio;
+        }
+        const lx = (width - dWidth) / 2;
+        const ly = height * 0.22 + (logoSize - dHeight) / 2;
+        ctx.drawImage(logoImg, lx, ly, dWidth, dHeight);
       }
 
       // Typographies & Textes
@@ -172,7 +196,22 @@ const TEMPLATES = [
         ctx.arc(cx, cy, imgSize / 2, 0, Math.PI * 2);
         ctx.closePath();
         ctx.clip();
-        ctx.drawImage(customImg, cx - imgSize / 2, cy - imgSize / 2, imgSize, imgSize);
+
+        // object-fit: cover simulation
+        const imgRatio = customImg.width / customImg.height;
+        let sWidth = customImg.width;
+        let sHeight = customImg.height;
+        let sx = 0;
+        let sy = 0;
+        if (imgRatio > 1) {
+          sWidth = customImg.height;
+          sx = (customImg.width - sWidth) / 2;
+        } else {
+          sHeight = customImg.width;
+          sy = (customImg.height - sHeight) / 2;
+        }
+
+        ctx.drawImage(customImg, sx, sy, sWidth, sHeight, cx - imgSize / 2, cy - imgSize / 2, imgSize, imgSize);
         ctx.restore();
         
         // Bord doré circulaire brillant
@@ -183,9 +222,17 @@ const TEMPLATES = [
         ctx.stroke();
       } else if (logoImg) {
         const logoSize = Math.min(width, height) * 0.32;
-        const lx = (width - logoSize) / 2;
-        const ly = height * 0.35 - (logoSize / 2);
-        ctx.drawImage(logoImg, lx, ly, logoSize, logoSize);
+        const logoRatio = logoImg.width / logoImg.height;
+        let dWidth = logoSize;
+        let dHeight = logoSize;
+        if (logoRatio > 1) {
+          dHeight = logoSize / logoRatio;
+        } else {
+          dWidth = logoSize * logoRatio;
+        }
+        const lx = (width - dWidth) / 2;
+        const ly = height * 0.35 - (dHeight / 2);
+        ctx.drawImage(logoImg, lx, ly, dWidth, dHeight);
       }
 
       // Textes
