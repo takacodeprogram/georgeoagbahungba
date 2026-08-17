@@ -3,7 +3,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import CapRotationStory from "@/components/CapRotationStory";
 import SkillsSection from "@/components/SkillsSection";
-import PortraitSection from "@/components/PortraitSection";
 import PageLoader from "@/components/PageLoader";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import CvSection from "@/components/CvSection";
@@ -53,7 +52,6 @@ export default function Home({ locale = "fr" }) {
       </section>
 
       <JourneySection locale={locale} />
-      <PortraitSection locale={locale} />
 
       <section className="projects" id="projets" aria-labelledby="projects-title">
         <div className="section-heading">
