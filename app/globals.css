@@ -744,7 +744,9 @@ button {
 
 .method-principles {
   display: grid;
-  gap: 26px;
+  /* Les deux lignes forment une seule phrase : elles doivent se lire
+     collées, pas comme deux paragraphes distincts. */
+  gap: clamp(2px, 0.4vw, 6px);
 }
 
 .method-principle {
@@ -2929,18 +2931,26 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   padding: clamp(90px, 11vw, 180px) clamp(24px, 7.5vw, 132px);
   overflow: hidden;
   scroll-margin-top: 92px;
-  color: #f8f5ed;
-  background: radial-gradient(ellipse at 82% 22%, rgba(216, 169, 61, 0.12), transparent 58%), #0b0e10;
-  border-top: 1px solid rgba(216, 169, 61, 0.22);
-  border-bottom: 1px solid var(--line-dark);
+  color: var(--ink);
+  background: radial-gradient(ellipse at 82% 18%, rgba(195, 130, 24, 0.12), transparent 58%), var(--paper);
+  border-top: 1px solid rgba(195, 130, 24, 0.32);
+  border-bottom: 1px solid rgba(8, 11, 13, 0.1);
 }
 
 .takacode-promo .eyebrow {
-  color: var(--gold-bright);
+  color: #6b675f;
 }
 
 .takacode-promo .section-heading h2 {
-  color: #f8f5ed;
+  color: var(--ink);
+}
+
+.takacode-promo .section-heading h2 em {
+  color: var(--gold);
+}
+
+.takacode-promo .text-action {
+  border-bottom-color: rgba(8, 11, 13, 0.3);
 }
 
 .takacode-promo-heading {
@@ -2970,7 +2980,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-promo-copy {
   max-width: 56ch;
   margin: 0 0 26px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--ink-muted);
   font-size: clamp(15px, 1.12vw, 17.5px);
   line-height: 1.78;
 }
@@ -2986,7 +2996,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-promo-points li {
   position: relative;
   padding-left: 26px;
-  color: rgba(255, 255, 255, 0.72);
+  color: #3c4247;
   font-size: clamp(14px, 1.02vw, 16px);
   line-height: 1.6;
 }
@@ -2998,7 +3008,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   width: 14px;
   height: 1px;
   content: "";
-  background: var(--gold-bright);
+  background: var(--gold);
 }
 
 .takacode-promo-actions {
@@ -3016,15 +3026,16 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 .takacode-promo-frame {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(216, 169, 61, 0.25);
+  border: 1px solid rgba(195, 130, 24, 0.42);
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: transform 320ms ease, border-color 320ms ease;
+  box-shadow: 0 26px 60px rgba(8, 11, 13, 0.16);
+  transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
 }
 
 .takacode-promo-frame:hover {
   transform: translateY(-4px);
-  border-color: rgba(216, 169, 61, 0.5);
+  border-color: var(--gold);
+  box-shadow: 0 34px 70px rgba(8, 11, 13, 0.2);
 }
 
 .takacode-promo-img {
@@ -3041,7 +3052,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: var(--chalk);
+  color: var(--ink);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -3052,22 +3063,22 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--acid);
-  box-shadow: 0 0 0 0 rgba(198, 238, 67, 0.55);
+  background: #2f9e5a;
+  box-shadow: 0 0 0 0 rgba(47, 158, 90, 0.5);
   animation: takacode-promo-pulse 2s ease-out infinite;
 }
 
 .takacode-promo-caption p {
   max-width: 46ch;
   margin: 9px 0 0;
-  color: rgba(255, 255, 255, 0.55);
+  color: #6b675f;
   font-size: clamp(13.5px, 1vw, 15px);
   line-height: 1.7;
 }
 
 @keyframes takacode-promo-pulse {
-  70% { box-shadow: 0 0 0 9px rgba(198, 238, 67, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(198, 238, 67, 0); }
+  70% { box-shadow: 0 0 0 9px rgba(47, 158, 90, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 158, 90, 0); }
 }
 
 @media (max-width: 1050px) {
