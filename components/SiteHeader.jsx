@@ -10,6 +10,7 @@ const links = [
   { href: "/#competences", label: "Compétences", hash: "#competences" },
   { href: "/#parcours", label: "Parcours", hash: "#parcours" },
   { href: "/#projets", label: "Projets", hash: "#projets" },
+  { href: "/takacode", label: "TakaCode", path: "/takacode" },
   { href: "/cv", label: "CV", path: "/cv" },
   { href: "/agency", label: "Agency", path: "/agency" },
 ];

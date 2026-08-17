@@ -44,6 +44,38 @@ export default function Home() {
       <JourneySection />
       <PortraitSection />
 
+      <section className="takacode-promo" id="takacode" aria-labelledby="takacode-promo-title" style={{ padding: "8rem 0 6rem", borderTop: "1px solid var(--border)", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
+          <div className="section-heading" style={{ marginBottom: "3rem" }}>
+            <p className="eyebrow">Écosystème & Produit Phare</p>
+            <h2 id="takacode-promo-title">Découvrez <em>TakaCode.</em></h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "4rem", alignItems: "center" }}>
+            <div>
+              <h3 style={{ fontSize: "2rem", color: "var(--paper)", fontFamily: "var(--font-serif)", marginBottom: "1.5rem" }}>Apprendre par la pratique avec l'IA</h3>
+              <p style={{ color: "var(--mud)", fontSize: "1.1rem", lineHeight: "1.7", marginBottom: "2rem" }}>
+                TakaCode est une plateforme éducative d'un nouveau genre conçue et développée par Georgeo Agbahungba. Elle accompagne la création de projets numériques réels avec le soutien intelligent de l'IA.
+              </p>
+              <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+                <Link className="primary-action" href="/takacode" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  Découvrir TakaCode <ArrowUpRight size={16} aria-hidden="true" />
+                </Link>
+                <a className="text-action" href="https://takacode.app" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+                  Visiter takacode.app <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+            <div style={{ position: "relative", background: "radial-gradient(circle, rgba(216,169,61,0.12) 0%, transparent 70%)", padding: "3rem", borderRadius: "16px", border: "1px solid var(--border)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <span style={{ fontSize: "4.5rem", color: "var(--gold)", fontWeight: "300", lineHeight: "1", fontFamily: "var(--font-serif)" }}>TK</span>
+              <strong style={{ display: "block", marginTop: "1rem", color: "var(--paper)", fontSize: "1.2rem" }}>Plateforme active</strong>
+              <p style={{ color: "var(--mud)", fontSize: "0.95rem", marginTop: "0.5rem", margin: "0.5rem 0 0" }}>
+                Une approche orientée projet pour concrétiser des applications web, mobiles et automatisations IA.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="projects" id="projets" aria-labelledby="projects-title">
         <div className="section-heading">
           <p className="eyebrow">Projets & produits</p>
