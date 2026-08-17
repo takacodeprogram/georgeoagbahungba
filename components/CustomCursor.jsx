@@ -40,9 +40,58 @@ export default function CustomCursor() {
         moveRingY(event.clientY);
       };
 
+      // ---- Contraste sur les surfaces dorées ---------------------------
+      // Le curseur est doré : sur la section contact ou un bouton primaire, il
+      // se fond dans le fond. On le repasse alors en encre, la couleur que ces
+      // surfaces donnent déjà à leur texte.
+      const isGold = (r, g, b) => {
+        const max = Math.max(r, g, b) / 255;
+        const min = Math.min(r, g, b) / 255;
+        const light = (max + min) / 2;
+        if (light < 0.38) return false;
+        const delta = max - min;
+        if (!delta) return false;
+        const sat = delta / (1 - Math.abs(2 * light - 1));
+        if (sat < 0.35) return false;
+        let hue = 0;
+        if (max === r / 255) hue = ((g - b) / 255 / delta) % 6;
+        else if (max === g / 255) hue = (b - r) / 255 / delta + 2;
+        else hue = (r - g) / 255 / delta + 4;
+        hue *= 60;
+        if (hue < 0) hue += 360;
+        return hue >= 28 && hue <= 56;
+      };
+
+      // On remonte jusqu'au premier fond réellement opaque : c'est lui qu'on voit.
+      const onGoldSurface = (node) => {
+        for (let el = node; el && el !== document.documentElement; el = el.parentElement) {
+          const parts = getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
+          if (!parts) continue;
+          const [r, g, b, a = 1] = parts.map(Number);
+          if (a < 0.5) continue;
+          return isGold(r, g, b);
+        }
+        return false;
+      };
+
+      let toneTimer = 0;
+      const syncTone = (node) => {
+        const gold = onGoldSurface(node);
+        dot.classList.toggle("is-on-gold", gold);
+        ring.classList.toggle("is-on-gold", gold);
+      };
+      const onOverTone = (event) => {
+        // Certaines cibles ne virent au doré qu'au survol, via une transition :
+        // on repasse une fois celle-ci terminée.
+        window.clearTimeout(toneTimer);
+        const { target } = event;
+        toneTimer = window.setTimeout(() => syncTone(target), 240);
+      };
+
       const interactive = "a, button, [role='tab'], input, textarea, [data-magnetic]";
       const onOver = (event) => {
         if (event.target.closest(interactive)) ring.classList.add("is-active");
+        syncTone(event.target);
       };
       const onOut = (event) => {
         if (event.target.closest(interactive)) ring.classList.remove("is-active");
@@ -51,6 +100,7 @@ export default function CustomCursor() {
       document.body.classList.add("has-custom-cursor");
       window.addEventListener("pointermove", onMove, { passive: true });
       document.addEventListener("pointerover", onOver);
+      document.addEventListener("pointerover", onOverTone);
       document.addEventListener("pointerout", onOut);
 
       // ---- Attraction magnétique ---------------------------------------
@@ -76,8 +126,10 @@ export default function CustomCursor() {
 
       dispose = () => {
         document.body.classList.remove("has-custom-cursor");
+        window.clearTimeout(toneTimer);
         window.removeEventListener("pointermove", onMove);
         document.removeEventListener("pointerover", onOver);
+        document.removeEventListener("pointerover", onOverTone);
         document.removeEventListener("pointerout", onOut);
         magnetCleanups.forEach((fn) => fn());
       };

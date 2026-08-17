@@ -1425,6 +1425,7 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   height: 6px;
   margin: -3px 0 0 -3px;
   background: var(--gold-bright);
+  transition: background 200ms ease;
 }
 
 .cursor-ring {
@@ -1441,6 +1442,21 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
   margin: -29px 0 0 -29px;
   background: rgba(221, 166, 60, 0.12);
   border-color: var(--gold-bright);
+}
+
+/* Sur une surface dorée, le curseur doré disparaît : on passe à l'encre,
+   la couleur que ces surfaces donnent déjà à leur texte. */
+.cursor-dot.is-on-gold {
+  background: var(--ink);
+}
+
+.cursor-ring.is-on-gold {
+  border-color: rgba(8, 11, 13, 0.5);
+}
+
+.cursor-ring.is-on-gold.is-active {
+  background: rgba(8, 11, 13, 0.1);
+  border-color: var(--ink);
 }
 
 [data-magnetic] { will-change: transform; }
