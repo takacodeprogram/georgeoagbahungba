@@ -8,6 +8,8 @@ const routes = [
   { path: "/projets", priority: 0.9 },
   { path: "/cv", priority: 0.8 },
   { path: "/takacode", priority: 0.8 },
+  { path: "/data", priority: 0.7 },
+  { path: "/software", priority: 0.7 },
 ];
 
 export default function sitemap() {

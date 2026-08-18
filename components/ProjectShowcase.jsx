@@ -19,12 +19,15 @@ const filtersEN = [
   { label: "Data & Agritech", value: "data-agri" },
 ];
 
-export default function ProjectShowcase({ limit = 6, full = false, locale = "fr" }) {
+export default function ProjectShowcase({ limit = 6, full = false, locale = "fr", sector = null }) {
   const [activeFilter, setActiveFilter] = useState("all");
-  const filtered = activeFilter === "all" ? projects : projects.filter((project) => project.sectors.includes(activeFilter));
-  
+  // `sector` fige le filtre : les pages mono-metier n'affichent que leur domaine
+  // et se passent de la barre de filtres.
+  const pool = sector ? projects.filter((project) => project.sectors.includes(sector)) : projects;
+  const filtered = activeFilter === "all" ? pool : pool.filter((project) => project.sectors.includes(activeFilter));
+
   // Sort projects with images first on homepage
-  const featured = [...projects].sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
+  const featured = [...pool].sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   const items = full ? filtered : featured.slice(0, limit);
 
   const filters = locale === "en" ? filtersEN : filtersFR;

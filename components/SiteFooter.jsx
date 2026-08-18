@@ -18,6 +18,9 @@ export default function SiteFooter({ locale = "fr" }) {
       <nav aria-label="Liens du pied de page">
         <Link href={isEn ? "/en/projets" : "/projets"}>{isEn ? "Projects" : "Projets"}</Link>
         <Link href={isEn ? "/en/cv" : "/cv"}>CV</Link>
+        {/* Seul acces aux versions mono-metier : volontairement discret. */}
+        <Link href={isEn ? "/en/data" : "/data"}>{isEn ? "Data Engineer" : "Ingénieur Data"}</Link>
+        <Link href={isEn ? "/en/software" : "/software"}>{isEn ? "Software Engineer" : "Ingénieur Logiciel"}</Link>
         <a href={contact.links[0].href} target="_blank" rel="noreferrer">GitHub</a>
         <a href={contact.links[1].href} target="_blank" rel="noreferrer">LinkedIn</a>
         <a href={contact.links[3].href} target="_blank" rel="noreferrer">{isEn ? "Store" : "Boutique"}</a>
