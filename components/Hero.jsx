@@ -26,15 +26,6 @@ const chaptersFR = [
     orbit: ["TERRAIN", "MARCHÉ", "FILIÈRE", "TECH"],
   },
   {
-    key: "code",
-    tab: "Développement",
-    eyebrow: "Web • Mobile • IA • Automatisation",
-    title: ["Concevoir. Développer."],
-    accent: "Déployer.",
-    copy: "Je transforme un besoin en application que l’on peut réellement utiliser, de la première maquette jusqu’à la mise en production.",
-    orbit: ["WEB", "MOBILE", "API", "PROD"],
-  },
-  {
     key: "data-eng",
     tab: "Data Engineering",
     eyebrow: "Pipelines • SQL • Automatisation",
@@ -42,6 +33,15 @@ const chaptersFR = [
     accent: "Fiabiliser.",
     copy: "Je construis les pipelines, modèles SQL et automatisations qui transforment des sources dispersées en données propres, structurées et prêtes à être analysées.",
     orbit: ["ETL", "SQL", "FLUX", "QUALITÉ"],
+  },
+  {
+    key: "code",
+    tab: "Développement",
+    eyebrow: "Web • Mobile • IA • Automatisation",
+    title: ["Concevoir. Développer."],
+    accent: "Déployer.",
+    copy: "Je transforme un besoin en application que l’on peut réellement utiliser, de la première maquette jusqu’à la mise en production.",
+    orbit: ["WEB", "MOBILE", "API", "PROD"],
   },
 ];
 
@@ -65,15 +65,6 @@ const chaptersEN = [
     orbit: ["FIELDWORK", "MARKETS", "SECTOR", "TECH"],
   },
   {
-    key: "code",
-    tab: "Development",
-    eyebrow: "Web • Mobile • AI • Automation",
-    title: ["Design. Develop."],
-    accent: "Deploy.",
-    copy: "I translate a business need into a production-ready application, from the very first mockups to final release.",
-    orbit: ["WEB", "MOBILE", "API", "PROD"],
-  },
-  {
     key: "data-eng",
     tab: "Data Engineering",
     eyebrow: "Pipelines • SQL • Automation",
@@ -82,14 +73,27 @@ const chaptersEN = [
     copy: "I build the pipelines, SQL models, and automation workflows that turn fragmented sources into clean, structured, and ready-to-analyze data.",
     orbit: ["ETL", "SQL", "STREAMS", "QUALITY"],
   },
+  {
+    key: "code",
+    tab: "Development",
+    eyebrow: "Web • Mobile • AI • Automation",
+    title: ["Design. Develop."],
+    accent: "Deploy.",
+    copy: "I translate a business need into a production-ready application, from the very first mockups to final release.",
+    orbit: ["WEB", "MOBILE", "API", "PROD"],
+  },
 ];
 
-const frames = [
+const framesFR = [
   { key: "neutral", src: "/media/georgeo-vision.webp", kind: "cover", priority: true },
   { key: "agro", src: "/media/georgeo-agroeconomiste.webp", kind: "cover" },
-  { key: "developer", src: "/media/developer-front.webp", kind: "cover" },
   { key: "data-eng", src: "/media/data-engineer.png", kind: "cover" },
+  { key: "developer", src: "/media/developer-front.webp", kind: "cover" },
 ];
+
+const framesEN = framesFR.map((frame) =>
+  frame.key === "agro" ? { ...frame, src: "/media/georgeo-agroeconomiste-en.webp" } : frame,
+);
 
 const TIMELINE_SPAN = 4.5;
 const CHAPTER_SWITCH_TIMES = [0, 1.25, 2.25, 3.25];
@@ -112,6 +116,7 @@ export default function Hero({ locale = "fr" }) {
 
   const isEn = locale === "en";
   const chapters = isEn ? chaptersEN : chaptersFR;
+  const frames = isEn ? framesEN : framesFR;
 
   // Déclaré avant l'effet GSAP : il figure dans ses dépendances, donc le hook
   // doit exister au moment où le corps du composant est évalué (SSR compris).

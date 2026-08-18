@@ -5,14 +5,14 @@ import { useEffect, useRef } from "react";
 
 const capFramesFR = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroéconomie" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Développement" },
   { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineering" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Développement" },
 ];
 
 const capFramesEN = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroeconomics" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Development" },
   { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineering" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Development" },
 ];
 
 export default function CapRotationStory({ locale = "fr" }) {
@@ -108,22 +108,22 @@ export default function CapRotationStory({ locale = "fr" }) {
           </div>
           {/* Slide 2 */}
           <div className="cap-copy-panel" ref={(node) => { copyRef.current[1] = node; }}>
-            <p className="eyebrow">{isEn ? "02 — Software Development" : "02 — Développement logiciel"}</p>
-            <h2>{isEn ? "Design to better act" : "Concevoir pour mieux agir"}</h2>
-            <p>
-              {isEn
-                ? "Designing applications, platforms, and digital tools to automate workflows, process data, and meet business needs."
-                : "Conception d’applications, de plateformes et d’outils digitaux pour automatiser les processus, exploiter les données et répondre à des besoins métiers."}
-            </p>
-          </div>
-          {/* Slide 3 */}
-          <div className="cap-copy-panel" ref={(node) => { copyRef.current[2] = node; }}>
-            <p className="eyebrow">03 — Data Engineering</p>
+            <p className="eyebrow">02 — Data Engineering</p>
             <h2>{isEn ? "Structure to better analyze" : "Structurer pour mieux analyser"}</h2>
             <p>
               {isEn
                 ? "Designing architectures, database models, and automated ETL pipelines to secure and streamline complex data flows."
                 : "Conception d’architectures, modélisation de bases de données et pipelines ETL automatisés pour fiabiliser et fluidifier les flux de données complexes."}
+            </p>
+          </div>
+          {/* Slide 3 */}
+          <div className="cap-copy-panel" ref={(node) => { copyRef.current[2] = node; }}>
+            <p className="eyebrow">{isEn ? "03 — Software Development" : "03 — Développement logiciel"}</p>
+            <h2>{isEn ? "Design to better act" : "Concevoir pour mieux agir"}</h2>
+            <p>
+              {isEn
+                ? "Designing applications, platforms, and digital tools to automate workflows, process data, and meet business needs."
+                : "Conception d’applications, de plateformes et d’outils digitaux pour automatiser les processus, exploiter les données et répondre à des besoins métiers."}
             </p>
           </div>
         </div>

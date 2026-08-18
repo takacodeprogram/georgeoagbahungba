@@ -266,17 +266,6 @@ export const cvs = [
     number: "01" 
   },
   { 
-    title: { fr: "Développement & Produit", en: "Development & Product" }, 
-    subtitle: { fr: "Full Stack · Mobile · IA · Automatisation", en: "Full Stack · Mobile · AI · Automation" }, 
-    description: {
-      fr: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.",
-      en: "Technical background, tech stacks, digital products, and software engineering projects."
-    }, 
-    fr: "/cv/CV_Developpeur_FR.pdf", 
-    en: "/cv/CV_Developpeur_EN.pdf", 
-    number: "02" 
-  },
-  { 
     title: { fr: "Data Engineering", en: "Data Engineering" }, 
     subtitle: { fr: "Collecte · ETL · SQL · Qualité · Décision", en: "Collection · ETL · SQL · Quality · Decision" }, 
     description: {
@@ -285,6 +274,17 @@ export const cvs = [
     }, 
     fr: "/cv/CV_DataEngineer_FR.pdf", 
     en: "/cv/CV_DataEngineer_EN.pdf", 
+    number: "02" 
+  },
+  { 
+    title: { fr: "Développement & Produit", en: "Development & Product" }, 
+    subtitle: { fr: "Full Stack · Mobile · IA · Automatisation", en: "Full Stack · Mobile · AI · Automation" }, 
+    description: {
+      fr: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.",
+      en: "Technical background, tech stacks, digital products, and software engineering projects."
+    }, 
+    fr: "/cv/CV_Developpeur_FR.pdf", 
+    en: "/cv/CV_Developpeur_EN.pdf", 
     number: "03" 
   },
   { 

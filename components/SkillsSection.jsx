@@ -20,22 +20,22 @@ export default function SkillsSection({ locale = "fr" }) {
     },
     {
       number: "02",
-      icon: Code2,
-      title: isEn ? "Products & development" : "Produits & développement",
-      skills: [
-        "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
-        "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",
-        "DevOps", "CI/CD", "Funnel Building",
-      ],
-    },
-    {
-      number: "03",
       icon: DatabaseZap,
       title: isEn ? "Data Engineering & Cloud" : "Data Engineering & Cloud",
       skills: [
         "Python", "SQL", "Supabase", "Google Cloud", "AWS Cloud", "APIs",
         isEn ? "Data Pipelines (ETL)" : "Pipelines de données (ETL)",
         isEn ? "Generative AI / LLMs" : "IA générative / LLMs",
+      ],
+    },
+    {
+      number: "03",
+      icon: Code2,
+      title: isEn ? "Products & development" : "Produits & développement",
+      skills: [
+        "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
+        "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",
+        "DevOps", "CI/CD", "Funnel Building",
       ],
     },
   ];
