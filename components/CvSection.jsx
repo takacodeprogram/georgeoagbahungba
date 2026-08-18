@@ -35,16 +35,12 @@ export default function CvSection({ locale = "fr" }) {
               <p className="cv-subtitle">{subtitle}</p>
               <p className="cv-desc">{description}</p>
               <div className="cv-actions">
-                <div>
-                  <strong>FR</strong>
-                  <a href={cv.fr} target="_blank" rel="noreferrer"><Eye aria-hidden="true" /> {isEn ? "View" : "Voir"}</a>
-                  <a href={cv.fr} download><Download aria-hidden="true" /> PDF</a>
-                </div>
-                <div>
-                  <strong>EN</strong>
-                  <a href={cv.en} target="_blank" rel="noreferrer"><Eye aria-hidden="true" /> {isEn ? "View" : "Voir"}</a>
-                  <a href={cv.en} download><Download aria-hidden="true" /> PDF</a>
-                </div>
+                <a href={isEn ? cv.en : cv.fr} target="_blank" rel="noreferrer">
+                  <Eye aria-hidden="true" /> {isEn ? "View" : "Voir"}
+                </a>
+                <a href={isEn ? cv.en : cv.fr} download>
+                  <Download aria-hidden="true" /> {isEn ? "Download" : "Télécharger"}
+                </a>
               </div>
             </article>
           );

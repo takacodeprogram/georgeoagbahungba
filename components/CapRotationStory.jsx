@@ -5,14 +5,14 @@ import { useEffect, useRef } from "react";
 
 const capFramesFR = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroéconomie" },
-  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Ingénieur Data" },
+  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-front.webp", label: "Ingénieur Data" },
   { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Ingénieur Logiciel" },
 ];
 
 const capFramesEN = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front-en.webp", label: "Agroeconomics" },
-  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineer" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Software Engineer" },
+  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-front-en.webp", label: "Data Engineer" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front-en.webp", label: "Software Engineer" },
 ];
 
 export default function CapRotationStory({ locale = "fr" }) {
