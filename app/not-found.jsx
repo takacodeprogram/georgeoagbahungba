@@ -14,7 +14,7 @@ export const metadata = {
 const destinations = [
   { href: "/#projets", label: "Les projets", detail: "Applications, plateformes et outils livrés" },
   { href: "/cv", label: "Les CV", detail: "À télécharger en français et en anglais" },
-  { href: "/agency", label: "TakaCode Agency", detail: "Concevoir un produit ensemble" },
+  { href: "/takacode", label: "TakaCode", detail: "La plateforme et son écosystème" },
   { href: "/#contact", label: "Me contacter", detail: "WhatsApp ou e-mail" },
 ];
 

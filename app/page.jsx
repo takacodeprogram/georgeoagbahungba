@@ -6,7 +6,6 @@ import CapRotationStory from "@/components/CapRotationStory";
 import SkillsSection from "@/components/SkillsSection";
 import PageLoader from "@/components/PageLoader";
 import ProjectShowcase from "@/components/ProjectShowcase";
-import CvSection from "@/components/CvSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import ContactSection from "@/components/ContactSection";
 import ChatAssistant from "@/components/ChatAssistant";
@@ -77,7 +76,6 @@ export default function Home({ locale = "fr" }) {
         </Link>
       </section>
 
-      <CvSection locale={locale} />
       <NewsletterSection locale={locale} />
       <ContactSection locale={locale} />
 
