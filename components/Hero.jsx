@@ -98,15 +98,24 @@ const framesEN = [
   { key: "developer", src: "/media/georgeo-ingenieur-logiciel-en.webp", kind: "cover" },
 ];
 
-const TIMELINE_SPAN = 4.5;
-const CHAPTER_SWITCH_TIMES = [0, 1.25, 2.25, 3.25];
-const CHAPTER_REST_TIMES = [0, 1.77, 2.77, 4.0];
+// Le recit occupe une unite de temps par chapitre, plus une demie de repos
+// final. Les pages mono-metier n'en affichent que deux, la home quatre : tout
+// est donc derive du nombre de chapitres plutot que fige.
+function buildTiming(count) {
+  const span = count + 0.5;
+  const switchTimes = Array.from({ length: count }, (_, i) => (i === 0 ? 0 : i + 0.25));
+  const restTimes = Array.from({ length: count }, (_, i) =>
+    i === 0 ? 0 : i === count - 1 ? span - 0.5 : i + 0.77,
+  );
+  return {
+    span,
+    chapterStops: switchTimes.map((t) => t / span),
+    chapterRestStops: restTimes.map((t) => t / span),
+    scrollStops: [...restTimes.map((t) => t / span), 1],
+  };
+}
 
-const chapterStops = CHAPTER_SWITCH_TIMES.map((time) => time / TIMELINE_SPAN);
-const chapterRestStops = CHAPTER_REST_TIMES.map((time) => time / TIMELINE_SPAN);
-const scrollStops = [...chapterRestStops, 1];
-
-export default function Hero({ locale = "fr" }) {
+export default function Hero({ locale = "fr", roleKey = null }) {
   const storyRef = useRef(null);
   const heroRef = useRef(null);
   const navRef = useRef(null);
@@ -118,8 +127,15 @@ export default function Hero({ locale = "fr" }) {
   const [active, setActive] = useState(0);
 
   const isEn = locale === "en";
-  const chapters = isEn ? chaptersEN : chaptersFR;
-  const frames = isEn ? framesEN : framesFR;
+  const allChapters = isEn ? chaptersEN : chaptersFR;
+  const allFrames = isEn ? framesEN : framesFR;
+
+  // Page mono-metier : on garde l'ouverture puis le seul chapitre concerne, en
+  // conservant l'appariement chapitre/portrait par leur position d'origine.
+  const keep = roleKey ? [0, allChapters.findIndex((c) => c.key === roleKey)] : allChapters.map((_, i) => i);
+  const chapters = keep.map((i) => allChapters[i]);
+  const frames = keep.map((i) => allFrames[i]);
+  const { span: TIMELINE_SPAN, chapterStops, chapterRestStops, scrollStops } = buildTiming(chapters.length);
 
   // Déclaré avant l'effet GSAP : il figure dans ses dépendances, donc le hook
   // doit exister au moment où le corps du composant est évalué (SSR compris).
@@ -248,9 +264,9 @@ export default function Hero({ locale = "fr" }) {
           onUpdate() {
             const progress = timeline.progress();
             let next = 0;
-            if (progress >= chapterStops[3]) next = 3;
-            else if (progress >= chapterStops[2]) next = 2;
-            else if (progress >= chapterStops[1]) next = 1;
+            for (let i = chapterStops.length - 1; i > 0; i--) {
+              if (progress >= chapterStops[i]) { next = i; break; }
+            }
             if (next !== activeRef.current) {
               activeRef.current = next;
               setActive(next);
@@ -260,14 +276,10 @@ export default function Hero({ locale = "fr" }) {
 
         timelineRef.current = timeline;
         timeline.to({}, { duration: 1.0 });
-        showFrame(timeline, 1, 1.0);
-        changeChapter(timeline, 0, 1, 1.04);
-
-        showFrame(timeline, 2, 2.0);
-        changeChapter(timeline, 1, 2, 2.04);
-
-        showFrame(timeline, 3, 3.0);
-        changeChapter(timeline, 2, 3, 3.04);
+        for (let i = 1; i < chapters.length; i++) {
+          showFrame(timeline, i, i);
+          changeChapter(timeline, i - 1, i, i + 0.04);
+        }
 
         timeline
           .to({}, { duration: 1.0 })
@@ -336,7 +348,7 @@ export default function Hero({ locale = "fr" }) {
     <>
       <SiteHeader ref={navRef} locale={locale} />
 
-      <div className="hero-story" ref={storyRef}>
+      <div className="hero-story" ref={storyRef} style={{ height: `${chapters.length * 90}vh` }}>
         <header className="hero" ref={heroRef} id="top">
           <div className="hero-noise" aria-hidden="true" />
           <div className="hero-pointer-light" aria-hidden="true" />

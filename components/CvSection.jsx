@@ -2,8 +2,9 @@ import Link from "next/link";
 import { ArrowUpRight, Download, Eye, Languages } from "lucide-react";
 import { cvs } from "@/data/portfolio";
 
-export default function CvSection({ locale = "fr" }) {
+export default function CvSection({ locale = "fr", only = null }) {
   const isEn = locale === "en";
+  const liste = only === null ? cvs : [{ ...cvs[only], number: "01" }];
   return (
     <section className="cv-section" id="cv" aria-labelledby="cv-title">
       <div className="section-heading cv-heading">
@@ -22,7 +23,7 @@ export default function CvSection({ locale = "fr" }) {
           : "Agroéconomie, développement, Data Engineering : choisissez la version de mon parcours la plus pertinente pour votre contexte."}
       </p>
       <div className="cv-grid">
-        {cvs.map((cv) => {
+        {liste.map((cv) => {
           const title = typeof cv.title === "object" ? (cv.title[locale] || cv.title["fr"]) : cv.title;
           const subtitle = typeof cv.subtitle === "object" ? (cv.subtitle[locale] || cv.subtitle["fr"]) : cv.subtitle;
           const description = typeof cv.description === "object" ? (cv.description[locale] || cv.description["fr"]) : cv.description;

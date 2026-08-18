@@ -1,9 +1,9 @@
 import { Code2, DatabaseZap, LineChart } from "lucide-react";
 
-export default function SkillsSection({ locale = "fr" }) {
+export default function SkillsSection({ locale = "fr", only = null }) {
   const isEn = locale === "en";
 
-  const groups = [
+  const allGroups = [
     {
       number: "01",
       icon: LineChart,
@@ -39,6 +39,9 @@ export default function SkillsSection({ locale = "fr" }) {
       ],
     },
   ];
+
+  // `only` isole un groupe pour les pages mono-metier, sans toucher au rendu.
+  const groups = only === null ? allGroups : [{ ...allGroups[only], number: "01" }];
 
   return (
     <section className="skills" id="competences" aria-labelledby="skills-title">

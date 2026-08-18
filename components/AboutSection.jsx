@@ -2,14 +2,19 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { roles } from "@/data/roles";
 
 const badgesFR = ["Agroéconomie", "Full Stack", "Data & IA"];
 const badgesEN = ["Agroeconomics", "Full Stack", "Data & AI"];
 
-export default function AboutSection({ locale = "fr" }) {
+export default function AboutSection({ locale = "fr", roleKey = null }) {
   const sectionRef = useRef(null);
   const isEn = locale === "en";
-  const badges = isEn ? badgesEN : badgesFR;
+  const lang = isEn ? "en" : "fr";
+  // Les pages mono-metier reprennent la section a l’identique et n’echangent
+  // que le texte : meme grille, meme photo, meme animation.
+  const role = roleKey ? roles[roleKey] : null;
+  const badges = role ? role.about.badges[lang] : (isEn ? badgesEN : badgesFR);
 
   useEffect(() => {
     let context;
@@ -71,7 +76,9 @@ export default function AboutSection({ locale = "fr" }) {
           <p className="eyebrow">{isEn ? "Who I am" : "Qui suis-je"}</p>
           <h2 id="about-title">{isEn ? "About Me" : "À propos"}</h2>
           <h3>
-            {isEn ? (
+            {role ? (
+              <>{role.about.h3[lang][0]} <em>{role.about.h3[lang][1]}</em></>
+            ) : isEn ? (
               <>At the crossroads of agroeconomics <em>and technology</em></>
             ) : (
               <>À la croisée de l’agroéconomie <em>et du numérique</em></>
@@ -84,7 +91,11 @@ export default function AboutSection({ locale = "fr" }) {
             ))}
           </div>
 
-          {isEn ? (
+          {role ? (
+            role.about.p[lang].map((texte) => (
+              <p data-reveal key={texte.slice(0, 24)} dangerouslySetInnerHTML={{ __html: texte }} />
+            ))
+          ) : isEn ? (
             <>
               <p data-reveal>
                 I am <strong>Georgeo AGBAHUNGBA</strong>, an agroeconomist, Full Stack Developer, and Data Engineer. My career has been built at the intersection of agricultural projects, data analytics, and digital product creation.
