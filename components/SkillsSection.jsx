@@ -31,7 +31,7 @@ export default function SkillsSection({ locale = "fr" }) {
     {
       number: "03",
       icon: Code2,
-      title: isEn ? "Products & development" : "Produits & développement",
+      title: isEn ? "Software Engineering" : "Ingénierie logicielle",
       skills: [
         "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "PHP", "Laravel",
         "Flutter", "React Native", "Expo", "WordPress", "Git", "GitHub", "Docker",

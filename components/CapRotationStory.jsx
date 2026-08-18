@@ -5,14 +5,14 @@ import { useEffect, useRef } from "react";
 
 const capFramesFR = [
   { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroéconomie" },
-  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineering" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Développement" },
+  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Ingénieur Data" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Ingénieur Logiciel" },
 ];
 
 const capFramesEN = [
-  { key: "agro-front", src: "/media/caps-rotation/cap-agro-front.webp", label: "Agroeconomics" },
-  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineering" },
-  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Development" },
+  { key: "agro-front", src: "/media/caps-rotation/cap-agro-front-en.webp", label: "Agroeconomics" },
+  { key: "data-eng-front", src: "/media/caps-rotation/cap-data-engineer.png", label: "Data Engineer" },
+  { key: "dev-front", src: "/media/caps-rotation/cap-dev-front.webp", label: "Software Engineer" },
 ];
 
 export default function CapRotationStory({ locale = "fr" }) {
@@ -108,7 +108,7 @@ export default function CapRotationStory({ locale = "fr" }) {
           </div>
           {/* Slide 2 */}
           <div className="cap-copy-panel" ref={(node) => { copyRef.current[1] = node; }}>
-            <p className="eyebrow">02 — Data Engineering</p>
+            <p className="eyebrow">{isEn ? "02 — Data Engineer" : "02 — Ingénieur Data"}</p>
             <h2>{isEn ? "Structure to better analyze" : "Structurer pour mieux analyser"}</h2>
             <p>
               {isEn
@@ -118,7 +118,7 @@ export default function CapRotationStory({ locale = "fr" }) {
           </div>
           {/* Slide 3 */}
           <div className="cap-copy-panel" ref={(node) => { copyRef.current[2] = node; }}>
-            <p className="eyebrow">{isEn ? "03 — Software Development" : "03 — Développement logiciel"}</p>
+            <p className="eyebrow">{isEn ? "03 — Software Engineer" : "03 — Ingénieur Logiciel"}</p>
             <h2>{isEn ? "Design to better act" : "Concevoir pour mieux agir"}</h2>
             <p>
               {isEn

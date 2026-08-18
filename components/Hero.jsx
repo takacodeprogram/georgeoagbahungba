@@ -27,7 +27,7 @@ const chaptersFR = [
   },
   {
     key: "data-eng",
-    tab: "Data Engineering",
+    tab: "Ingénieur Data",
     eyebrow: "Pipelines • SQL • Automatisation",
     title: ["Structurer. Connecter."],
     accent: "Fiabiliser.",
@@ -36,7 +36,7 @@ const chaptersFR = [
   },
   {
     key: "code",
-    tab: "Développement",
+    tab: "Ingénieur Logiciel",
     eyebrow: "Web • Mobile • IA • Automatisation",
     title: ["Concevoir. Développer."],
     accent: "Déployer.",
@@ -66,7 +66,7 @@ const chaptersEN = [
   },
   {
     key: "data-eng",
-    tab: "Data Engineering",
+    tab: "Data Engineer",
     eyebrow: "Pipelines • SQL • Automation",
     title: ["Structure. Connect."],
     accent: "Secure.",
@@ -75,7 +75,7 @@ const chaptersEN = [
   },
   {
     key: "code",
-    tab: "Development",
+    tab: "Software Engineer",
     eyebrow: "Web • Mobile • AI • Automation",
     title: ["Design. Develop."],
     accent: "Deploy.",
@@ -87,13 +87,16 @@ const chaptersEN = [
 const framesFR = [
   { key: "neutral", src: "/media/georgeo-vision.webp", kind: "cover", priority: true },
   { key: "agro", src: "/media/georgeo-agroeconomiste.webp", kind: "cover" },
-  { key: "data-eng", src: "/media/data-engineer.png", kind: "cover" },
-  { key: "developer", src: "/media/developer-front.webp", kind: "cover" },
+  { key: "data-eng", src: "/media/georgeo-ingenieur-data.webp", kind: "cover" },
+  { key: "developer", src: "/media/georgeo-ingenieur-logiciel.webp", kind: "cover" },
 ];
 
-const framesEN = framesFR.map((frame) =>
-  frame.key === "agro" ? { ...frame, src: "/media/georgeo-agroeconomiste-en.webp" } : frame,
-);
+const framesEN = [
+  { key: "neutral", src: "/media/georgeo-vision.webp", kind: "cover", priority: true },
+  { key: "agro", src: "/media/georgeo-agroeconomiste-en.webp", kind: "cover" },
+  { key: "data-eng", src: "/media/georgeo-ingenieur-data-en.webp", kind: "cover" },
+  { key: "developer", src: "/media/georgeo-ingenieur-logiciel-en.webp", kind: "cover" },
+];
 
 const TIMELINE_SPAN = 4.5;
 const CHAPTER_SWITCH_TIMES = [0, 1.25, 2.25, 3.25];
