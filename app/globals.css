@@ -1547,8 +1547,9 @@ a.project-tile:hover .project-art > span { transform: scale(1.08) rotate(-3deg);
 
 @media (max-width: 1050px) {
   .nav-links { display: none; }
-  .hero-nav { grid-template-columns: auto 1fr; gap: 20px; }
+  .hero-nav { grid-template-columns: auto 1fr auto; gap: 20px; }
   .hero-nav .nav-actions { justify-self: end; }
+  .mobile-menu-toggle { justify-self: end; }
   .hero-copy { width: 64vw; }
   .hero-role-switcher { width: auto; }
   .expertise-grid { grid-template-columns: repeat(2, 1fr); }
