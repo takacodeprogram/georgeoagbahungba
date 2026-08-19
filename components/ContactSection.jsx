@@ -1,23 +1,31 @@
 import { ArrowUpRight, Code2, Mail, MapPin, MessageCircle, Network, Phone } from "lucide-react";
 import { contact } from "@/data/portfolio";
+import { roles } from "@/data/roles";
 
-export default function ContactSection({ locale = "fr" }) {
+export default function ContactSection({ locale = "fr", roleKey = null }) {
   const isEn = locale === "en";
+  const lang = isEn ? "en" : "fr";
+  // Sur une page mono-metier, l’accroche generique parle des trois casquettes.
+  const role = roleKey ? roles[roleKey] : null;
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
       <div className="contact-orbit" aria-hidden="true"><span>FIELD</span><span>DATA</span><span>PRODUCT</span></div>
       <p className="eyebrow">
-        {isEn ? "You have the problem. Let's build the solution." : "Vous avez le problème. Construisons la solution."}
+        {role
+          ? role.contact.eyebrow[lang]
+          : isEn ? "You have the problem. Let's build the solution." : "Vous avez le problème. Construisons la solution."}
       </p>
       <h2 id="contact-title" data-anim="title">
-        {isEn ? (
+        {role ? (
+          <>{role.contact.h2[lang][0]}<br />{role.contact.h2[lang][1]}<br /><em>{role.contact.h2[lang][2]}</em></>
+        ) : isEn ? (
           <>The need.<br />The data.<br /><em>The solution.</em></>
         ) : (
           <>Le besoin.<br />La donnée.<br /><em>La solution.</em></>
         )}
       </h2>
       <p className="contact-lead">
-        {isEn
+        {role ? role.contact.lead[lang] : isEn
           ? "Data to leverage, processes to automate, a web or mobile application to build, or an Agritech project to structure: tell me about your needs. We'll start from there."
           : "Données à exploiter, processus à automatiser, application à construire ou projet Agritech à structurer : expliquez-moi le besoin. Nous partirons de là."}
       </p>

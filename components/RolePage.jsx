@@ -31,7 +31,7 @@ export default function RolePage({ role: roleKey, locale = "fr" }) {
       <PageLoader />
       <Hero locale={locale} roleKey={role.chapterKey} />
       <AboutSection locale={locale} roleKey={roleKey} />
-      <SkillsSection locale={locale} only={role.skillsGroup} />
+      <SkillsSection locale={locale} only={role.skillsGroup} roleKey={roleKey} />
 
       <section className="method" id="methode" aria-labelledby="method-title">
         <p className="eyebrow">{isEn ? "My Way of Working" : "Ma façon de travailler"}</p>
@@ -45,8 +45,8 @@ export default function RolePage({ role: roleKey, locale = "fr" }) {
             </p>
           </div>
           <div className="method-side">
-            <h3 className="method-title" id="method-title">{t(role.label)}</h3>
-            <p className="method-copy">{t(role.method)}</p>
+            <h3 className="method-title" id="method-title">{t(role.method.title)}</h3>
+            <p className="method-copy">{t(role.method.copy)}</p>
           </div>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function RolePage({ role: roleKey, locale = "fr" }) {
 
       <CvSection locale={locale} only={role.cvIndex} />
       <NewsletterSection locale={locale} />
-      <ContactSection locale={locale} />
+      <ContactSection locale={locale} roleKey={roleKey} />
 
       <SiteFooter locale={locale} />
       <ChatAssistant locale={locale} />
