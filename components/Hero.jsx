@@ -19,10 +19,10 @@ const chaptersFR = [
   {
     key: "agro",
     tab: "Agroéconomie",
-    eyebrow: "AGRO • DATA • AGRITECH",
+    eyebrow: "AGROÉCONOMIE • FILIÈRES • AGRITECH",
     title: ["L’expertise agricole"],
     accent: "augmentée par la tech",
-    copy: "J’analyse les filières agricoles pour comprendre leurs défis, puis je développe les solutions numériques dont elles ont besoin.",
+    copy: "J’analyse les filières, les marchés et les performances agricoles, puis mobilise la donnée et le numérique pour éclairer les décisions et transformer les pratiques.",
     orbit: ["TERRAIN", "MARCHÉ", "FILIÈRE", "TECH"],
   },
   {
@@ -58,10 +58,10 @@ const chaptersEN = [
   {
     key: "agro",
     tab: "Agroeconomics",
-    eyebrow: "AGRO • DATA • AGRITECH",
+    eyebrow: "AGRICULTURAL ECONOMICS • VALUE CHAINS • AGRITECH",
     title: ["Agricultural expertise"],
-    accent: "augmented by tech",
-    copy: "I analyze agricultural value chains to understand their challenges, then develop the digital solutions they need.",
+    accent: "augmented by technology",
+    copy: "I analyze value chains, markets and agricultural performance, then use data and digital technologies to support better decisions and transform practices.",
     orbit: ["FIELDWORK", "MARKETS", "SECTOR", "TECH"],
   },
   {
