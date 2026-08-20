@@ -10,10 +10,10 @@ const chaptersFR = [
   {
     key: "vision",
     tab: "Vision",
-    eyebrow: "Des expertises complémentaires pour un objectif unique",
-    title: ["Innover"],
-    accent: "pour le développement",
-    copy: "Je transforme les problèmes, les données et les idées en solutions numériques exploitables. Agroéconomie, Data Engineering et Développement.",
+    eyebrow: "IDÉES • DATA • PRODUITS",
+    title: ["Transformer les idées"],
+    accent: "en solutions utiles.",
+    copy: "J’analyse les besoins, structure les données et construis les produits numériques qui permettent de passer de l’idée à l’usage.",
     orbit: ["TERRAIN", "DATA", "PRODUIT", "IA"],
   },
   {
@@ -49,10 +49,10 @@ const chaptersEN = [
   {
     key: "vision",
     tab: "Vision",
-    eyebrow: "Complementary expertise for a single objective",
-    title: ["Innovate"],
-    accent: "for development",
-    copy: "I turn challenges, data, and ideas into actionable digital solutions. Agroeconomics, Data Engineering, and Development.",
+    eyebrow: "IDEAS • DATA • PRODUCTS",
+    title: ["Turning ideas"],
+    accent: "into useful solutions.",
+    copy: "I analyze needs, structure data and build digital products that turn ideas into usable solutions.",
     orbit: ["FIELDWORK", "DATA", "PRODUCT", "AI"],
   },
   {
