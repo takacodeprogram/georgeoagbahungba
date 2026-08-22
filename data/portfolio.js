@@ -251,6 +251,22 @@ export const projects = [
       en: ["Web", "Events", "Invitation"]
     }
   },
+  { 
+    name: "Benelux.EU HealthTech Innovations", 
+    url: "https://healthtech-innovations.be/", 
+    image: "/media/project-healthtech.png", 
+    category: { fr: "Santé & Distribution", en: "Health & Distribution" },
+    code: "HT", 
+    sectors: ["web-mobile"],
+    description: {
+      fr: "Site vitrine pour distributeur d'équipements médicaux de laboratoire dans le Benelux : microscopes numériques, analyseurs et scanners.",
+      en: "Showcase website for laboratory medical equipment distributor in the Benelux: digital microscopes, analyzers, and scanners."
+    },
+    tags: {
+      fr: ["Web", "Santé", "Belgique"],
+      en: ["Web", "Health", "Belgium"]
+    }
+  },
 ];
 
 export const cvs = [
