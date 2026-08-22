@@ -55,16 +55,16 @@ export default function SkillsSection({ locale = "fr", only = null, roleKey = nu
           {role ? (
             <>{role.skills.h2[lang][0]} <em>{role.skills.h2[lang][1]}</em></>
           ) : isEn ? (
-            <>Skills covering the<br /><em>entire pipeline.</em></>
+            <>A complete path<br /><em>from data to product.</em></>
           ) : (
-            <>Des compétences qui <em>couvrent toute la chaîne.</em></>
+            <>Un parcours complet<br /><em>de la donnée au produit.</em></>
           )}
         </h2>
       </div>
       <p className="skills-lead" data-anim="up">
         {role ? role.skills.lead[lang] : isEn
-          ? "Collecting field data on the ground, designing data pipelines, performing statistical analysis, developing full-stack applications, and deploying to cloud infrastructure: my technical stack handles the full cycle from raw data to digital product."
-          : "Collecter une donnée sur le terrain, construire son pipeline, l’analyser, développer l’application qui l’exploite et la déployer : mon environnement technique couvre le parcours complet de l’information jusqu’au produit."}
+          ? "Collection, pipelines, analysis, development, and deployment: my skills bridge data with the applications that give it value."
+          : "Collecte, pipelines, analyse, développement et déploiement : mes compétences relient la donnée aux applications qui lui donnent de la valeur."}
       </p>
       <div className="skills-grid">
         {groups.map(({ number, icon: Icon, title, skills }) => (
