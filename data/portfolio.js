@@ -36,6 +36,22 @@ export const projects = [
     }
   },
   { 
+    name: "Musimaps", 
+    url: "https://musimaps.app", 
+    image: "/media/project-musimaps.webp", 
+    category: { fr: "Cartographie & Culture", en: "Mapping & Culture" },
+    code: "MM", 
+    sectors: ["web-mobile", "data-agri"],
+    description: {
+      fr: "Explorer la musique autrement grâce à une cartographie interactive des artistes, scènes et cultures musicales.",
+      en: "Explore music differently through an interactive mapping of artists, scenes, and musical cultures."
+    }, 
+    tags: {
+      fr: ["Web", "Mobile", "Géodata"],
+      en: ["Web", "Mobile", "Geodata"]
+    }
+  },
+  { 
     name: "Lokali", 
     url: "https://lokali.bj", 
     image: "/media/project-lokali.webp", 
