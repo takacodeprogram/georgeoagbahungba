@@ -25,9 +25,9 @@ export const projects = [
     image: "/media/project-takacode.webp", 
     category: { fr: "Produit IA", en: "AI Product" },
     code: "TK", 
-    sectors: ["web-mobile", "ia-auto"], 
+    sectors: ["web-mobile", "ia-auto"],
     description: {
-      fr: "Passer d’une idée à un projet numérique structuré avec l’appui de l’IA et l’apprentissage par la pratique.",
+      fr: "Passer d'une idée à un projet numérique structuré avec l'appui de l'IA et l'apprentissage par la pratique.",
       en: "Go from idea to structured digital project with AI assistance and hands-on learning."
     }, 
     tags: {
@@ -36,28 +36,12 @@ export const projects = [
     }
   },
   { 
-    name: "Musimaps", 
-    url: "https://musimaps.app", 
-    image: "/media/project-musimaps.webp", 
-    category: { fr: "Cartographie & Culture", en: "Mapping & Culture" },
-    code: "MM", 
-    sectors: ["web-mobile", "data-agri"], 
-    description: {
-      fr: "Explorer la musique autrement grâce à une cartographie interactive des artistes, scènes et cultures musicales.",
-      en: "Explore music differently through an interactive mapping of artists, scenes, and musical cultures."
-    }, 
-    tags: {
-      fr: ["Web", "Mobile", "Géodata"],
-      en: ["Web", "Mobile", "Geodata"]
-    }
-  },
-  { 
     name: "Lokali", 
     url: "https://lokali.bj", 
     image: "/media/project-lokali.webp", 
     category: { fr: "Plateforme locale", en: "Local Platform" },
     code: "LO", 
-    sectors: ["web-mobile", "data-agri"], 
+    sectors: ["web-mobile", "data-agri"],
     description: {
       fr: "Rendre les prix agricoles plus accessibles pour mieux comprendre les marchés et comparer les produits au Bénin.",
       en: "Making agricultural prices more accessible to better understand markets and compare products in Benin."
@@ -72,11 +56,11 @@ export const projects = [
     url: null, 
     category: { fr: "Agritech & Data", en: "Agritech & Data" },
     code: "AI", 
-    sectors: ["ia-auto", "data-agri"], 
+    sectors: ["ia-auto", "data-agri"],
     description: {
       fr: "Solution de collecte terrain offline et géolocalisée pour suivre, analyser et exploiter les données agricoles.",
       en: "Offline and geolocated field data collection solution to track, analyze, and leverage agricultural data."
-    }, 
+    },
     tags: {
       fr: ["Agritech", "Data", "IA"],
       en: ["Agritech", "Data", "AI"]
@@ -88,74 +72,30 @@ export const projects = [
     image: "/media/project-contentfactory.webp", 
     category: { fr: "IA & Automatisation", en: "AI & Automation" },
     code: "CF", 
-    sectors: ["web-mobile", "ia-auto"], 
+    sectors: ["web-mobile", "ia-auto"],
     description: {
-      fr: "Automatiser la chaîne éditoriale, de la génération du contenu jusqu’à sa validation, sa planification et sa diffusion.",
+      fr: "Automatiser la chaîne éditoriale, de la génération du contenu jusqu'à sa validation, sa planification et sa diffusion.",
       en: "Automate the editorial chain, from content generation to validation, scheduling, and distribution."
-    }, 
+    },
     tags: {
       fr: ["IA", "Automatisation", "Contenu"],
       en: ["AI", "Automation", "Content"]
     }
   },
   { 
-    name: "ANOPER — Cartes membres", 
-    url: "https://anoper.bj/card-create-system/", 
-    category: { fr: "Solution métier", en: "Business Solution" },
-    code: "AN", 
-    sectors: ["web-mobile"], 
-    description: {
-      fr: "Plateforme de gestion pour générer, administrer et exporter les cartes des membres de l’association.",
-      en: "Management platform to generate, administer, and export association member cards."
-    }, 
-    tags: {
-      fr: ["Association", "Gestion", "Digitalisation"],
-      en: ["Association", "Management", "Digitalization"]
-    }
-  },
-  { 
-    name: "Plateforme filière soja", 
-    url: "https://platformparcsojaidid-dqhk.vercel.app/", 
-    category: { fr: "Agritech", en: "Agritech" },
-    code: "SO", 
-    sectors: ["web-mobile", "data-agri"], 
-    description: {
-      fr: "Ressources éducatives pour les acteurs de la filière soja et modernisation de la présence numérique d’IDID.",
-      en: "Educational resources for soybean sector actors and modernization of IDID's digital presence."
-    }, 
-    tags: {
-      fr: ["Agritech", "Filière", "Digitalisation"],
-      en: ["Agritech", "Value Chain", "Digitalization"]
-    }
-  },
-  { 
     name: "Ire Ayodé", 
     url: "https://ireayode.bj", 
+    image: "/media/project-ireayode.png", 
     category: { fr: "Data agricole", en: "Agricultural Data" },
     code: "IA", 
-    sectors: ["data-agri"], 
+    sectors: ["data-agri", "web-mobile"],
     description: {
-      fr: "Visualisation des données KoboCollect des coopératives d’anacarde dans les Collines du Bénin.",
-      en: "Visualization of KoboCollect data from cashew cooperatives in the Collines region of Benin."
-    }, 
+      fr: "Plateforme de suivi agricole simplifié : synchronisation KoboToolbox, carte interactive et dashboard de producteurs.",
+      en: "Simplified agricultural monitoring platform: KoboToolbox sync, interactive map, and producer dashboard."
+    },
     tags: {
-      fr: ["Coopératives", "Data", "Terrain"],
-      en: ["Cooperatives", "Data", "Field"]
-    }
-  },
-  { 
-    name: "Lottery dApp", 
-    url: "https://lottery-nextjs-dapp-triplecrowndiamond.vercel.app/", 
-    category: { fr: "Web3", en: "Web3" },
-    code: "W3", 
-    sectors: ["web-mobile"], 
-    description: {
-      fr: "Loterie décentralisée pour explorer la blockchain et les contrats intelligents de bout en bout.",
-      en: "Decentralized lottery to explore blockchain and smart contracts from end to end."
-    }, 
-    tags: {
-      fr: ["Web3", "Blockchain", "Expérimentation"],
-      en: ["Web3", "Blockchain", "Experimentation"]
+      fr: ["Agritech", "KoboToolbox", "Dashboard"],
+      en: ["Agritech", "KoboToolbox", "Dashboard"]
     }
   },
   { 
@@ -163,7 +103,7 @@ export const projects = [
     url: "https://project-threejs-ai-customizer-app.onrender.com/", 
     category: { fr: "3D + IA", en: "3D + AI" },
     code: "3D", 
-    sectors: ["web-mobile", "ia-auto"], 
+    sectors: ["web-mobile", "ia-auto"],
     description: {
       fr: "Personnalisateur de t-shirts 3D avec génération de textures par intelligence artificielle.",
       en: "3D t-shirt customizer with texture generation powered by artificial intelligence."
@@ -174,31 +114,16 @@ export const projects = [
     }
   },
   { 
-    name: "Castro Négocé Inter", 
-    url: "https://centurion.castronegoceinter.com/", 
-    category: { fr: "Digitalisation", en: "Digitalization" },
-    code: "CN", 
-    sectors: ["web-mobile"], 
-    description: {
-      fr: "Digitalisation de l’entreprise et déploiement d’un outil de gestion pour ses boutiques de Cotonou et Lomé.",
-      en: "Company digitalization and deployment of a management tool for its Cotonou and Lomé stores."
-    }, 
-    tags: {
-      fr: ["Entreprise", "Gestion", "Web"],
-      en: ["Business", "Management", "Web"]
-    }
-  },
-  { 
     name: "Le Rural", 
     url: "https://lerural.bj", 
     image: "/media/project-lerural.webp", 
     category: { fr: "Média agricole", en: "Agricultural Media" },
     code: "LR", 
-    sectors: ["web-mobile", "data-agri"], 
+    sectors: ["web-mobile", "data-agri"],
     description: {
       fr: "Projet web pour le groupe de presse agricole Le Rural / AIG-Bénin.",
       en: "Web project for the agricultural press group Le Rural / AIG-Benin."
-    }, 
+    },
     tags: {
       fr: ["Média", "Agriculture", "Web"],
       en: ["Media", "Agriculture", "Web"]
@@ -210,11 +135,11 @@ export const projects = [
     image: "/media/project-idid.webp", 
     category: { fr: "Développement", en: "Development" },
     code: "ID", 
-    sectors: ["web-mobile", "data-agri"], 
+    sectors: ["web-mobile", "data-agri"],
     description: {
-      fr: "Présence numérique de l’ONG IDID, partenaire du secteur agricole et territorial.",
+      fr: "Présence numérique de l'ONG IDID, partenaire du secteur agricole et territorial.",
       en: "Digital presence of the NGO IDID, partner of the agricultural and territorial sector."
-    }, 
+    },
     tags: {
       fr: ["ONG", "Agriculture", "Web"],
       en: ["NGO", "Agriculture", "Web"]
@@ -223,16 +148,17 @@ export const projects = [
   { 
     name: "Data Palace", 
     url: "https://datapalace.com", 
-    category: { fr: "Web", en: "Web" },
+    image: "/media/project-datapalace.png", 
+    category: { fr: "Services linguistiques", en: "Language Services" },
     code: "DP", 
-    sectors: ["web-mobile"], 
+    sectors: ["web-mobile"],
     description: {
-      fr: "Projet web référencé dans le parcours de réalisations.",
-      en: "Web project referenced in the track of achievements."
-    }, 
+      fr: "Services de traduction, localisation et annotation de données pour entreprises à dimension internationale.",
+      en: "Translation, localization, and data annotation services for companies scaling globally."
+    },
     tags: {
-      fr: ["Web", "Produit"],
-      en: ["Web", "Product"]
+      fr: ["Traduction", "Localisation", "Web"],
+      en: ["Translation", "Localization", "Web"]
     }
   },
   { 
@@ -240,12 +166,12 @@ export const projects = [
     url: "https://invitation-dot.vercel.app", 
     image: "/media/project-invitation.webp", 
     category: { fr: "Événementiel", en: "Events" },
-    code: "ID", 
-    sectors: ["web-mobile"], 
+    code: "IV", 
+    sectors: ["web-mobile"],
     description: {
       fr: "Invitation numérique pour une cérémonie de dot : écran de bienvenue, détails de l'événement et informations pratiques.",
       en: "Digital invitation for a dowry ceremony: welcome screen, event details, and practical information."
-    }, 
+    },
     tags: {
       fr: ["Web", "Événementiel", "Invitation"],
       en: ["Web", "Events", "Invitation"]
@@ -267,6 +193,22 @@ export const projects = [
       en: ["Web", "Health", "Belgium"]
     }
   },
+  { 
+    name: "Mairie Grand-Popo", 
+    url: "https://mairiegrandpopo.bj", 
+    image: "/media/project-mairiegrandpopo.png", 
+    category: { fr: "Institutionnel", en: "Institutional" },
+    code: "GP", 
+    sectors: ["web-mobile"],
+    description: {
+      fr: "Site institutionnel pour la mairie de Grand-Popo : e-guichet, démarches citoyennes, vie municipale et tourisme balnéaire.",
+      en: "Institutional website for the Grand-Popo city hall: e-counter, citizen services, municipal life, and seaside tourism."
+    },
+    tags: {
+      fr: ["Institution", "Web", "Bénin"],
+      en: ["Institution", "Web", "Benin"]
+    }
+  },
 ];
 
 export const cvs = [
@@ -276,7 +218,7 @@ export const cvs = [
     description: {
       fr: "Parcours académique, expériences terrain, analyse de données, suivi-évaluation et projets agricoles.",
       en: "Academic background, fieldwork, data analysis, monitoring & evaluation, and agricultural projects."
-    }, 
+    },
     fr: "/cv/CV_Agroeconomiste_FR.pdf", 
     en: "/cv/CV_Agroeconomiste_EN.pdf", 
     number: "01" 
@@ -287,7 +229,7 @@ export const cvs = [
     description: {
       fr: "Chaîne de vie de la donnée agricole : conception des enquêtes, contrôle qualité, modélisation et restitution.",
       en: "Agricultural data life cycle: survey design, quality control, modeling, and output presentation."
-    }, 
+    },
     fr: "/cv/CV_DataEngineer_FR.pdf", 
     en: "/cv/CV_DataEngineer_EN.pdf", 
     number: "02" 
@@ -298,7 +240,7 @@ export const cvs = [
     description: {
       fr: "Expériences techniques, technologies, produits numériques et projets de développement logiciel.",
       en: "Technical background, tech stacks, digital products, and software engineering projects."
-    }, 
+    },
     fr: "/cv/CV_Developpeur_FR.pdf", 
     en: "/cv/CV_Developpeur_EN.pdf", 
     number: "03" 
@@ -309,7 +251,7 @@ export const cvs = [
     description: {
       fr: "Une vision complète de mon parcours, de mes compétences et de mes expériences professionnelles.",
       en: "A comprehensive view of my background, skill sets, and professional experiences."
-    }, 
+    },
     fr: "/cv/CV_Complet_FR.pdf", 
     en: "/cv/CV_Complet_EN.pdf", 
     number: "04" 
@@ -336,16 +278,16 @@ export const journey = [
     }
   },
   { 
-    period: "2020 — aujourd’hui", 
+    period: "2020 — aujourd'hui", 
     role: { fr: "Fondateur — Solutions Luciole", en: "Founder — Solutions Luciole" }, 
     org: "Solutions Luciole", 
     detail: {
-      fr: "Pilotage de produits numériques à la rencontre de l’analyse, du code et de la donnée.",
+      fr: "Pilotage de produits numériques à la rencontre de l'analyse, du code et de la donnée.",
       en: "Digital product management at the intersection of economic analysis, code, and data."
     }
   },
   { 
-    period: "2023 — aujourd’hui", 
+    period: "2023 — aujourd'hui", 
     role: { fr: "Produits numériques & IA", en: "Digital Products & AI" }, 
     org: "TakaCode · Musimaps", 
     detail: {
